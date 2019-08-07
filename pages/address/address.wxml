@@ -1,0 +1,23 @@
+<view class='address-container'>
+  <view class='address-item' wx:for="{{addressList}}"  >
+    <view class="info-box {{item.is_default==0?'':'bgf'}}" bindtap='selectAddress' data-id="{{item.address_id}}">
+      <view class='user'>
+        <view class='user-name'>{{item.consignee}}</view>
+        <view class='tel'>{{item.mobile}}</view>
+      </view>
+      <view class='address-detail'> <text class='em'>{{item.is_default==0?'':'[默认地址]'}}</text>{{item.province_name}}{{item.city_name}}{{item.district_name=='请选择'?'':item.district_name}}{{item.address}}</view>
+    </view>
+
+    <view class='operation'>
+      <view class='set-default' data-id="{{item.address_id}}"> <image src="{{item.is_default==0?'../img/yuan.png':'../img/xuanzhong.png'}}" class='default-img' bindtap='setDefault' data-id="{{item.address_id}}"    data-default="{{item.is_default}}"></image>设为默认</view>
+      <view class='bn'>
+        <view class='edit' data-id="{{item.address_id}}" bindtap='editAddress'> <image src='../img/edit.png' class='edit-img'></image> 编辑</view>
+        <view class='del' data-id="{{item.address_id}}"  bindtap='delAddress'> <image src='../img/del.png' class='del-img'></image>删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+ <view class='add-btn'>
+    <image src='../img/address_btn.png' bindtap='addAddress' class='add-btn-img'> </image>  
+    
+  </view>

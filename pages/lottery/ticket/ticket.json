@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "春节免费机票",
+  "navigationBarBackgroundColor": "#f53b22",
+  "navigationBarTitleFrontColor": "white",
+  "usingComponents": {
+    "airlineChecker": "../components/airlineChecker/airlineChecker"
+  }
+}

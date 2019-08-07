@@ -1,0 +1,12 @@
+{
+  "disableScroll":true,
+  "navigationBarTitleText": "寻找20.19好友",
+  "usingComponents": {
+    "authorize": "../../../component/authorize/authorize",
+    "rule":"components/rule/rule",
+    "dialog": "../../../component/dialog/dialog",
+    "airlineChecker": "../components/airlineChecker/airlineChecker",
+    "indicator": "../../../component/indicator/indicator",
+    "backhome": "../components/backhome/backhome"
+  }
+}

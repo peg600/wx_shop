@@ -1,0 +1,121 @@
+<!--pages/offlineShop/shopPage/shopPage.wxml-->
+<!-- <scroll-view class='fix-box' scroll-y> -->
+<view class='preview' wx:if="{{shop_info.images.length > 0}}">
+  <view class='title'>{{shop_info.shop_name}}</view>
+
+  <image class='line' src="/pages/img/color_line.png"></image>
+
+  <!-- 轮播图 -->
+  <view class="swiper-container" id='top'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+      <swiper-item wx:for="{{shop_info.images}}" wx:for-item="item" wx:key="{{shop_info.images}}">
+        <image src="{{item}}" class="img" bindtap="swipClick" mode="aspectFit"></image>
+       </swiper-item>
+    </swiper>
+    <view class='img-number'>{{swiperCurrent+1}} / {{shop_info.images.length}}</view>
+  </view>
+  
+  <image class='line' src="/pages/img/color_line.png"></image>
+
+  <!-- 轮播图点击后的预览图 -->
+  <view class='preview-mask' wx:if="{{show_swiper_img}}" catchtouchmove="prevent" catchtap='toggleShowSwiperImage'>
+    <image src='{{shop_info.images[swiperCurrent]}}' mode='widthFix'></image>
+  </view>
+
+  <view class='coupons' wx:if="{{shop_info.coupons && !show_coupons && shop_info.coupons[0].discount}}">最高可领取 {{shop_info.coupons[0].discount}} 元优惠券</view>
+  <view class='coupons' wx:if="{{shop_info.coupons && !show_coupons && (shop_info.coupons[0].coupon_type == 3 || shop_info.coupons[0].coupon_type == 4)}}">最高可领取 {{shop_info.coupons[0].percent * 10}} 折优惠券</view>
+
+  <view catchtap='toMap'>
+    <view class='info'>地址：{{shop_info.address}}</view>
+    <view class='info' wx:if="{{distance && distance >= 1}}">距离：{{distance}}km</view>
+    <view class='info' wx:if="{{distance && distance < 1}}">距离：{{distance * 1000}}m</view>
+  </view>
+  
+  <view class='info'>营业时间：{{shop_info.shop_hours}}</view>
+  <view class='info'>联系电话：{{shop_info.phone_number}}</view>
+</view>
+
+<!-- <view class='pay'>
+  <view>买单可使用优惠券</view>
+  <view catchtap='toPay'>付款</view>
+</view> -->
+
+<view class='coupon-title' wx:if="{{shop_info.coupons.length>0}}">本店有以下优惠券可供领取：</view>
+<!-- <view class='coupon-title' wx:if="{{shop_info.coupons.length==0}}">无可领取的优惠券</view> -->
+<!-- <view class='coupons-wrapper' wx:if="{{shop_info.claimed_coupons}}">
+  <view class='coupon-list'>
+    <view class='coupon' wx:for="{{shop_info.claimed_coupons}}" wx:for-item="claimed_coupon" wx:key="{{claimed_coupon.coupon_id}}">
+      <view class='coupon-left'>
+        <view>{{claimed_coupon.coupon_name}}</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 1}}">无条件抵扣 {{claimed_coupon.discount}} 元</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 2}}">消费满 {{claimed_coupon.quota}} 元减 {{claimed_coupon.discount}} 元</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 3}}">无条件打 {{claimed_coupon.percent * 10}} 折</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 4}}">消费满 {{claimed_coupon.quota}} 元打 {{claimed_coupon.percent * 10}} 折</view>
+        <view>使用期限：{{claimed_coupon.start_time}} ~ {{claimed_coupon.end_time}}</view>
+      </view>
+      <view class='coupon-right coupon-used' wx:if="{{!claimed_coupon.is_outdated}}">已领取</view>
+      <view class='coupon-right coupon-used' wx:if="{{claimed_coupon.is_outdated}}">已过期</view>
+    </view>
+  </view>
+</view> -->
+
+<scroll-view class='coupons-wrapper' wx:if="{{shop_info.coupons}}" scroll-x="true">
+  <view class='coupon-list'>
+    <view class='coupon-content' wx:if="{{!coupon.full}}" wx:for="{{shop_info.coupons}}" wx:for-item="coupon" wx:key="{{coupon.coupon_id}}">
+      <view class='coupon'>
+        <view class='coupon-left'>
+          <view>{{coupon.coupon_name}}</view>
+          <view wx:if="{{coupon.coupon_type == 1}}">无条件抵扣 {{coupon.discount}} 元</view>
+          <view wx:if="{{coupon.coupon_type == 2}}">消费满 {{coupon.quota}} 元减 {{coupon.discount}} 元</view>
+          <view wx:if="{{coupon.coupon_type == 3}}">无条件打 {{coupon.percent * 10}} 折</view>
+          <view wx:if="{{coupon.coupon_type == 4}}">消费满 {{coupon.quota}} 元打 {{coupon.percent * 10}} 折</view>
+          <view>{{coupon.start_time}} ~ {{coupon.end_time}}</view>
+          <view>限领 {{coupon.max_claim_number}} 张   已领 {{coupon.number?coupon.number:0}} 张</view>
+        </view>
+        <button class='coupon-right' open-type='share'>分享</button>
+        <!-- <view class='coupon-right' wx:if="{{!coupon.used}}" data-coupon_id="{{coupon.coupon_id}}" data-max_claim_number="{{coupon.max_claim_number}}" data-index="{{index}}" catchtap='getCoupon'>分享</view>
+        <view class='coupon-right coupon-used' wx:if="{{coupon.used}}">已领取</view> -->
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class='coupon-title' wx:if="{{shop_info.cash_coupon}}">现金券（{{shop_info.cash_coupon.length}}）</view>
+<view class='goods-wrapper' wx:if="{{shop_info.cash_coupon}}">
+  <view class='goods' wx:for="{{shop_info.cash_coupon}}" wx:for-item="cash_coupon" wx:key="{{cash_coupon.goods_id}}" data-goods_info="{{cash_coupon}}" catchtap="gotoDetail">
+    <view class='goods-info'>
+      <view class='cash-coupon'>
+        <view class='cash-coupon-left'>
+          <view class='coupon-discount'>￥{{cash_coupon.goods_discount}}</view>
+          <view class='coupon-price'>仅售{{cash_coupon.shop_price}}元</view>
+        </view>
+        <view class='cash-coupon-right'>立即购买</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='coupon-title' wx:if="{{shop_info.goods_list}}">店长推荐（{{shop_info.goods_list.length}}）</view>
+<view class='goods-wrapper' wx:if="{{shop_info.goods_list}}">
+  <view class='goods' wx:for="{{shop_info.goods_list}}" wx:for-item="good" wx:key="{{good.goods_id}}" data-goods_info="{{good}}" catchtap="gotoDetail">
+    <image class='thumb' src="{{good.goods_thumb}}" mode="aspectFit"></image>
+    <view class='goods-info'>
+      <view class='goods-name'>{{good.goods_name}}</view>
+      <view class='shop-price'>￥{{good.shop_price}}</view>
+      <view class='market-price'>￥{{good.market_price}}</view>
+    </view>
+    <image class='jump' src="/pages/img/jump_icon.png"></image>
+  </view>
+</view>
+<!-- </scroll-view> -->
+
+<form-button class='fix-button'>
+  <view class='bottom-bar' slot='slot1'>
+    <view bindtap='toPay'>付款</view>
+    <view bindtap='toFitview'>试戴眼镜</view>
+    <button open-type='share'>分享</button>
+    <view bindtap='toShare'>买家秀</view>
+  </view>
+</form-button>
+
+<authorize />

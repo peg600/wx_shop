@@ -1,0 +1,15 @@
+/* pages/endorser/endorser.wxss */
+
+.test{
+  position: relative;
+  width: 80%;
+  height: 200rpx;
+  margin: 100rpx auto;
+  line-height: 200rpx;
+  text-align: center;
+  font-size: 60rpx;
+  color: #333;
+  background-color: greenyellow;
+}
+
+

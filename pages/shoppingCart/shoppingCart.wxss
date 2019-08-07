@@ -1,0 +1,415 @@
+page {
+  background: #f2f2f2;
+  height: 100%;
+  position: relative;
+}
+
+/* -webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+} */
+
+.cart-container {
+  margin-bottom: 100rpx;
+}
+
+.shop {
+  background: #fff;
+  width: 750rpx;
+  overflow: hidden;
+}
+
+.title {
+  height: 80rpx;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  /* margin: 0 29rpx; */
+  padding: 0 29rpx;
+}
+
+.check-btn {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 28rpx;
+}
+
+.shop-icon {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+
+.shop-info {
+  flex: 1;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-info text {
+  font-size: 22rpx;
+  color: rgb(53, 53, 53);
+}
+
+.voucher {
+  font-size: 22rpx;
+  color: rgb(53, 53, 53);
+  /* margin-right: 30rpx; */
+}
+
+.shop-info text, .voucher {
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.flex {
+  justify-content: initial;
+}
+
+.goods {
+  padding: 25rpx 30rpx 25rpx 28rpx;
+  width: 950rpx;
+}
+
+.container-goods-item {
+  width: 950rpx;
+  display: flex;
+  position: relative;
+  transition: left 0.2s linear;
+  /* -moz-transition: left 0.2s linear; */
+  left: 0;
+}
+
+.show-del-btn {
+  left: -210rpx;
+  /* transition: all 5s linear; */
+}
+
+.del-goods {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 200rpx;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 40rpx;
+  align-items: center;
+  background: rgb(230, 67, 64);
+}
+
+.goods-btn {
+  display: flex;
+  align-items: center;
+}
+
+.goods-img image {
+  width: 210rpx;
+  height: 210rpx;
+  background: #ccc;
+  margin-right: 30rpx;
+}
+
+.goods-name {
+  font-size: 26rpx;
+  width: 392rpx;
+  overflow: hidden;
+  color: rgb(53, 53, 53);
+  font-family: "PingFangSC-Medium";
+  line-height: 36rpx;
+  margin-bottom: 6rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.goods-attr {
+  width: 392rpx;
+  font-size: 22rpx;
+  color: rgb(136, 136, 136);
+  height: 42rpx;
+  line-height: 42rpx;
+}
+
+.stock{
+  position: relative;
+  width: 100%;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 22rpx;
+  color: rgb(136, 136, 136);
+}
+.stock view:first-child{
+  position: relative;
+  float: left;
+}
+.stock view:nth-child(2){
+  position: relative;
+  float: right;
+  margin-right: 55rpx;
+  color: red;
+}
+
+.rmb {
+  font-size: 28rpx;
+}
+
+.price {
+  font-size: 34rpx;
+  display: inline-block;
+  width: 160rpx;
+}
+
+.rmb, .price {
+  color: rgb(230, 67, 64);
+  font-size: 36rpx;
+}
+
+.goods-number-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-box {
+  /* border: 1px solid rgb(222, 222, 222); */
+  border-radius: 8rpx;
+  /* width: 116rpx; */
+  height: 54rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.number-box text {
+  /* margin-left:18rpx; */
+  text-align: center;
+}
+
+.add {
+  color: #353535;
+}
+
+.reduce, .add {
+  color: rgb(222, 222, 222);
+  width: 54rpx;
+  height: 54rpx;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 40rpx;
+}
+
+.add {
+  color: #353535;
+}
+
+.can-reduce {
+  color: #353535;
+}
+
+.goods-number {
+  color: rgb(136, 136, 136);
+  width: 94rpx;
+  background: #f6f6f6;
+  text-align: center;
+  height: 54rpx;
+  line-height: 54rpx;
+}
+
+.balance {
+  height: 100rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.total {
+  font-size: 26rpx;
+  color: rgb(53, 53, 53);
+  /* margin-left: 150rpx;  */
+}
+
+.balance .rmb {
+  font-size: 32rpx;
+  color: rgb(230, 67, 64);
+}
+
+.total-price {
+  font-size: 38rpx;
+  color: rgb(230, 67, 64);
+  display: inline-block;
+  /* width: 100rpx; */
+  flex: 1;
+}
+
+.freight {
+  font-size: 22rpx;
+  color: rgb(230, 67, 64);
+  width: 80rpx;
+  position: absolute;
+  right: 390rpx;
+}
+
+.bt {
+  height: 100rpx;
+  width: 190rpx;
+  font-size: 30rpx;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+}
+
+.quantity {
+  background: rgb(230, 67, 64);
+  right: 0;
+}
+
+.friendly {
+  right: 190rpx;
+  background: #ff8f02;
+  border-radius: 0;
+  border: 0;
+}
+
+.shop {
+  background: #f2f2f2;
+}
+
+.carts-dafault {
+  margin: 110rpx auto;
+  width: 310rpx;
+  height: 310rpx;
+}
+
+.carts-dafault image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods {
+  background: #fff;
+}
+
+.title {
+  background: #fff;
+}
+
+.ipt-num {
+  display: inline-block;
+  color: rgb(136, 136, 136);
+  width: 90rpx;
+  background: #f6f6f6;
+  text-align: center;
+  height: 54rpx;
+}
+
+.total-box {
+  width: 280rpx;
+  text-align: right;
+  padding-right: 10rpx;
+  box-sizing: border-box;
+}
+
+.to-actions {
+  position: absolute;
+  bottom: 30rpx;
+  left: 20rpx;
+  z-index: 999;
+  background: #ccc;
+}
+
+/* 活动规则 */
+
+.rule-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9;
+}
+
+.rule-container {
+  /* overflow: hidden; *//* position: absolute; */
+  background: #fff;
+  width: 650rpx;
+  margin: 60rpx auto;
+  /* padding: 0 20rpx; */
+  border-radius: 8rpx;
+  padding-top: 20rpx;
+}
+
+.actions-rule {
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.tit {
+  font-size: 30rpx;
+  color: #ff9200;
+}
+
+.content {
+  font-size: 30rpx;
+  color: #888;
+}
+
+.ont {
+  margin: 40rpx auto 0;
+  width: 600rpx;
+}
+
+.rule-mask button {
+  /* position: absolute;
+  bottom: 0; */
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 10rpx;
+}
+
+.close {
+  position: absolute;
+  top: -20rpx;
+  right: 20rpx;
+}
+
+button[plain] {
+  background: #ff8f02;
+  border: 0;
+  color: #fff;
+  border-radius: 0;
+}
+
+navigator{
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 50rpx 0;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+navigator image{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+navigator text{
+  vertical-align: middle;
+}

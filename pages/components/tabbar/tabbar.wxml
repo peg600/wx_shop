@@ -1,0 +1,2 @@
+<!--pages/component/tabbar/tabbar.wxml-->
+<!--<tabbar tabbar_set="{{tabbar_set}}" selected_index="{{selected_index}}"></tabbar>-->

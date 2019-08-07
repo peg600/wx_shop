@@ -1,0 +1,111 @@
+/* pages/order-pay/order-pay.wxss */
+ @import "../index/index.wxss";  
+page{
+  background: #f7f7f7;
+  overflow-x: hidden;
+}
+.c-box{
+  width: 100%;
+}
+.pay_item{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 80rpx 0;
+}
+.pay_item image{
+    width: 70rpx;
+    height: 70rpx;
+}
+.pay_item .pay_status_text,.pay_price{
+  margin-left: 25rpx;
+  font-size: 25rpx;
+  color: rgb(53, 53, 53)
+}
+.pay_price{
+  color: red;
+  font-size: 40rpx;
+}
+.pay_item_list{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+}
+.pay_item_list{
+  color: rgb(53, 53, 53);
+  font-size: 26rpx;
+  
+}
+.pay_con{
+  height: 300rpx;
+  background: #fff
+}
+.pay_share{
+   margin-top: 25rpx;
+   padding: 30rpx 0;
+   font-size: 26rpx;
+   color: rgb(255, 88, 41)
+}
+.pay_text{
+  padding: 5rpx 0 30rpx 0;
+}
+.pay_text view{
+  padding: 0;
+  font-size: 26rpx;
+  display: block;
+  width: 380rpx;
+  line-height: 43rpx;
+}
+.pay_btn{
+    padding: 5rpx 0 30rpx 0;
+}
+.pay_btn button{
+  padding: 0;
+  font-size: 26rpx;
+  display: block;
+  width: 350rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  background: #fec400;
+  border-radius: 25rpx;
+  color: #fff
+}
+.but_other{
+  margin-top: 24rpx;
+  background: #fff
+}
+.but_other .but_text{
+  text-align: center;
+  font-size: 26rpx;
+  padding: 25rpx 0;
+  color: rgb(255, 88, 41)
+}
+.but_other {
+   padding: 0 25rpx; 
+}
+.glasses_list{
+  overflow: hidden; 
+  padding-top: 5rpx;
+}
+.s_order,.r_index{
+  flex: 1;
+   text-align: center; 
+}
+.s_order{
+  border-right: 1px solid #e2e2e2;
+}
+.btn{
+  border: 0;
+  /* border-radius: 50%; */
+}
+button[plain]{
+  border: 0;
+  border-radius: 45rpx;
+}
+

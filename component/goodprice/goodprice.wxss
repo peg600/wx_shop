@@ -1,0 +1,64 @@
+/* component/goodprice/goodprice.wxss */
+
+.wrapper{
+  position: relative;
+  width: 100%;
+}
+
+.default-price{
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  color:  #f41010;
+  font-size: 24rpx;
+}
+
+.new-user-tip{
+  display: inline-block;
+  position: relative;
+  margin-left: 30rpx;
+  padding: 0 20rpx;
+  overflow: hidden;
+  border-radius: 30rpx 0 30rpx 0;
+  font-size: 24rpx;
+  color: white;
+  background-color: #f41010;
+}
+
+.default-market-price{
+  margin-left: 5rpx;
+  position: relative;
+  font-size: 24rpx;
+  color: rgb(136, 136, 136);
+  display: inline-block;
+  line-height: 80rpx;
+  text-decoration:line-through;
+}
+
+.star-price
+{
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.star-price image
+{
+  width:40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+

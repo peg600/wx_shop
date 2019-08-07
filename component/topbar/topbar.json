@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "searchbar": "../searchbar/searchbar",
+    "goodlist": "../goodlist/goodlist",
+    "container": "../container/container",
+    "blank": "../blank/blank"
+  }
+}

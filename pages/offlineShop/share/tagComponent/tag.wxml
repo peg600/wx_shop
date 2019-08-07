@@ -1,0 +1,7 @@
+<!--pages/offlineShop/share/tagComponent/tag.wxml-->
+
+<movable-view class='tag-wrapper' id="tag-{{index}}" style="left: {{tag.left ? (tag.min_left ? tag.min_left : tag.x) : (tag.min_right ? tag.min_right : tag.x)}}px; top: {{tag.y}}px; flex-direction: {{tag.left ? 'row-reverse' : 'row'}}; transform: translate({{tag.left ? '-100%' : '0'}},-50%);">
+  <view class='dot {{chosen_tag && chosen_tag.index == index ? "chosen" : ""}}' catchtap='changeDirect'></view>
+  <view class='line {{chosen_tag && chosen_tag.index == index ? "chosen" : ""}}'></view>
+  <view class='text {{chosen_tag && chosen_tag.index == index ? "chosen" : ""}}' catchtap='chosen'>{{tag.text}}</view>
+</movable-view>

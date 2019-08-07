@@ -1,0 +1,10 @@
+.component_splitter_container
+{
+  
+}
+
+.component_splitter
+{
+  width: 2rpx;
+  height:3rpx;
+}

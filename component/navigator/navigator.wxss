@@ -1,0 +1,25 @@
+/* component/navigator/navigator.wxss */
+.component-navigatorcontainer
+{
+  width:750rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.component-navigatorcontainer image{
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.component-navigatorcontainer text
+{
+  flex-grow: 1;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 90rpx;
+  overflow: hidden;
+  flex-shrink: 1;
+}

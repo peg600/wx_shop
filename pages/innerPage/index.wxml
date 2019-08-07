@@ -1,0 +1,2 @@
+<!--pages/innerPage/index.wxml-->
+<container componentlist="{{componentlist}}"/>

@@ -1,0 +1,47 @@
+
+.inner .title
+{
+  font-weight: bold;
+  font-size: 40rpx;
+  color: #e63117;
+  margin-bottom: 20rpx;
+}
+
+.inner .hasMargin
+{
+  margin-top: 20rpx;
+}
+
+.inner .hasBottomMargin
+{
+  margin-bottom: 20rpx;
+}
+
+.inner .hasLeftMargin
+{
+  margin-left: 30rpx;
+}
+
+.inner .listitem
+{
+  margin-bottom: 20rpx;
+  margin-left: 15rpx;
+}
+
+.inner .index
+{
+  font-weight: bold;
+   color: #e63117;
+}
+
+.numberIndex
+{
+  color: #e63117;
+  font-weight: bold;
+
+}
+
+.inner{
+  overflow-y:auto;
+  height: 590rpx;
+}

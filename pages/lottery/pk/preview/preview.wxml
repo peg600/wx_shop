@@ -1,0 +1,24 @@
+
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="开心小集" show_capsule="1" />
+<sharepanel id="sharePanel" bind:getShareImage="drawShareImage"></sharepanel>
+<view class='head'>
+  <view class="rule_region">
+    <image src="/pages/img/rule.png"></image>
+  </view>
+</view>
+
+<view class="preview_container">
+  <view class="image-container">
+    <image src="{{imgSource}}" mode="widthFix" style="display:{{isOwner?'block':'none'}}"></image>
+    <canvas canvas-id='maskImage' style="left:2000rpx"></canvas>
+    <canvas canvas-id='resultmaskImage' style="display:{{isOwner?'none':'block'}}"></canvas>
+  </view>
+
+  <view class='newPK' catchtap='submitAction'>
+    <text>{{isOwner?'邀请好友参与PK':'挑战TA'}}</text>
+  </view>
+</view>
+</view>
+

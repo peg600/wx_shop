@@ -1,0 +1,21 @@
+{
+  "component": true,
+  "usingComponents": {
+        "goodlist": "../goodlist/goodlist",
+        "imagelist": "../imagelist/imagelist",
+        "grid": "../grid/grid",
+        "authorize":"../authorize/authorize",
+        "holonavigator": "../navigator/navigator",
+        "textpanel": "../textpanel/textpanel",
+        "headpanel": "../headpanel/headpanel",
+        "blank": "../blank/blank",
+        "splitter": "../splitter/splitter",
+        "ticket": "../ticket/ticket",
+        "board": "../board/board",
+        "tabbar": "../tabbar/tabbar",
+        "shoplist":"../shoplist/shoplist",
+        "indicator": "../indicator/indicator",
+        "branchlist": "../branchlist/branchlist",
+        "searchbar": "../searchbar/searchbar"
+  }
+}

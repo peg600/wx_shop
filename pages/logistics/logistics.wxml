@@ -1,0 +1,73 @@
+<view class='logistics-container' wx:if="{{!isSingle}}">
+<view class='summary wrap'>
+    <view class='summary-info'>
+      订单共有{{shoplist.length}}个物流信息，请分别点击查看
+    </view> 
+  </view>
+  <view class='goods_container wrap' wx:for="{{shoplist}}" wx:for-item="shop">
+    <!-- <view class='shop-info'>
+      <view class='shop-icon'>
+        <image src='{{}}'></image>
+      </view>
+      <view class='shop-name'>
+        {{shop.virtual_shop_name}}
+      </view>
+    </view> -->
+    <view class='goods-box'>
+      <view class="goods-wrapper" wx:for="{{shop.goods_list}}" wx:for-item="good">
+        <view class='goods-icon'>
+          <image src="{{good.goods_thumb}}"></image>
+        </view>
+        <view class='goods-name'>
+          <view class='name-content'>{{good.goods_name}}</view>
+        </view>
+        <view class='goods-number'>
+          x{{good.goods_number}}
+        </view>
+      </view> 
+    </view>
+      <view class="btnContainer wrap">
+      <text class="normal" bindtap='showexpress' data-sn="{{shop.express_form_sn}}" data-company="{{shop.express_company_short}}" wx:if="{{shop.express_form_sn.length > 0?true:false}}">查看物流</text>
+      </view>
+    </view>
+</view>
+<view class='logistics-container' wx:elif="{{isSingle}}">
+<view class='logistics-container' wx:if="{{isShow}}">
+  <view class='express wrap'>
+    <view class='ecpress-logo'>
+      <image src=''></image>
+    </view>
+    <view class='express-info'>
+      <view class='express-name'>{{logisticsInfo.company}}快递</view>
+      <view class='sn'>运单号:{{logisticsInfo.no}}</view>
+      <view class='tel'>官方电话:95546</view>
+    </view>
+  </view>
+  <view class='logistics wrap'>
+    <view class='logistics-box'>
+      <view class='term'>
+          <view class='term-left'><view class='day'></view> <view class='time'></view></view>
+          <view class='term-right big'><view class='state-detail'>[收货地址]{{addressInfo.province_name}}{{addressInfo.city_name}}{{addressInfo.district_name=='请选择'?'':addressInfo.district_name}}</view></view>
+      </view>
+        <view class="term " wx:for="{{logisticsList}}">
+          <view class="term-left {{index==0?'selected':''}}"> <view class=''></view> <view class='time'>{{item.datetime}}</view></view>
+          <view class="term-right short {{index==0?'active selected':''}}"> <view class="state {{index==0?'cheng':''}}">运输中</view> <view class="state-detail {{index==0?'cheng':''}}">{{item.remark}}</view></view>
+      </view>
+       <view class='term'>
+          <view class='term-left'> <view class='time'>2018-05-26 11:24:04</view></view>
+          <view class='term-right short'> <view class='state'>运输中</view> <view class='state-detail'>在浙江义乌分拨中心进行装车扫描，即将发往：河南分拨中心</view></view>
+      </view>
+        <view class='term'>
+          <view class='term-left'> <view class='time'>2018-05-26 08:24:04</view></view>
+          <view class='term-right short end'> <view class='state'>您的订单已经开始处理</view> <view class='state-detail'></view></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='show_default' wx:if="{{!isShow}}">
+  <view class='n-img'>
+    <image src='/pages/img/wuliu.png'></image>
+  </view>
+
+</view>
+</view>

@@ -1,0 +1,5 @@
+/* component/blank/blank.wxss */
+.component_blank
+{
+  width:100%;
+}

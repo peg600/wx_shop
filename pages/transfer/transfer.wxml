@@ -1,0 +1,43 @@
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="客服" show_capsule="1" />
+<view class='transfer-container'>
+  <view class='quest-box'>
+    <view class='hs'>Hello,您是不是要咨询以下问题？</view>
+    <view class='quest-list'>
+      <view class='tit'>Q.我的订单什么时候发货？</view>
+      <view class='content'>A.我们会在订单拍下后48小时内发货，请您耐心等待。</view>
+    </view>
+    <view class='quest-list'>
+      <view class='tit'>Q.我的订单拍错了怎么办？</view>
+      <view class='content'>A.您可在我的订单处申请退款，重新添加购买。</view>
+    </view>
+    <view class='quest-list'>
+      <view class='tit'>Q.如何填写/修改邮寄地址？</view>
+      <view class='content'>A.您可在“我的”页面直接选择地址管理。</view>
+    </view>
+    <view class='quest-list'>
+      <view class='tit'>Q.页面无反应/卡住怎么办？</view>
+      <view class='content'>A.您可下拉返回重新进入或重启小程序，如仍有问题欢迎向客服反馈。</view>
+    </view>
+    <view class='quest-list'>
+      <view class='tit'>Q.商品支持退换货吗？</view>
+      <view class='content'>A.如您不喜欢/质量问题，我们支持退换货。感谢您对我们的使用和支持。</view>
+    </view>
+  </view>
+  <view class='concat-box'>
+     <button send-message-title="{{goodsName}}" send-message-img="{{imgUrl}}" show-message-card="true" send-message-path="{{'../detailPage/detailPage?goods_id='+goodsId}}" open-type='contact' plain>
+     <view class='con-img'> <image src='../img/csd.png'></image> </view>
+      <view class='con-text'><view class='con-tit'> <text>联系客服</text> </view><view class='con-time'><text>在线时间:9:00-20：00</text></view></view>
+      <view class='con-next'> <image src='../img/next_img.png'></image></view>
+      <view class='cr'> <image src='../img/cr.png'></image> </view>
+  </button> 
+  </view>
+</view>
+  <view class='logo'><image src='../img/shopIcon.png' mode="widthFix"></image> </view>
+
+
+<!-- <button send-message-title="{{goodsName}}" send-message-img="{{imgUrl}}" show-message-card="true" send-message-path="{{'../index/list/list?shopid='+goodsId}}" open-type='contact' plain>联系客服
+  </button> -->
+</view>
+

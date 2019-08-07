@@ -1,0 +1,13 @@
+<!--pages/lottery/luckfriend/luckmall/luckmall.wxml-->
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="幸运集市" show_capsule="1" />
+<view class="mall_header gradientBackground">
+我拥有{{star_number}}颗幸运星<image src="/pages/img/star_1.png" mode="widthFix"></image>
+</view>
+<indicator title="幸运免单商品" subTitle="一枚幸运星，好物免费领"/>
+<goodlist id="goodlist" pull_down_refresh="true" goods="star" keyword="Hot" listStyle="3" itemGoodPrice="2"/>
+<view class="mall_footer mall_header reverseGradientBackground" catchtap='newFinding'>发起新的评测，获取幸运星<image src="/pages/img/star_1.png" mode="widthFix"></image>
+</view>
+</view>
+

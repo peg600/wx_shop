@@ -1,0 +1,13 @@
+<!--pages/offlineShop/personalPage/fans/fans.wxml-->
+
+<view class='list-wrapper' wx:if="{{fans_list.length > 0}}">
+  <view class='list' wx:for="{{fans_list}}" wx:for-item="fan" wx:key="{{fan.id}}">
+    <image src="{{fan.avatar_url}}"></image>
+    <view class='name'>{{fan.nick_name}}</view>
+    <view class='time'>{{fan.creat_time}}</view>
+  </view>
+</view>
+
+<view class='no-shop' wx:else>
+  <view class='no-shop-title'>暂无粉丝</view>
+</view>

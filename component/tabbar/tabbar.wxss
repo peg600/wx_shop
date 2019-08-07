@@ -1,0 +1,76 @@
+.component-icon {
+  display: block;
+  position: relative;
+  width: 54rpx;
+  height: 54rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20rpx;
+}
+.component-icon image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+component-tabBar-item text{
+  position: relative;
+  top: -5rpx;
+}
+
+.big .component-icon{
+  position: relative;
+  width: 114rpx;
+  height: 114rpx;
+  top: -60rpx;
+  padding: 15rpx;
+  border-radius: 50%;
+  background: #f7f7fa;
+}
+.big text{
+  position: relative;
+  top: -70rpx;
+  font-size: 30rpx;
+}
+
+.basic {
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  z-index: 1000;
+  bottom: 0;
+  padding: 10rpx 0;
+  background: #f7f7fa;
+  color: #8a8a8a;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+  overflow: visible;
+}
+
+.component-tabBar-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  font-size: 0;
+}
+
+.item-wrapper{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  text-align: center;
+  font-size: 20rpx;
+}
+
+/*当前字体颜色*/
+.component-tabBartext {
+  color: red;
+}
+
+.dd{
+  position: relative;
+  left: 50%;
+}

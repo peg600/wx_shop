@@ -1,0 +1,21 @@
+<!--component/goodprice/goodprice.wxml-->
+
+<!-- 折行 -->
+<view class='wrapper' wx:if="{{price_type == 1 && show_style == 1}}">
+  <view>
+    <view class='{{price_class}}'>{{price}}</view>
+    <view class='new-user-tip' wx:if="{{has_new_user_price && new_user_tip}}">新人特价</view>
+  </view>
+  <view class='{{market_price_class}}' wx:if="{{goods_info.market_price}}">{{goods_info.market_price}}</view>
+</view>
+
+<!-- 同行 -->
+<view class='wrapper' wx:if="{{price_type == 1 && show_style == 2}}">
+  <text class='{{price_class}}'>{{price}}</text><text class='{{market_price_class}}' wx:if="{{goods_info.market_price}}">{{goods_info.market_price}}</text>
+</view>
+
+<!-- 星星 -->
+<view class="star-price" wx:if="{{price_type == 2}}">
+  <view>{{goods_info.star_price}}</view>
+  <image src="/pages/img/star_1.png" mode="widthFix"></image>
+</view>

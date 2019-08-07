@@ -1,0 +1,47 @@
+<!--pages/personalShop/personalShop.wxml-->
+<view id='bac'>
+  <!-- <canvas style="width: {{canvas_width + 'px'}}; height: {{canvas_height + 'px'}};" canvas-id="firstCanvas"></canvas> -->
+  <image src='{{bac_img}}'></image>
+</view>
+
+<view class='main'>
+  <view class='persen-center' wx:if='{{!show_decorate}}'>
+    <view class='shop-name'>{{info.personal_shop_name}}</view>
+    <image src='/pages/img/personal_to_center.png' bindtap='toPersonalCenter' wx:if='{{is_master}}'></image>
+  </view>
+  <view class='share' catchtap='shareShop' wx:if='{{!show_decorate}}'>
+    <image src='/pages/img/personal_share.png'></image>
+    <text>分享</text>
+  </view>
+
+  <view class='btn-wrapper' wx:if='{{!show_decorate}}'>
+    <view class='back' bindtap='goBack'>
+      <image src='/pages/img/personal_first_page.png'></image>
+    </view>
+    <view class='decorate-btn' catchtap='showDecorate' wx:if='{{is_master}}'>
+      <image src='/pages/img/personal_decorate.png'></image>
+    </view>
+  </view>
+
+  <view class='decorate' wx:if='{{show_decorate}}' animation='{{animation}}'>
+    <view class='decorate-title'>
+      <image class='personal-save' catchtap='saveBac' src='/pages/img/personal_save.png'></image>
+      背景
+      <image class='back-arrow' src='/pages/img/arrow_up.png'
+      catchtap='translate'></image>
+    </view>
+    <view class='decorate-list'>
+      <view class='decorate-item' wx:for="{{bac_list}}" wx:for-item="bac" data-bac_url="{{bac.personal_image_url}}" data-bac_thumb_url="{{bac.personal_image_thumb_url}}" bindtap='selectBac' 
+      style='border:{{bac.personal_image_url == bac_img?"4rpx solid orange":"none"}}'>
+        <image src='{{bac.personal_image_thumb_url}}' ></image>
+
+      </view>
+    </view>
+    
+  </view>
+
+  <image class='buy' src='/pages/img/personal_to_goods.png' bindtap='toPersonalMain' wx:if='{{!show_decorate}}'></image>
+  
+</view>
+
+

@@ -1,0 +1,22 @@
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar title="我的收藏" show_capsule="1" />
+<view class="collection-cotainer {{collectionList.length == 0?'bg-default':'' }}">
+    <view class='glasses_list' wx:if="{{collectionList.length > 0 }}">
+        <view class="view_glass {{index==selectGoodsIndex?'show-mask':''}}" wx:for="{{collectionList}}" bindtap='toGoodsDetail' data-index="{{index}}" data-id="{{item.goods_id}}" bindlongpress='touchLongHandle'>
+          <view class="del-collect" hidden="{{index==selectGoodsIndex?false:true}}" bindtap='delCollect' data-recid="{{item.rec_id}}">删 除</view>
+          <image src="{{baseUrl+'/'+item.goods_thumb}}"></image>
+          <view class="view_contain">
+            <view class="view_title">{{item.goods_name}}</view>
+            <view class="view_price fl">
+              <text>￥{{item.shop_price}}元</text>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view wx:else  class='collection-default'>
+        <image src='../img/collection_default.png'></image>
+    </view>
+</view>
+</view>
+

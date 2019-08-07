@@ -1,0 +1,31 @@
+<view class="component_branchslist_container component-branchlist-layout{{listStyle}}">
+  <view class="view_branch{{listStyle}} component_branchlist_item_ui {{listStyle<=3?'component_branchlist_item_border':''}}" wx:for="{{new_data}}" wx:for-item="branch" wx:if="{{listStyle<=4?1:0}}">
+    <view class="component-branchlist-itemContainer" wx:if="{{listStyle!=3?1:0}}" data-userID="{{branch.user_id}}" bindtap='_toDetailListPage'>
+      <image src="{{branch.branch_logo}}" mode='aspectFill' class="image{{listStyle==0? imageRatio*10 :''}}{{listStyle}}"></image>
+      <view class="component_branchlist_view_contain">
+        <view class="component_branchlist_view_title">{{branch.branch_name}}</view>
+        <view class="component_branchlist_view_desc">{{branch.address}}</view>
+      </view>
+    </view>
+
+    <view class="component-branchlist-detail-itemContainer" wx:if="{{listStyle==3?1:0}}" data-userID="{{branch.user_id}}" bindtap='_toDetailListPage'>
+      <image src="{{branch.branch_logo}}" mode='aspectFill' />
+      <view class="component_branchlist_view_contain component-branchlist-detail-desc">
+        <view class="component_branchlist_view_title">{{branch.branch_name}}<text>距离我{{branch.distance}}m</text></view>
+        <view class="component_branchlist_view_desc">{{branch.address}}</view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-x="true" scroll-with-animation="true" scroll-left='0' totalLength="750" class="component-branchlist-scroll" windowWidth="375" wx:if="{{listStyle==5?1:0}}">
+    <view class="component-branchlist-scrollwrap" scroll-x="true">
+      <view wx:for="{{new_data}}" wx:for-item="branch" class="component-branchlist-scroll-itemContainer">
+        <image src="{{branch.branch_logo}}" mode='aspectFill' data-userID="{{branch.user_id}}" bindtap='_toDetailListPage'></image>
+        <view class="component_branchlist_view_contain">
+          <view class="component_branchlist_view_title">{{branch.branch_name}}</view>
+          <view class="component_branchlist_view_desc">{{branch.branch_address}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

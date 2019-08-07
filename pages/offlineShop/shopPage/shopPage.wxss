@@ -1,0 +1,511 @@
+/* pages/offlineShop/shopPage/shopPage.wxss */
+
+page{
+  width: 100vw;
+  padding-bottom: 100rpx;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+/* .fix-box{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding-bottom: 101rpx;
+  overflow: auto;
+} */
+
+.preview{
+  position: relative;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.title{
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  padding: 0 20rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: #333;
+}
+
+.line{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 10rpx;
+}
+
+.swiper-container{
+  position: relative;
+  width: 100%;
+  height: 750rpx;
+  padding: 0;
+  margin: 0;
+}
+
+swiper{
+  position: absolute;
+  width: 100%;
+  height: 750rpx;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+
+swiper-item{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background-color: #eee;
+}
+
+.img{
+  position: relative;
+  width: 100%;
+  height: 750rpx;
+}
+
+.img-number{
+  position: absolute;
+  width: 100rpx;
+  height: 60rpx;
+  right: 30rpx;
+  bottom: 30rpx;
+  border-radius: 15rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.preview-mask{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+.preview-mask image{
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.desc{
+  position: relative;
+  width: 100%;
+  padding: 0 20rpx;
+  line-height: 32rpx;
+  word-wrap: break-word;
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.info{
+  position: relative;
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  line-height: 32rpx;
+  word-wrap: break-word;
+  font-size: 28rpx;
+  color: #333;
+}
+.info:first-child{
+  margin-top: 50rpx;
+}
+
+.endorser{
+  position: absolute;
+  width: 150rpx;
+  height: 60rpx;
+  top: 30rpx;
+  right: 30rpx;
+  border-radius: 10rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  background-color: orange;
+}
+
+.canvas-wrapper{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.coupons{
+  position: relative;
+  width: 80%;
+  height: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 30rpx 0;
+  padding: 0 50rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: white;
+  background-color: red;
+}
+
+.pay{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 102rpx;
+  margin: 30rpx 0;
+  padding: 0 50rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.pay view{
+  flex: 1 1;
+}
+.pay view:last-child{
+  flex: 0 0 150rpx;
+  height: 60rpx;
+  padding: 0 20rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: orange;
+}
+
+.coupon-title{
+  position: relative;
+  width: 100%;
+  margin-top: 30rpx;
+  padding: 0 20rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.coupons-wrapper{
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  margin: 30rpx 0;
+  overflow: hidden;
+}
+
+.coupon-list{
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  padding: 0 20rpx;
+}
+
+.coupon-content{
+  position: relative;
+  flex:0 0 650rpx;
+  margin-right: 30rpx;
+}
+.coupon-content:last-child{
+  margin-right: 0;
+}
+
+.coupon{
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  width: 100%;
+  height: 170rpx;
+  overflow: hidden;
+  background-color: red;
+}
+.coupon:before, .coupon:after {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+    top: 10rpx;
+}
+
+.coupon:before {
+    /* 圆点型的border */
+    border-right: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -4rpx;
+}
+
+.coupon:after {
+    /* 圆点型的border */
+    border-left: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    right: -4rpx;
+}
+
+.coupon-left{
+  position: relative;
+  flex: 1 1;
+  margin-left: 20rpx;
+  padding: 0 20rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: white;
+}
+
+.coupon-right{
+  position: relative;
+  flex: 0 0 200rpx;
+  height: 170rpx;
+  line-height: 170rpx;
+  text-align: center;
+  font-size: 50rpx;
+  color: #fff;
+}
+.coupon-right:before {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+    top: 0rpx;
+    /* 圆点型的border */
+    border-right: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -4rpx;
+}
+
+
+.coupon-used{
+  color: #333;
+  background-color: #ccc;
+}
+
+.to-fitview{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  right: 30rpx;
+  bottom: 120rpx;
+  overflow: hidden;
+}
+.to-fitview image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.to-fitview view{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.goods-wrapper{
+  position: relative;
+  width: 100%;
+  border-top: 1rpx solid #eee;
+}
+
+.goods{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 30rpx;
+}
+.thumb{
+  position: relative;
+  flex: 0 0 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+
+.goods-info{
+  position: relative;
+  flex: 1 1;
+}
+
+.goods-name{
+  position: relative;
+  width: 100%;
+  line-height: 40rpx;
+  white-space:wrap;
+  font-size: 30rpx;
+}
+
+.shop-price{
+  display: inline-block;
+  height: 40rpx;
+  margin-right: 30rpx;
+  line-height: 40rpx;
+  vertical-align: middle;
+  font-size: 30rpx;
+  color: red;
+}
+
+.market-price{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: middle;
+  text-decoration: line-through;
+  font-size: 26rpx;
+  color: #aaa;
+}
+
+
+
+.jump{
+  flex: 0 0 20rpx;
+  height: 40rpx;
+  padding: 0 30rpx;
+}
+
+.bottom-bar{
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 101rpx;
+  left: 0;
+  bottom: 0;
+  padding: 20rpx 0;
+  border-top: 1rpx solid #aaa;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #333;
+  background-color: #fff;
+}
+.bottom-bar button{
+  box-sizing: border-box;
+  flex: 1 1;
+  height: 100%;
+  border-right: 1rpx solid #aaa;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+.bottom-bar view{
+  box-sizing: border-box;
+  flex: 1 1;
+  height: 100%;
+  border-right: 1rpx solid #aaa;
+}
+.bottom-bar view:last-child{
+  border-right: none;
+}
+
+.cash-coupon{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 170rpx;
+  background-color: rgb(240, 240 , 0);
+}
+.cash-coupon:before, .cash-coupon:after {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+    top: 10rpx;
+}
+
+.cash-coupon:before {
+    /* 圆点型的border */
+    border-right: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -4rpx;
+}
+
+.cash-coupon:after {
+    /* 圆点型的border */
+    border-left: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    right: -4rpx;
+}
+
+.cash-coupon-left{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  padding: 0 20rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: white;
+}
+
+.cash-coupon-right{
+  position: relative;
+  flex: 0 0 200rpx;
+  height: 100%;
+  line-height: 170rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+}
+.cash-coupon-right:before {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+    top: 0rpx;
+    /* 圆点型的border */
+    border-right: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -4rpx;
+}
+
+.coupon-discount{
+  width: 100%;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 80rpx;
+  color: #fff;
+}
+
+.coupon-price{
+  width: 100%;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.fix-button{
+  position: fixed;
+  box-sizing: border-box;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 101rpx;
+  z-index: 100;
+}

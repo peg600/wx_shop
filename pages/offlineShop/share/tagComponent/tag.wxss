@@ -1,0 +1,49 @@
+/* pages/offlineShop/share/tagComponent/tag.wxss */
+
+.tag-wrapper{
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  height: 50rpx;
+  line-height: 50rpx;
+  z-index: 100;
+}
+
+.dot{
+  position: relative;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.line{
+  position: relative;
+  width: 30rpx;
+  height: 4rpx;
+  background-color: #fff;
+}
+
+.text{
+  position: relative;
+  height: 100%;
+  padding: 0 20rpx;
+  border: 1rpx solid #fff;
+  border-radius: 25rpx;
+  line-height: 48rpx;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.chosen{
+  border-color: orange;
+  background-color: orange;
+}
+
+
+
+
+

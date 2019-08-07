@@ -1,0 +1,3 @@
+<view class="back_home_region" style="top:{{top}}rpx" catchtap='backHome'>
+    <image src="/pages/img/back_home.png" ></image>
+  </view>

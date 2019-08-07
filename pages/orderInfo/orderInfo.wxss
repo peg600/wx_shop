@@ -1,0 +1,228 @@
+/* pages/orderInfo/orderInfo.wxss */
+@import "../payCenter/payCenter.wxss";
+page{
+  height: 100%;
+  background: #f2f2f2;
+}
+.tab{
+  display: flex;
+  height: 84rpx;
+  background: #ffffff;
+}
+.tab-item{
+  flex: 1;
+  text-align: center; 
+  font-size: 25rpx;
+  color: #888888;
+  margin: 0 22rpx;
+}
+.tab-item text{
+    padding: 26rpx 0;
+    line-height: 84rpx;
+    height: 84rpx;
+    box-sizing: border-box;
+
+    
+}
+.selected{
+    border-bottom: 1px solid #ff5829;
+    color: #ff5829;    
+}
+.infor-container{
+  /* height: 447rpx; */
+  background: #ffffff;
+  /* margin-top: 22rpx; */
+}
+.infor-wrap{
+  /* width: 704rpx; */
+  width: 100%;
+  margin: 0 auto;
+}
+.top-line{
+  width: 100%;
+  height: 20rpx;
+  background: #f2f2f2;
+}
+.store-infor{
+  height: 62rpx;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 24rpx;
+}
+/* .store-infor image{
+    width: 36rpx;
+    height: 36rpx;
+    vertical-align: middle;
+    margin-right: 26rpx;
+}
+.store-infor text{
+    font-size: 22rpx;
+    color: #353535;
+    font-weight: 600;
+    letter-spacing: 3rpx;
+}
+.item{
+    height: 300rpx;
+
+}
+.goods-img{
+  display: inline-block;
+  vertical-align: top;
+}
+.goods-img image{
+    width: 215rpx;
+    height: 215rpx;
+}
+.goods-detail{
+   display: inline-block; 
+  width: 444rpx;
+}*/
+.goods-price{
+  position: relative;
+  margin-bottom: 10rpx;
+}
+ .goods-price text{
+    font-size: 26rpx;
+    color: #888888;
+    position: absolute;
+    right: 10rpx;
+    /* float: right; */
+}
+.container-order.a-goods{
+  background: #ffffff;
+}
+.goods-detail{
+  font-size: 26rpx;
+  color: #353535;
+  text-align: right;
+  text-indent: 216rpx;
+  margin-bottom: 10rpx;
+  padding: 5px;
+  border-bottom: #f4f4f4 1px solid;
+}
+.goods-detail text{
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+
+.goods-detail .goods_total{
+  margin-right: 26rpx;
+  font-weight: 600;
+  font-size: 30rpx;
+}
+.btn navigator{
+    display: inline-block;
+    font-size: 22rpx;
+    height: 52rpx;
+    line-height: 52rpx;
+    border: 1px solid #565656;
+    color: #565656;
+    padding: 0 30rpx;
+    border-radius: 45rpx;
+    box-sizing: border-box;
+}
+.btn .prominent{
+  background: #ffffff;
+  border: 1px solid #ff5829;
+  color: #ff5829;
+}
+.r-magin{
+     margin-right: 30rpx;
+}
+.btn{
+  /* width: 500rpx; */
+  margin-top :10rpx;  
+  margin-right:15rpx;
+  text-align: right;
+}
+.default-show{
+  display: flex;
+  background: #f2f2f2;
+}
+.default-show image{
+    width: 300rpx;
+    height: 300rpx; 
+    margin: 110rpx auto;
+
+}
+.goods-list{
+  /* border-top: 20rpx solid #f2f2f2; */
+  box-sizing: border-box;
+}
+.shop_name image{
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: middle;
+}
+.container-t{
+  display: flex;
+  align-items: center;
+  padding: 0 25rpx;
+  margin-top: 20rpx;
+  margin-bottom:20rpx;
+}
+.shopname{
+  font-size:28rpx;
+  color:#000;
+  margin-left: 20rpx;
+}
+.fx{
+  background-color:#f9f9f9; 
+  padding:25rpx;
+  display: flex;
+}
+.fx image
+{
+  margin-left:25rpx;
+}
+.fx .text-box{
+  width: 580px; 
+    height:212rpx;
+    box-sizing: border-box;
+    margin-left: 20rpx;
+    padding-top:30rpx;
+    vertical-align: middle;
+}
+.fx .text-box .arow .goods-name{
+     font-size:26rpx;
+     height: 74rpx;
+     color:#000000;
+     /* line-height: 1.6; */
+     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+ }
+.fx .text-box .arow01{
+    margin-bottom: 10rpx;
+    padding-right: 10rpx;
+    width: 470rpx; 
+}
+.fx .text-box .arow .goods-price{
+    font-size:34rpx;
+    color:red;
+    align-self: flex-start;
+    margin-top: 16rpx;
+}
+.fx .text-box .goods-huo{
+  font-size: 22rpx;
+  color: #353535;
+
+}
+
+.fx .text-box .arow .goods-label{
+    font-size: 26rpx;
+    color: #999;
+}
+.fx .text-box .arow .goods-num{
+    font-size: 26rpx;
+    color: #999;
+}
+.container-order{
+  padding:0;
+}
+.b-gap{
+  padding: 10rpx;
+  padding-top:0px;
+}

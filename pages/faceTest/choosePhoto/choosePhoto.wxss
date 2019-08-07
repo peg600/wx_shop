@@ -1,0 +1,55 @@
+/* pages/jingku/choosePhoto/choosePhoto.wxss */
+
+.bottom{
+  position: fixed;
+  width: 100%;
+  top: 750rpx;
+  bottom: 0;
+}
+
+.btn-area{
+  position: relative;
+  display: flex;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.album{
+  position: relative;
+  flex: 0 0 200rpx;
+}
+.album image{
+  position: relative;
+  width: 85rpx;
+  height: 80rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.take-photo{
+  position: relative;
+  flex: 1 1;
+}
+.take-photo image{
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.change{
+  position: relative;
+  flex: 0 0 200rpx;
+}
+.change image{
+  position: relative;
+  width: 90rpx;
+  height: 74rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

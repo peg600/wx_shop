@@ -1,0 +1,19 @@
+<!--pages/endorser/poster/poster.wxml-->
+<image class='preview' src="{{img_src}}" mode="aspectFit"></image>
+
+<view class='scroll-container'>
+  <scroll-view class='images' scroll-x>
+    <view class='bac-wrapper'>
+      <image class='bac {{bac_img.src == current_bac.src ? "chosen" : ""}}' mode="aspectFit" wx:for="{{bac_list}}" wx:for-item="bac_img" wx:key="{{bac_img.src}}" src="{{bac_img.src}}" catchtap='chooseBac' data-index="{{index}}"></image>
+    </view>
+  </scroll-view>
+</view>
+
+<image class='share' src="/pages/img/share1.png" catchtap='toggleShare'></image>
+
+<!-- 分享方式选择栏 -->
+<sharepanel id="sharepanel" bind:getShareImage="drawPoster" bind:shareFinished="onShareFinished" share_img="{{img_src}}"></sharepanel>
+
+<view class='canvas-wrapper'>
+  <canvas style="width: {{canvas_width}}px; height: {{canvas_height}}px; left: 2000rpx;" canvas-id="firstCanvas"></canvas>
+</view>

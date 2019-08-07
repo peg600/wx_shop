@@ -1,0 +1,13 @@
+<!--component/ticket/ticket.wxml-->
+<scroll-view scroll-x="true" style="padding-top:10rpx" scroll-with-animation="true" scroll-left='0' totalLength="750" class="component-ticket" windowWidth="375">
+  <view class="stamp {{item.count < item.num_condition?'stamp01':'stampdisable'}} ticket_item" wx:for="{{items}}" wx:for-item="item" wx:for-index="index" data-id="{{item.ticket_id}}" data-userid="{{item.user_id}}"
+    data-index="{{index}}" data-count="{{item.count}}" data-num_condition="{{item.num_condition}}" bindtap='_getTicket'>
+       <view class="item_container">
+    <view class="number" wx:if="{{item.promotion_code == '0'?1:0}}">￥{{item.value}}</view>
+    <view class="number" wx:if="{{item.promotion_code == '0'?0:1}}">{{item.value * 10}}折</view>
+    <view class="description" wx:if="{{item.condition == '0'?0 :1}}">满{{item.condition}}元可使用</view>
+    <view class="description" wx:if="{{item.condition == '0' ?1 :0}}">无门槛使用</view>
+    <view class="top-margin-middle description" wx:if="{{item.start_date_str != '' && item.end_date_str != ''?1 :0}}">{{item.start_date_str}} - {{item.end_date_str}}</view>
+    </view>
+  </view>
+</scroll-view>

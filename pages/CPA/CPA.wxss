@@ -1,0 +1,131 @@
+/* pages/CPA/CPA.wxss */
+.container
+{
+    height: 100%;
+}
+.logistics-container
+{
+  width: 100%;
+  background:#ffe712;
+}
+
+.wrap {
+  width: 700rpx;
+  margin: 0 auto;
+}
+
+.express {
+  display: flex;
+  border-radius: 8rpx;
+  margin-top: 26rpx;
+  height: 200rpx;
+}
+
+.summary
+{
+  display: flex;
+  background: #fff;
+  border-radius: 8rpx;
+  vertical-align: middle;
+  margin-top: 26px;
+  height: 110rpx;
+}
+
+.summary-info {
+  padding-left:10rpx;
+}
+
+.express-info {
+  flex: 1;
+}
+
+.ecpress-logo {
+  width: 170rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecpress-logo image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.express-name {
+  font-size: 30rpx;
+  color: #353535;
+  margin-top: 85rpx;
+}
+
+.cash
+{
+  font-size:80rpx;
+  margin-top: 80px;
+  color: #353535;
+}
+
+.sn {
+  font-size: 24rpx;
+  color: #353535;
+  margin: 10rpx 0;
+}
+
+.tel {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.sub
+{
+  margin-left:40rpx;
+}
+
+.box
+{
+  margin-top:50px;
+  margin-left:20px;
+  margin-right: 20px;
+  height:100px;
+  border-bottom: 1px #ffe712 solid;
+}
+.tab
+{
+  display: flex;
+  align-items: center;
+}
+
+.item
+{
+  width:50%;
+  padding-left:20rpx;
+  padding-top:60rpx;
+}
+
+.number
+{
+    font-size:80rpx;
+  color: #353535;
+  margin-left: 10rpx;
+}
+
+.info
+{
+  font-size: 30rpx;
+  color: #353535;
+}
+
+.intro
+{
+  margin-top:50rpx;
+  font-size:25rpx;
+   color: #353535;
+   padding: 40rpx;
+}
+
+.intro .name
+{
+  font-size: 30rpx;
+  font-weight: bold;
+}

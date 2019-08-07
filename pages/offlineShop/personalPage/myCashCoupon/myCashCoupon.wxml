@@ -1,0 +1,18 @@
+<!--pages/offlineShop/personalPage/myCashCoupon/myCashCoupon.wxml-->
+
+<view class='user-cash'>现金券余额：{{cash_coupon}}元</view>
+<view class='coupons-wrapper' wx:if="{{coupons.length}}">
+  <view class='coupon-list'>
+    <view class='coupon' wx:for="{{coupons}}" wx:for-item="claimed_coupon" wx:key="{{claimed_coupon.coupon_id}}">
+      <view class='coupon-left'>
+        <view>￥{{claimed_coupon.goods_discount}}</view>
+      </view>
+      <view class='coupon-right coupon-used' wx:if="{{!claimed_coupon.can_use}}">不可用</view>
+      <view class='coupon-right' wx:if="{{claimed_coupon.can_use}}">可用</view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class='no-shop' wx:else>
+  <view class='no-shop-title'>暂无可用的优惠券</view>
+</view> -->

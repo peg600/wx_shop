@@ -1,0 +1,27 @@
+<!--pages/index/brand/brand.wxml-->
+
+<view class="holo">
+    <!-- <view class="line"> </view> -->
+    <view class="container">
+      <!-- 新商品推荐 -->
+      <view class='active_title'>
+        <view>品牌街</view>
+        <image src="../../img/down_bg_box.png"></image>
+      </view>
+      <!-- start -->
+      <view class="glasses_list">
+        <view class="view_glass" wx:for="{{brand_data}}" wx:for-item="brand" data-brandId="{{brand.brand_id}}" data-brandName="{{brand.brand_name}}" bindtap="toBrandGoodsPage">
+          <image src="{{brand.brand_logo}}"></image>
+          <view class="view_contain">
+            <view class="view_title">{{brand.brand_name}}</view>
+            <!-- <view class="view_price fl">
+              <text>{{glass.shop_price}}</text>
+              <text>销量：{{glass.count_goods_num}}</text>
+              <image src="../img/togethIcon.png" class="fr" width="36" height="36"></image>
+            </view>
+            <view class="view_even">原价 :{{glass.market_price}}</view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

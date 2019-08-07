@@ -1,0 +1,143 @@
+<!--pages/lottery/lottery.wxml-->
+
+<view style='padding-top: {{navbar_height}}px'>
+  <navbar title="春节免费机票" show_capsule="1" />
+  <authorize/>
+  <view class="intro_page" wx:if="{{false}}">
+    <image src="https://wao-files.oss-cn-beijing.aliyuncs.com/holo/intro_1.jpg" mode="widthFix"></image>
+    <image src="/pages/img/main_entry.png" class="main_entry" mode="widthFix" wx:if="{{!has_submit && loaded}}" catchtap='enterAction'></image>
+  </view>
+  <view class='head no_submit'>
+    <view class="rule_region" catchtap='showrule'>
+      <image src="/pages/img/rule.png"></image>
+    </view>
+  </view>
+
+  <!-- 无航程信息 -->
+  <view class='before-submit-wrapper' wx:if="{{addressInfo}}">
+    <view class="address_info_container">
+      <view class="closeButton" catchtap='closeForm'>
+        <image src="/pages/img/51133509394742205.png" mode='widthFix'></image>
+      </view>
+      <view class="address_title">请输入你春节回家的行程信息</view>
+      <view class="from_container">
+        <view class="address from" catchtap='getFrom'>
+          <text>出发地:</text>
+          <text class="noborder">{{from}}</text>
+        </view>
+        <view class="location" catchtap='getLocation'>
+          <image src="/pages/img/btn_get_location.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="address" catchtap='getDestination'>
+        <text>目的地:</text>
+        <text class="noborder">{{destination}}</text>
+      </view>
+
+      <checkbox-group bindchange="checkboxChange">
+        <checkbox value="1" checked="{{agree_rule}}" />
+        <view class="rule_link" catchtap="showrule">我同意活动规则</view>
+      </checkbox-group>
+
+      <view class='btn_submit' catchtap='submit'>
+        <text>提交</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 有航程信息 -->
+  <view class='submit-wrapper' wx:if="{{!addressInfo}}">
+    <view class="main_info_wrapper">
+      <view class="user_image">
+        <open-data type="userAvatarUrl" class="head_image"></open-data>
+      </view>
+      <view class="user_welcome">你好,
+        <open-data type="userNickName" class="userNickName"></open-data>！</view>
+      <view class="today">今天是
+        <text class="info">{{cDate}}</text>，距春节
+        <text class="info">{{leftDays}}天</text>
+      </view>
+      <view class="from_to_info">
+        <view class="text from_text">{{from.length > 0 ? from :"工作地"}}</view>
+        <view class="text from_info info" wx:if="{{has_submit}}">{{from_weather.weather}} {{from_weather.temperature}}°</view>
+        <view class="text to_text ">{{destination.length > 0 ? destination :"家乡"}}</view>
+        <view class="text to_info info" wx:if="{{has_submit}}">{{destination_weather.weather}} {{destination_weather.temperature}}°</view>
+        <view class="noaddress_tip" wx:if="{{!has_submit}}">你还未提交春节航程,
+          <view class="submitAddress" catchtap='submitAddress'>马上提交</view>
+        </view>
+        <image src="/pages/img/fly_to.png" mode='widthFix'></image>
+      </view>
+    </view>
+    <view catchtap='gotoLuckFriend' class="navigator_btn">
+      <image src="https://wao-files.oss-cn-beijing.aliyuncs.com/holo/find_entry.jpg" class="navigator_btn_image" mode='widthFix'></image>
+    </view>
+    <view class="navigator_btn">
+      <image src="https://wao-files.oss-cn-beijing.aliyuncs.com/holo/buy_ad.jpg" class="navigator_btn_image" mode='widthFix' catchtap='gotoMall'></image>
+      <view class="bottombutton leftbutton" catchtap='gotoMall'>
+        <image src="/pages/img/goshopping.png" mode="widthFix"></image>
+      </view>
+      <view class="bottombutton rightbutton" catchtap='gotoTicket'>
+        <image src="/pages/img/golottery.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+
+  <tabbar selected_index="1"></tabbar>
+  <dialog visible="{{show_rule}}" width="700" height="800" title="规则" content="" autoHide="{{autoHide}}" contentPadding="15" showCloseButton="true">
+    <view class="inner1">
+      <view class="title">活动内容：</view>
+      <view>2019.1.1 ~ 2010.2.15日，用户在开心小集上购物或参与寻找"20.19"好友活动，可以获得春节回家的免费机票。</view>
+      <view class="title hasMargin">活动规则：</view>
+      <view class="listitem">
+        <text class="index">1、</text>活动期间，用户预先提交春节回家的航程计划（起点和终点），即可参与相关活动。</view>
+      <view class="listitem">
+        <text class="index">2、</text>春节航程信息一旦提交，将不能更改，开心小集将按照此信息为中奖用户提供国内任意航空公司的经济舱机票一张。中奖用户可以自由选择去程或返程以及时间（有效期：2019.1.1 ~ 2019.2.20）。</view>
+      <view class="listitem">
+        <text class="index">3、</text>默认情况下，开心小集会提供起点和终点的直航机票，如果用户提供的航程需要中转，开心小集只负责其中航程最远的那一部分机票。</view>
+      <view class="listitem">
+        <text class="index">4、</text>开心小集会在小程序和公众号上公布中奖名单，请用户及时关注，一旦中奖，请及时联系客服提供相关身份信息，开心小集不承担因为中奖用户身份信息提供不及时或者不准确导致的任何结果。</view>
+      <view class="listitem">
+        <text class="index">5、</text>用户需保证是本人真实参与，禁止采取一切作弊活动获取奖励，一旦发现，所有的奖励都将作废。</view>
+      <view class="listitem">
+        <text class="index">6、</text>开心小集保证活动的真实和公正性，并保留活动的解释权。</view>
+      <view class="title hasMargin">活动一：寻找"20.19"好友</view>
+      <view class="hasBottomMargin">通过寻找和自己外表相似度为(20+19)%的好友，可以获得相关奖励。</view>
+      <view class="listitem">
+        <text class="index">1、</text>外表相似39%的两个人，每个人得一枚幸运星
+        <image src='/pages/img/star_1.png' mode='widthFix'></image>，可用于免费兑换商品。</view>
+      <view class="listitem">
+        <text class="index">2、</text>长得39%相似，并且符合：</view>
+      <view class="hasLeftMargin hasBottomMargin">
+        <text class="index">a)</text> 外表年龄相差
+        <text class="numberIndex">2</text>岁以内(AI自动判定)</view>
+      <view class="hasLeftMargin hasBottomMargin">
+        <text class="index">b)</text> 异性(性别
+        <text class="numberIndex">0</text>相似)(AI自动判定)</view>
+      <view class="hasLeftMargin hasBottomMargin">
+        <text class="index">c)</text> 在同
+        <text class="numberIndex">1</text>个城市</view>
+      <view class="hasLeftMargin hasBottomMargin">
+        <text class="index">d)</text> 相似度3
+        <text class="numberIndex">9</text>%(AI自动判定)</view>
+      <view class="listitem">每个人可获得一枚特别幸运星
+        <image src='/pages/img/star_2019.png' mode='widthFix'></image>。最早集齐2枚
+        <image src='/pages/img/star_2019.png' mode='widthFix'></image>的用户，获得第一张免费机票，最早集齐3枚的，获得第二张免费机票，获奖所需的
+        <image src='/pages/img/star_2019.png' mode='widthFix'></image>数目依次加一，依次类推。如，最早集齐4枚获得第三张机票，集齐5枚获得第4张机票，等等。本活动中，每人只能中奖一次。</view>
+      <view class="listitem">
+        <text class="index">3、</text>每次不同好友之间的测试都会增加幸运值，幸运值为39的倍数时，也会产生一枚
+        <image src='/pages/img/star_1.png' mode='widthFix'></image>。</view>
+      <view class="listitem">
+        <text class="index">4、</text>相同的两个人只能领取一次奖励，多余的测试只会给出结果，不会产生相关奖励。</view>
+      <view class="listitem">
+        <text class="index">5、</text>参与活动必须是本人拍照，不得采取作弊（包括但不限于翻拍照片，换号重拍等）手段获取奖励，否则所有获得的奖励都将作废。</view>
+
+      <view class="title hasMargin">活动二：购好物，赢机票</view>
+      <view class="listitem">
+        <text class="index">1、</text>活动期间，在开心小集购买商品，每个订单可获得一张抽奖券，每张抽奖券可获得一次抽取2019年春节免费机票的机会。</view>
+      <view class="listitem">
+        <text class="index">2、</text>机票数目没有限制，每2000名参与抽奖的用户作为一期抽奖，每一期抽奖会产生一张机票。</view>
+      <view class="listitem">
+        <text class="index">3、</text>抽奖活动中所使用的抽奖券作为用户在开心小集上购买商品的回馈，是和您购买的订单商品关联在一起的。正常情况下，开心小集上所售出的任何商品，均享受7天无理由退换的售后服务。抽奖券一旦使用，原则上认为您已经确认和奖券所关联的商品质量没有问题，相应的商品将不能再无理由退换，请妥善安排您参与抽奖的时间，确保您对购买的商品没有异议。</view>
+    </view>
+  </dialog>
+</view>

@@ -1,0 +1,16 @@
+<!--pages/offlineShop/personalPage/myOrder/myOrder.wxml-->
+
+<view class='order-list'>
+  <view class='order' wx:for="{{order_list}}" wx:for-item="order" wx:key="{{order.order_id}}" data-order_info="{{order}}" catchtap='toggleShowDetail'>
+    
+    <view class='mid gray' wx:if="{{order.status == 0}}">已作废</view>
+    <view class='mid red' wx:if="{{order.status == 1}}" data-order_info="{{order}}" catchtap='pay'>待付款</view>
+    <view class='mid' wx:if="{{order.status == 2}}">拼团中</view>
+    <view class='mid green' wx:if="{{order.status == 3}}">已完成</view>
+
+    <view class='left red'>{{order.final_price}}</view>
+
+    <view class='right'>{{order.create_time}}</view>
+    
+  </view>
+</view>

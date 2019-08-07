@@ -1,0 +1,23 @@
+<!--pages/offlineShop/personalPage/myCoupon/myCoupon.wxml-->
+
+<view class='coupons-wrapper' wx:if="{{coupons.length}}">
+  <view class='coupon-list'>
+    <view class='coupon' wx:for="{{coupons}}" wx:for-item="claimed_coupon" wx:key="{{claimed_coupon.coupon_id}}">
+      <view class='coupon-left'>
+        <view>{{claimed_coupon.shop_name}}</view>
+        <view>{{claimed_coupon.coupon_name}}</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 1}}">无条件抵扣 {{claimed_coupon.discount}} 元</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 2}}">消费满 {{claimed_coupon.quota}} 元减 {{claimed_coupon.discount}} 元</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 3}}">无条件打 {{claimed_coupon.percent * 10}} 折</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 4}}">消费满 {{claimed_coupon.quota}} 元打 {{claimed_coupon.percent * 10}} 折</view>
+        <view>{{claimed_coupon.start_time}} ~ {{claimed_coupon.end_time}}</view>
+      </view>
+      <view class='coupon-right coupon-used' wx:if="{{!claimed_coupon.is_outdated}}">已领取</view>
+      <view class='coupon-right coupon-used' wx:if="{{claimed_coupon.is_outdated}}">已过期</view>
+    </view>
+  </view>
+</view>
+
+<view class='no-shop' wx:else>
+  <view class='no-shop-title'>暂无可用的优惠券</view>
+</view>

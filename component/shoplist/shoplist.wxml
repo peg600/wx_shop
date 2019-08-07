@@ -1,0 +1,47 @@
+<view class="component_shopslist_container component-shoplist-layout{{listStyle}}">
+  <view class="view_shop{{listStyle}} component_shoplist_item_ui {{listStyle<=3?'component_shoplist_item_border':''}}" wx:for="{{new_data}}" wx:for-item="shop" wx:if="{{listStyle<=4?1:0}}">
+    <view class="component-shoplist-itemContainer" wx:if="{{listStyle!=3?1:0}}" data-userID="{{shop.user_id}}" bindtap='_toDetailListPage'>
+      <image src="{{shop.personal_shop_thumb}}" mode='aspectFill' class="image{{listStyle==0? imageRatio*10 :''}}{{listStyle}}"></image>
+      <view class="component_shoplist_view_master">
+        <view class="component_shoplist_view_master_container">
+          <text>{{shop.nick_name}}</text>
+          <image src="{{shop.avatar_url}}" mode='widthFix' style='width:35rpx'></image>
+        </view>
+      </view>
+      <view class="component_shoplist_view_contain">
+        <view class="component_shoplist_view_title">{{shop.personal_shop_name}}</view>
+        <view class="component_shoplist_view_desc">{{shop.personal_shop_slogan}}</view>
+      </view>
+    </view>
+
+    <view class="component-shoplist-detail-itemContainer" wx:if="{{listStyle==3?1:0}}" data-userID="{{shop.user_id}}" bindtap='_toDetailListPage'>
+      <image src="{{shop.personal_shop_thumb}}" mode='aspectFill' />
+      <view class="component_shoplist_view_contain component-shoplist-detail-desc">
+        <view class="component_shoplist_view_master_container_detail">
+          <image src="{{shop.avatar_url}}" mode='widthFix' style='width:35rpx'></image>
+          <text>{{shop.nick_name}}</text>
+        </view>
+        <view class="component_shoplist_view_title">{{shop.personal_shop_name}}<text>距离我{{shop.distance}}m</text></view>
+        <view class="component_shoplist_view_desc">{{shop.personal_shop_slogan}}</view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-x="true" scroll-with-animation="true" scroll-left='0' totalLength="750" class="component-shoplist-scroll" windowWidth="375" wx:if="{{listStyle==5?1:0}}">
+    <view class="component-shoplist-scrollwrap" scroll-x="true">
+      <view wx:for="{{new_data}}" wx:for-item="shop" class="component-shoplist-scroll-itemContainer">
+        <image src="{{shop.personal_shop_thumb}}" mode='aspectFill' data-userID="{{shop.user_id}}" bindtap='_toDetailListPage'></image>
+        <view class="component_shoplist_view_master">
+          <view class="component_shoplist_view_master_container">
+            <text>{{shop.nick_name}}</text>
+            <image src="{{shop.avatar_url}}" mode='widthFix' style='width:35rpx'></image>
+          </view>
+        </view>
+        <view class="component_shoplist_view_contain">
+          <view class="component_shoplist_view_title">{{shop.personal_shop_name}}</view>
+          <view class="component_shoplist_view_desc">{{shop.personal_shop_slogan}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

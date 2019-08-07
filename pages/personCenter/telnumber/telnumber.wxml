@@ -1,0 +1,26 @@
+<view class='tel-container' wx:if="{{isShow==0}}">
+  <view class='tit'>绑定手机</view>
+  <view class='ipt-box'>
+    <view>
+      <input placeholder='请输入您的手机号' type='number' bindinput='telValue' maxlength='11'>
+      </input> 
+    </view>
+    <view class='ma'>
+      <input placeholder='请输入短信验证' type='number' bindinput='codeValue'>
+      </input> 
+      <button plain bindtap='getCode' disabled="{{isDisabled}}">{{codeText}}</button> 
+    </view>
+  </view>
+ <view class='confirm'><button plain bindtap='binTel'>立即绑定</button></view>
+ <view class='rd'>
+     <view class="img-box  {{isBind==true?'':'select'}}" bindtap='changeImg'><image class='re' src='../../img/gouxuan.png'  hidden="{{!isBind}}"></image></view>我已经阅读并同意 <text class='sm'>服务声明</text> </view>
+</view>
+<view wx:elif="{{isShow==1}}" class='yb-box'>
+  <!-- 绑定手机号为:{{telNumber}} -->
+  <view class="t-img"> <image src='../../img/phone_img.png' mode="widthFix"></image> </view>
+  <view class='yb'>已绑定手机号码</view>
+  <view class='tm'>{{telNumber}}</view>
+
+  <view class='qr'><button plain bindtap='goBack'>确认</button></view>
+  <view class='jb'><button plain bindtap='removeBindTel'>解绑</button></view>
+</view>

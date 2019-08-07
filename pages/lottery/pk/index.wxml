@@ -1,0 +1,68 @@
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="开心小集" show_capsule="1" />
+<view class='head'>
+  <view class="rule_region">
+    <image src="/pages/img/rule.png"></image>
+  </view>
+</view>
+<view class="pk_info_container">
+  <view class="tabheader">
+    <view class="tabitem {{selected_index == 0 ? 'selectedtab':''}}" data-index='0' catchtap='switchtab'>
+      <text>规则</text>
+    </view>
+    <view class="tabitem {{selected_index == 1 ? 'selectedtab':''}}" data-index='1' catchtap='switchtab'>
+      <text>我的PK</text>
+    </view>
+    <view class="tabitem {{selected_index == 2 ? 'selectedtab':''}}" data-index='2' catchtap='switchtab'>
+      <text>我的游戏券</text>
+    </view>
+    <view class="tabcontent" wx:if="{{selected_index == 0?1:0}}">
+      <text>1：庄家（PK发起者）选择一种挑战表情，打开摄像头，表演相应的表情并拍摄一张照片，然后提交。
+
+2：邀请好友进行PK，接受挑战的好友表演相同的表情并拍照提交。 PK双方的照片彼此对对方不可见（系统将会通过技术手段对照片进行马赛克）。一张照片庄家最多可以邀请5名好友参与PK。
+
+3：系统根据选择的表情，对双方提交的照片进行评分，评分高者赢，赢家获得翻输家牌的特权，查看输家的照片。
+
+4：每次PK对战双方会随机获得开心卡。
+     </text>
+    </view>
+    <view class="tabcontent" wx:if="{{selected_index == 1?1:0}}"></view>
+    <view class="tabcontent" wx:if="{{selected_index == 2?1:0}}"></view>
+  </view>
+
+  <view class='newPK' bindtap='newPK'><text>发起PK</text></view>
+</view>
+
+<dialog visible="{{show_selector}}" width="600" height="800" title="选择要PK的表情" contentPadding="0" autoHide="{{autoHide}}" content="" >
+  <view class="emoji-container">
+    <view class="emoji-item">
+      <view class="emoji-content {{selectedEmojiIndex==1?'selected':''}}" catchtap='switchEmoji' data-index='1' data-emoji="大笑">
+        <image src="/pages/img/smile.jpg" mode="widthFix"></image>
+        <text>大笑</text>
+      </view>
+    </view>
+    <view class="emoji-item">
+      <view class="emoji-content {{selectedEmojiIndex==4?'selected':''}}" catchtap='switchEmoji' data-index='4' data-emoji="愤怒">
+        <image src="/pages/img/angry.jpg" mode="widthFix"></image>
+        <text>愤怒</text>
+      </view>
+    </view>
+    <view class="emoji-item">
+      <view class="emoji-content {{selectedEmojiIndex==8?'selected':''}}" catchtap='switchEmoji' data-index='8' data-emoji="伤心">
+        <image src="/pages/img/sad.jpg" mode="widthFix"></image>
+        <text>伤心</text>
+      </view>
+    </view>
+    <view class="emoji-item">
+      <view class="emoji-content  {{selectedEmojiIndex==16?'selected':''}}" catchtap='switchEmoji' data-index='16' data-emoji="惊吓">
+        <image src="/pages/img/fear.jpg" mode="widthFix"></image>
+        <text>惊吓</text>
+      </view>
+    </view>
+
+    <view class='newPK' bindtap='confirmPK'><text>开始表演"{{selectedEmoji}}"</text></view>
+  </view>
+</dialog>
+</view>
+

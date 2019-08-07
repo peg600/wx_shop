@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <image src='../img/bac.jpg' class='background-pic'></image>
+  <view class='choose'>
+    <image src='../img/choose_history@2x.png'></image>
+  </view>
+  <view class='pic-border'>
+    <navigator url='../fitview/fitview'>
+      <image src='../img/photo_border@2x.png'></image>
+    </navigator>
+  </view>
+  <view class='takephoto'>
+    <image src='../img/upload_photo@2x.png'></image>
+  </view> -->
+</view>
+

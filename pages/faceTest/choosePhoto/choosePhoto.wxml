@@ -1,0 +1,18 @@
+<!--pages/jingku/choosePhoto/choosePhoto.wxml-->
+<camera device-position="{{device_position}}" flash="off" binderror="error" style="width: 100%; height: 100vw;"></camera>
+
+<view class='bottom'>
+  <view class="btn-area">
+    <view class='album' catchtap='chooseImage'>
+      <image src='/pages/img/album.png'></image>
+    </view>
+    <view class='take-photo' catchtap='takePhoto'>
+      <image src='/pages/img/take_photo.png'></image>
+    </view>
+    <view class='change' catchtap='changeDevice'>
+      <image src='/pages/img/change_device.png'></image>
+      </view>
+  </view>
+</view>
+
+

@@ -1,0 +1,23 @@
+<!--pages/coupon/coupon.wxml-->
+<view class='coupon-box'>
+    <view class='effective-coupon coupon'>
+        <view class='coupon-info'>
+            <view><text class='rmb'>￥</text><text class='price'>2元</text><text class='text-coupon'>优惠券                    </text></view>
+            <view class='term'>2018-9-24至2018-09-29</view>
+            <view class='useage'>购买任意商品均可</view>
+        </view>
+        <view class='coupon-state'>
+            优惠折扣
+        </view>
+    </view>
+    <view class='invalidation-coupon coupon'>
+        <view class='coupon-info'>
+            <view><text class='rmb'>￥</text><text class='price'>2元</text><text class='text-coupon'>优惠券                    </text></view>
+            <view class='term'>2018-9-24至2018-09-29</view>
+            <view class='useage'>购买任意商品均可</view>
+        </view>
+        <view class='coupon-state'>
+            已经使用
+        </view>
+    </view>
+</view> 

@@ -1,0 +1,493 @@
+/* pages/group_purchase/group_purchase_join/group_purchase_join.wxss */
+page{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+text{
+  margin: 0;
+  padding: 0;
+}
+
+.top{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 365rpx;
+  padding: 45rpx;
+}
+
+.left{
+  position: relative;
+  height: 100%;
+  flex: 0 0 275rpx;
+  border-radius: 24rpx;
+  background-color: black;
+}
+
+.pic-wrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 24rpx;
+}
+.pic-wrapper image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.right{
+  position: relative;
+  height: 100%;
+  flex: 1 1;
+  padding: 25rpx 0 30rpx 30rpx;
+}
+
+.goods-name{
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 24rpx;
+}
+
+.goods-number{
+  position: relative;
+  margin-top: 60rpx;
+  text-align: left;
+  font-size: 20rpx;
+  color: rgb(138, 138, 138);
+}
+
+.price{
+  position: relative;
+}
+
+.act-price{
+  vertical-align: bottom;
+  font-size: 30rpx;
+  color: rgb(230, 0, 18);
+}
+
+.bargain{
+  margin-left: 22rpx;
+  vertical-align: bottom;
+  font-size: 20rpx;
+  color: rgb(138,138,138);
+}
+
+.icons{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 70rpx;
+  padding: 0 30rpx;
+  background-color: rgb(247, 247, 247);
+}
+
+.icon-list{
+  position: relative;
+  height: 100%;
+  flex: 1 1;
+
+}
+
+.icon-item{
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  margin-right: 40rpx;
+}
+
+.icon-wrapper{
+  display: inline-block;
+  position: relative;
+  width: 24rpx;
+  height: 100%;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+.icon-wrapper image{
+  position: absolute;
+  width: 100%;
+  height: 24rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.icon-text{
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  line-height: 70rpx;
+  vertical-align: middle;
+  font-size: 20rpx;
+  color: rgb(138, 138, 138);
+}
+
+.jump-icon{
+  position: relative;
+  height: 100%;
+  flex: 0 0 16rpx;
+  line-height: 70rpx;
+}
+.jump-icon image{
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 24rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.middle{
+  position: relative;
+  width: 100%;
+  padding: 0 20rpx;
+  text-align: center;
+  border-bottom: 20rpx solid rgb(241, 241, 241);
+}
+
+.users{
+  position: relative;
+  height: 64rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30rpx;
+}
+
+.captain-wrapper{
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  height: 64rpx;
+  width: 64rpx;
+}
+
+.captain{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1rpx solid orange;
+  overflow: hidden;
+}
+.captain image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.captain-mark{
+  position: absolute;
+  box-sizing: border-box;
+  width: 46rpx;
+  height: 22rpx;
+  top: -5rpx;
+  left: -5rpx;
+  border-radius: 22rpx;
+  line-height: 22rpx;
+  font-size: 14rpx;
+  text-align: center;
+  background-color: orange;
+}
+
+.others-list{
+  display: inline-block;
+  position: relative;
+  height: 64rpx;
+}
+
+.others{
+  display: inline-block;
+  position: relative;
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid orange;
+  overflow: hidden;
+}
+.others image{
+  width: 100%;
+  height: 100%;
+}
+
+.time-count{
+  margin-top: 18rpx;
+  font-size: 24rpx;
+}
+
+.join{
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 84rpx;
+  margin-top: 24rpx;
+  margin-bottom: 16rpx;
+  padding: 0 54rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  line-height: 84rpx;
+  font-size: 28rpx;
+  color: white;
+}
+.join view{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  background-color: red;  
+}
+
+.info-list{
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70rpx;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  border-top: 1px solid rgb(220, 220, 220);
+  text-align: center;
+  line-height: 68rpx;
+  font-size: 24rpx;
+}
+
+.info-left{
+  position: relative;
+  height: 100%;
+  flex: 0 0 100rpx;
+  text-align: left;
+}
+
+.info-right{
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  flex: 1 1 ;
+  padding-left: 100rpx;
+  text-align: right;
+}
+
+.rule-info {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  list-style: disc;
+}
+.rules {
+  display: inline-block;
+  position: relative;
+  height: 24rpx;
+  line-height: 24rpx;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: rgb(144, 144, 144);
+}
+
+.rule-mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.rule{
+  position: fixed;
+  width: 100%;
+  height: 1000rpx;
+  bottom: 0;
+  background-color: white;
+}
+
+.rule-title{
+  position: relative;
+  width: 100%;
+  height: 136rpx;
+  line-height: 136rpx;
+  text-align: center;
+  font-size: 38rpx;
+}
+.rule-title image{
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 38rpx;
+  padding: 10rpx;
+}
+
+.rule-content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-top: 1rpx solid rgb(220, 220, 220);
+
+}
+
+.rule-item{
+  position: relative;
+  width: 100%;
+  margin-top: 80rpx;
+  padding-left: 48rpx;
+}
+
+.rule-up{
+  position: relative;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+}
+.rule-up image{
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 32rpx;
+}
+
+.rule-down{
+  position: relative;
+  height: 28rpx;
+  line-height: 28rpx;
+  margin-top: 26rpx;
+  margin-left: 80rpx;
+  font-size: 28rpx;
+  color: #9f9f9f;
+}
+
+.group-list{
+  position: relative;
+  width: 600rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  color: rgb(230, 0, 18);
+  background-color: pink;
+}
+
+.group-item-list{
+  position: relative;
+  width: 100%;
+  padding: 22rpx 30rpx; 
+}
+
+.group-item{
+  position: relative;
+  width: 100%;
+  height: 62rpx;
+  margin-top: 22rpx;
+  color: black;
+}
+
+.group-left{
+  display: flex;
+  position: relative;
+  height: 100%;
+  max-width: 200rpx;
+  float: left;
+  font-size: 20rpx;
+}
+.group-left image{
+  position: relative;
+  height: 100%;
+  flex: 0 0 62rpx;
+  border-radius: 50%;
+}
+.group-left text{
+  position: relative;
+  height: 100%;
+  flex: 1 1;
+  padding-left: 10rpx;
+  line-height: 62rpx;
+  text-align: left;
+
+}
+
+.group-right{
+  display: flex;
+  position: relative;
+  width: 250rpx;
+  height: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  float: right;
+}
+
+.group-info{
+  position: relative;
+  height: 100%;
+  flex: 1 1;
+  margin-right: 10rpx;
+  text-align: right;
+}
+
+.group-join{
+  position: relative;
+  height: 100%;
+  flex: 0 0 100rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color: white;
+  font-size: 20rpx;
+  background-color: rgb(230, 0, 18);
+}
+
+.need-number{
+  position: relative;
+  height: 20rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  white-space: nowrap;
+}
+.need-number text{
+  color: rgb(230, 0, 18);
+}
+
+.group-time-count{
+  position: relative;
+  height: 20rpx;
+  font-size: 14rpx;
+  line-height: 20rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

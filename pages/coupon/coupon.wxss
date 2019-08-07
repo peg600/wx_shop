@@ -1,0 +1,52 @@
+/* pages/coupon/coupon.wxss */
+page{
+    height: 100%;
+    background: #f2f2f2;
+    font-family: "黑体";
+}
+.coupon{
+  width: 690rpx;
+  height: 196rpx;
+  color: #ffffff;
+  display: flex;
+  margin: 33rpx auto;
+}
+.effective-coupon{
+    background: url('https://www.zhaoxinzx.top/img/bg-coupon.png') no-repeat 50% 50%/cover;
+}
+.invalidation-coupon{
+    background: url('https://www.zhaoxinzx.top/img/bg-coupon1.png') no-repeat 50% 50%/cover;  
+}
+.rmb{
+  font-size: 36rpx;
+  margin-right: 15rpx;
+}
+.price{
+  font-size: 48rpx;
+  margin-right: 37rpx;
+}
+.text-coupon{
+  font-size: 38rpx;
+}
+.term{
+  font-size: 22rpx;
+  margin: 19rpx 0 14rpx 0;
+}
+.useage{
+  font-size: 22rpx;
+}
+
+.coupon-info{
+  flex: 1;
+  padding-left: 78rpx;
+  padding-top: 12rpx;
+  box-sizing: border-box;
+}
+.coupon-state{
+  font-size: 38rpx;
+  width:188rpx; 
+  padding: 44rpx 60rpx 60rpx 53rpx;  
+  box-sizing: border-box;
+  height: 52rpx;
+  line-height: 52rpx;
+}

@@ -1,0 +1,12 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "Holo",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "container": "../../component/container/container",
+    "tabbar": "../../component/tabbar/tabbar",
+    "goodlist": "../../component/goodlist/goodlist"
+  }
+}

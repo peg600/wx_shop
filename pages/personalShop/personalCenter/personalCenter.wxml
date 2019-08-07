@@ -1,0 +1,39 @@
+<!--pages/personalShop/personalCenter/personalCenter.wxml-->
+<view class='shop-info-wrapper'>
+  <image class='bac' src='/pages/img/personal_center_blackboard.jpg'></image>
+  <view class='shop-info-content'>
+    <view class='top'>
+      <view class='head-thumb'>
+        <image src='{{info.avatar_url}}'></image>
+      </view>
+      <view class='shop-info'>
+        <view class='shop-name'>{{info.personal_shop_name}}</view>
+        <view class='shop-slogan'>{{info.personal_shop_slogan}}</view>
+      </view>
+      <image class='edit' src='/pages/img/personal_center_edit.png' catchtap='toSetting'></image>
+    </view>
+    <image class='line' src='/pages/img/personal_center_line.png'></image>
+    <view class='sales'>
+      已售出{{info.personal_shop_sale_number}}单
+      <view bindtap='toCPA'>账单</view>
+    </view>
+  </view>
+</view>
+
+<view class='man'>
+  <image src='/pages/img/personal_center_man.png'></image>
+</view>
+
+<view class='rule'>
+  <view class='rule-out'>
+    <view class='rule-title'>
+      店铺消费规则
+    </view>
+    <view class='rule-text'>
+    每售出一副眼镜，你将获得20元眼镜店的基金奖励，基金可累计，可在任意好友店铺下单，直接抵用现金。
+    PS：不与特价优惠活动同享哦！
+    </view>
+  </view>
+
+</view>
+

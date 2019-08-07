@@ -1,0 +1,14 @@
+
+<web-view src="{{actionPageUrl}}"></web-view>
+
+
+
+<!-- <view class='act-container'>
+  <image src='/pages/img/act.jpg'></image>
+  
+  <navigator url='/pages/fitview/fitview' >
+    <view class='goto-fitview'>
+      <image src='/pages/img/enter_fitview.png'></image>
+    </view>
+  </navigator>
+</view> -->

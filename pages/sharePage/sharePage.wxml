@@ -1,0 +1,29 @@
+<!-- <button open-type='share'>分享</button> -->
+
+<view class='share-container'>
+  <image src='../img/shareBac.jpg' class='background-pic'></image>
+  <canvas style="width: {{width}}; height: {{height}};" canvas-id="firstCanvas" class='canv'></canvas>
+  <view  class="{{showMask ? 'save-mask view_show':'save-mask view_hide'}}" bindtap="toggleMask">
+    <view class="save-wrapper">
+          <image src="{{savePicUrl}}" class="save-pic" style="width: {{width}}; height: {{height}};" catchtap='none' bindlongtap='viewImage'></image>  
+      <text class="save-word">长按上方图片保存</text> 
+    </view>
+  </view>
+  <view class="{{showPic ? 'pic view_show':'pic view_hide'}}">
+    <image src='{{picURL}}' class='share-pic'></image>
+  </view>
+  <view class="{{showPic ? 'share-text view_hide':'share-text view_show'}}">
+    <view class='welcome'><text>Hello，欢迎</text></view>
+    <view class='st'><text>分享</text></view>
+    <view class='mb'><image src='../img/hb.png'></image></view>
+    <view class='sc'><text>和好友分享您喜欢的商品，一起体验购物试戴乐趣,还有更多惊喜红包奖励哦!</text> </view>
+    <view class='wi'><image src='../img/cr.png'></image> </view>
+  </view>
+  <view class="{{showPic ? 'pic-btn view_show':'pic-btn view_hide'}}">
+    <button open-type='share' plain hover-class="none">发送给好友</button>
+    <button plain hover-class="none" bindtap="toggleMask">分享到朋友圈</button>
+  </view>
+  <view class="{{showPic ? 'share-btn view_hide':'share-btn view_show'}}">
+    <button open-type='share' plain hover-class="none">立即分享</button>
+  </view>
+</view>

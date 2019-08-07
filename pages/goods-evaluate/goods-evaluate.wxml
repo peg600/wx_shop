@@ -1,0 +1,93 @@
+<!--pages/goods-evaluate/goods-evaluate.wxml-->
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="商品评价" show_capsule="1" />
+<view class="eva_page">
+  <form bindsubmit="bindFormSubmit">
+    <view class="container">
+      <view class="evl_goods flex">
+        <image src="{{goodsImgUrl}}"></image>
+        <view class="star_goods">
+          <view class="star_compare">商品评分</view>
+          <view class="star_more">
+            <image src="{{flag>=1 ? shop_.bg_src: shop_.plain_src}}" bindtap='moreStarListShop' id="{{1}}"></image>
+            <image src="{{flag>=2 ? shop_.bg_src: shop_.plain_src}}" bindtap='moreStarListShop' id="{{2}}"></image>
+            <image src="{{flag>=3 ? shop_.bg_src: shop_.plain_src}}" bindtap='moreStarListShop' id="{{3}}"></image>
+            <image src="{{flag>=4 ? shop_.bg_src: shop_.plain_src}}" bindtap='moreStarListShop' id="{{4}}"></image>
+            <image src="{{flag>=5 ? shop_.bg_src: shop_.plain_src}}" bindtap='moreStarListShop' id="{{5}}"></image>
+
+            <!-- <view class="starsM  {{flag2>=1? '': 'hideStar'}}" bindtap="changeColor11"></view>
+            <view class="starsM  {{flag2>=2? '': 'hideStar'}}" bindtap="changeColor12"></view>
+            <view class="starsM  {{flag2>=3? '': 'hideStar'}}" bindtap="changeColor13"></view>
+            <view class="starsM  {{flag2>=4? '': 'hideStar'}}" bindtap="changeColor14"></view>
+            <view class="starsM  {{flag2>=5? '': 'hideStar'}}" bindtap="changeColor15"></view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="section">
+      <textarea placeholder="宝贝满足你的期待嘛？说你的评论能够帮助其他小伙伴噢~" name="textarea"  show-confirm-bar="{{false}}"/>
+      <!-- <view class="evaluate_photo" bindtap='chooseImage'>
+           <image src="../img/photoEvl.png" ></image>
+           <view>上传凭证</view>
+           <view>(最多6张)</view>
+      </view> -->
+       <view class="flex pop_image">
+      <image src="{{tempFiles}}" mode="aspecFill" style="width: 150rpx; height: 152rpx"/>
+      </view>
+    </view>
+
+    <view class="container">
+      <view class="flex shop_buy shop_bottom">
+        <!-- <icon type='success' color='red' size="18"></icon> -->
+        <button class='checkActive' open-type='getUserInfo' bindgetuserinfo="onGotUserInfo" plain> <image src="{{isUserInfo==true?'/pages/img/yuan.png':'/pages/img/xuanzhong.png'}}"></image> </button>
+        <text>匿名评价</text>
+      </view>
+    </view>
+
+    <view class="container" style='padding-top:0'>
+      <view class="flex shop_buy">
+        <image src="../img/shop.png"></image>
+        <text>店铺评价</text>
+      </view>
+      <view class="shop_server">
+        <view class="evl_shop flex">
+          <text>描述相符</text>
+          <view class='bit_star'>
+            <image src="{{lags>=1 ? shop_.bg_src: shop_.plain_src}}" bindtap='staticStarListShop' id="{{1}}"></image>
+            <image src="{{lags>=2 ? shop_.bg_src: shop_.plain_src}}" bindtap='staticStarListShop' id="{{2}}"></image>
+            <image src="{{lags>=3 ? shop_.bg_src: shop_.plain_src}}" bindtap='staticStarListShop' id="{{3}}"></image>
+            <image src="{{lags>=4 ? shop_.bg_src: shop_.plain_src}}" bindtap='staticStarListShop' id="{{4}}"></image>
+            <image src="{{lags>=5 ? shop_.bg_src: shop_.plain_src}}" bindtap='staticStarListShop' id="{{5}}"></image>
+          </view>
+        </view>
+        <view class="evl_shop flex">
+          <text>物流服务</text>
+          <view class='bit_star'>
+            <image src="{{seps>=1 ? shop_.bg_src: shop_.plain_src}}" bindtap='speedStarListShop' id="{{1}}"></image>
+            <image src="{{seps>=2 ? shop_.bg_src: shop_.plain_src}}" bindtap='speedStarListShop' id="{{2}}"></image>
+            <image src="{{seps>=3 ? shop_.bg_src: shop_.plain_src}}" bindtap='speedStarListShop' id="{{3}}"></image>
+            <image src="{{seps>=4 ? shop_.bg_src: shop_.plain_src}}" bindtap='speedStarListShop' id="{{4}}"></image>
+            <image src="{{seps>=5 ? shop_.bg_src: shop_.plain_src}}" bindtap='speedStarListShop' id="{{5}}"></image>
+          </view>
+        </view>
+        <view class="evl_shop flex">
+          <text>服务态度</text>
+          <view class='bit_star'>
+            <image src="{{sers>=1 ? shop_.bg_src: shop_.plain_src}}" bindtap='serverStarListShop' id="{{1}}"></image>
+            <image src="{{sers>=2 ? shop_.bg_src: shop_.plain_src}}" bindtap='serverStarListShop' id="{{2}}"></image>
+            <image src="{{sers>=3 ? shop_.bg_src: shop_.plain_src}}" bindtap='serverStarListShop' id="{{3}}"></image>
+            <image src="{{sers>=4 ? shop_.bg_src: shop_.plain_src}}" bindtap='serverStarListShop' id="{{4}}"></image>
+            <image src="{{sers>=5 ? shop_.bg_src: shop_.plain_src}}" bindtap='serverStarListShop' id="{{5}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="container fix_btn">
+       <image src="../img/submit_bg.png"></image>
+        <button plain='true' form-type='submit'>提交</button>  
+    </view>
+  </form>
+</view>
+</view>
+

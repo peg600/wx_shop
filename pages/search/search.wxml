@@ -1,0 +1,11 @@
+<!--pages/index/type/type.wxml--> 
+
+<navbar  title="商品搜索" show_capsule="1" />
+<view class="stop_pushOn">
+  <searchbar to_search="0" bind:search="searchNewList" bind:clearSearch="clearValue" placeholder="{{placeholder}}"/>
+  <!-- <goodlist goods="" id="goodlist" pull_down_refresh="true" actionStyle="1" dataSource="1" /> -->
+  <goodlist id="goodlist" goods="" dataSource="1" listStyle="1" imageStyle="0" imageRatio="1.5" itemGoodPrice="1" itemBuyStyle="1" itemCornerStyle="0" pull_down_refresh="true" actionStyle="1" bindcomplete="onLoadComplete"/> 
+
+</view>
+
+

@@ -1,0 +1,43 @@
+<!--pages/order-pay/order-pay.wxml-->
+<view class="c-box">
+  <view class="pay_con">
+    <view class="pay_item container">
+      <image src="../img/pay_suceess.png"></image>
+      <view class="pay_status_text">支付成功</view>
+      <view class="pay_price">￥{{total}}</view>
+    </view>
+    <view class="pay_item_list container">
+      <view class="s_order" bindtap='toFindGoods'>查看订单</view>
+      <view class="r_index" bindtap='goBackIndex'>返回首页</view>
+    </view>
+  </view>
+   <view class="pay_con" wx:if="{{isShowShare}}">
+       <view class="pay_item container pay_share">
+         <view>分享给好友</view>
+       </view>
+       <view class="pay_item container pay_text">
+         <view>和好友分享，撮合成功立享钟情价！
+         更有拆散、包办多种玩法。</view>
+       </view>
+       <view class="pay_item container pay_btn">
+         <button open-type='share' class='btn' plain>分享</button>
+       </view>
+  </view> 
+  <view class="container but_other">
+        <view class="but_text">你可能还想买</view>
+        <view class="glasses_list">
+      <view class="view_glass fl" wx:for="{{allType_data}}" wx:for-item="glass" data-goodid="{{glass.goods_id}}" bindtap="toDetailListPage">
+        <image src="{{glass.goods_img}}"></image>
+        <view class="view_contain">
+          <view class="view_title">{{glass.goods_name}}</view>
+          <view class="view_price fl">
+            <text>￥{{glass.shop_price}}元</text>
+            <!--<text>销量：{{glass.comment_count}}</text>-->
+            <!-- <image src="../img/togethIcon.png" class="fr" width="36" height="36"></image> -->
+          </view>
+          <view class="view_even">原价 :￥{{glass.market_price}}元</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

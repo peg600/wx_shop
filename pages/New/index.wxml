@@ -1,0 +1,86 @@
+<!--pages/New/index.wxml-->
+
+<authorize /> 
+
+<view class='pos-wrapper'  wx:if="{{!show_tip}}">
+  <view>我的位置：{{city}}</view>
+  <view class='choose-city' catchtap='getLocation'>定位</view>
+  <view class='choose-city' catchtap='goChooseCity'>选择城市</view>
+</view>
+<view class='pos-wrapper'  wx:if="{{show_tip}}">
+  <view>定位失败，请重试或手动选择城市</view>
+  <view class='choose-city' catchtap='goChooseCity'>选择城市</view>
+</view>
+
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<container componentlist="{{componentlist}}" class="holo-container" />
+<!-- <searchbar isguide="true" /> -->
+
+<view class='shop-list-wrapper'>
+  <view class='shop-list'>
+    <view class='shop' wx:for="{{shop_list}}" wx:for-item="shop" wx:key="{{shop.shop_id}}" data-shop="{{shop}}" catchtap='gotoShop'>
+      <view class='info-wrapper'>
+        <view class='shop-image'>
+          <image src="{{shop.images[0]}}" mode="aspectFit"></image>
+        </view>
+        <view class='shop-info'>
+          <view class='shop-name'>{{shop.shop_name}}</view>
+          <view class='second-cat-wrapper'>
+            <view class='second-cat' wx:for="{{shop.second_cat}}" wx:for-item="second_cat" wx:key="{{second_cat}}">
+          {{second_cat}}
+            </view>
+          </view>
+          <image class='has-coupon' wx:if="{{shop.coupons.length > 0}}" src="/pages/img/jd_ticket.png"></image>
+          <view class='time'>营业时间 {{shop.shop_hours}}</view>
+          <view class='shop-dist' wx:if="{{shop.distance && shop.distance >= 1}}">{{shop.distance}}km</view>
+          <view class='shop-dist' wx:if="{{shop.distance && shop.distance < 1}}">{{shop.distance * 1000}}m</view>
+        </view>
+      </view>
+
+      <!-- <view class='coupon-wrapper' wx:if="{{shop.coupons}}">
+        <view class='coupon'  wx:for="{{shop.coupons}}" wx:for-item="coupon" wx:key="{{coupon.coupon_id}}" wx:if="{{index < 2 || shop.show_all_coupon}}">
+          <view class='coupon-price' wx:if="{{coupon.discount}}">￥{{coupon.discount}}</view>
+          <view class='coupon-price' wx:if="{{coupon.percent}}">{{coupon.percent * 10}} 折</view>
+          <view class='coupon-name'>{{coupon.coupon_name}}</view>
+          <view class='coupon-info' wx:if="{{coupon.quota}}">满 {{coupon.quota}} 元可用</view>
+          <view class='coupon-info' wx:if="{{!coupon.quota}}">无门槛使用</view>
+          <view class='coupon-info'>有效期 {{coupon.start_time}} ~ {{coupon.end_time}}</view>
+        </view>
+      </view>
+
+      <view class='more-coupon' wx:if="{{shop.coupons.length > 2 && !shop.show_all_coupon}}" data-index="{{index}}" catchtap="toggleShowAllCoupon">
+        查看其它 {{shop.coupons.length - 2}} 个优惠券
+      </view>
+      <view class='more-coupon' wx:if="{{shop.coupons.length > 2 && shop.show_all_coupon}}" data-index="{{index}}" catchtap="toggleShowAllCoupon">
+        收起
+      </view>-->
+
+      <view class='goods-list'>
+        <view class='goods' wx:for="{{shop.goods_list}}" wx:for-item="good" wx:key="{{good.goods_id}}" wx:if="{{index < 2 || shop.show_all_goods}}" data-goods_id="{{good.goods_id}}" catchtap="gotoDetail">
+          <view class='good-top'>
+            <view class='shop-price'>￥{{good.shop_price}}</view>
+            <view class='good-name'>【商品】{{good.goods_name}}</view>
+          </view>
+          <view class='market-price'>￥{{good.market_price}}</view>
+        </view>
+
+        <view class='more-coupon' wx:if="{{shop.goods_list.length > 2 && !shop.show_all_goods}}" data-index="{{index}}" catchtap="toggleShowAllGoods">
+        查看其它 {{shop.goods_list.length - 2}} 个商品
+        </view>
+        <view class='more-coupon' wx:if="{{shop.goods_list.length > 2 && shop.show_all_goods}}" data-index="{{index}}" catchtap="toggleShowAllGoods">
+        收起
+        </view>
+      </view>
+      
+    </view>
+  </view>
+</view>
+
+<image class='no-more' wx:if="{{show_no_more}}" src="/pages/img/hasmore.png"></image>
+
+<view class="goTopContainer" bindtap='goTop' wx:if="{{top>720?1:0}}">
+  <text class="corner-icon icon-gotop"></text>
+</view>
+

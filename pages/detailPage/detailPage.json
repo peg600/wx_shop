@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "goodlist": "../../component/goodlist/goodlist",
+    "sharepanel": "../../component/sharepanel/sharepanel"
+  }
+}

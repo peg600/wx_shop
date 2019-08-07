@@ -1,0 +1,340 @@
+/* pages/personalShop/personalMain/personalMain.wxss */
+page{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.wrapper{
+  position: relative;
+  width: 100%;
+  padding: 8rpx 62rpx 0 62rpx;
+  border-top: 2rpx solid rgb(229, 229, 229);
+  text-align: center;
+}
+
+.tips{
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 624rpx;
+  height: 456rpx;
+}
+
+.bac{
+  position: absolute;
+  width: 624rpx;
+  height: 456rpx;
+  transform: translateX(-50%);
+}
+
+.tips-content{
+  position: relative;
+  width: 624rpx;
+  height: 370rpx;
+  margin-top: 90rpx;
+  padding: 20rpx 165rpx 20rpx 20rpx;
+}
+
+.tips-title{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+  margin-top: 26rpx;
+  margin-left: 42rpx;
+  text-align: left;
+}
+.tips-title image{
+  position: relative;
+  height: 60rpx;
+  flex: 0 0 60rpx;
+  margin-right: 28rpx;
+}
+.tips-title view{
+  position: relative;
+  height: 60rpx;
+  flex: 1 1;
+  line-height: 60rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: rgb(255, 255, 255);
+}
+
+.tips-text{
+  position: relative;
+  width: 100%;
+  padding: 10rpx 10rpx 0 42rpx;
+  text-align: left;
+  font-size: 22rpx;
+  color: rgb(212, 210, 210);
+}
+
+.line{
+  position: relative;
+  width: 100%;
+  height: 3rpx;
+  padding: 0 10rpx;
+}
+.line image{
+  width: 100%;
+  height: 100%;
+}
+
+.sales{
+  margin-top: 40rpx;
+  position: relative;
+  width: 100%;
+  height: 110rpx;
+  padding: 0 65rpx 0 92rpx;
+}
+
+.left{
+  position: relative;
+  height: 24rpx;
+  margin-top: 40rpx;
+  float: left;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: rgb(212, 210, 210);
+}
+.left image{
+  display: inline-block;
+  width: 12rpx;
+  height: 24rpx;
+  margin-left: 8rpx;
+}
+
+.right{
+  position: relative;
+  height: 30rpx;
+  margin-top: 38rpx;
+  float: right;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: white;
+}
+
+.list{
+  position: relative;
+  width: 100%;
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
+  padding: 16rpx 18rpx 0 18rpx;
+  text-align: center;
+  border: 20rpx solid rgb(215, 184, 139);
+  border-image:linear-gradient(rgb(212, 140, 33),rgb(204, 176, 137)) 30 30;
+  background-color: rgb(253, 252, 240);
+}
+
+.list-title{
+  display: inline-block;
+  height: 28rpx;
+  line-height: 28rpx;
+  color: black;
+}
+
+.list-item{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 167rpx;
+  padding: 20rpx 0 20rpx 18rpx;
+  text-align: left;
+  border-bottom: 4rpx dotted rgb(207, 169, 114);
+}
+.list-item:last-child{
+  border-bottom: none;
+}
+
+.item-left{
+  position: relative;
+  height: 127rpx;
+  flex: 0 0 127rpx;
+  border: 4rpx solid rgb(207, 169, 114); 
+  border-radius: 20rpx;
+}
+
+.item-right{
+  position: relative;
+  height: 100%;
+  flex: 1 1 ;
+  margin-left: 24rpx;
+  padding: 10rpx 0;
+}
+
+.right-wrapper{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.info{
+  position: relative;
+  height: 100%;
+  flex: 1 1;
+  max-width: 335rpx;
+}
+
+.item-name{
+  position: relative;
+  width: 100%;
+  height: 24rpx;
+  line-height: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  color: rgb(43, 43, 43);
+}
+
+.item-brief{
+  position: relative;
+  width: 100%;
+  height: 44rpx;
+  margin-top: 10rpx;
+  line-height: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20rpx;
+  color: rgb(125, 125, 125);
+}
+
+.item-price{
+  position: relative;
+  width: 100%;
+  height: 30rpx;
+  margin-top: 10rpx;
+  text-align: left;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: rgb(255, 0, 0);
+}
+
+.price{
+  margin-right: 20rpx;
+  vertical-align: bottom;
+}
+
+.market-price{
+  font-size: 18rpx;
+  color: rgb(59, 59, 59);
+  vertical-align: bottom;
+}
+
+.btn{
+  position: relative;
+  flex: 0 0 36rpx;
+  height: auto;
+  margin-left: 10rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btn image{
+  position: relative;
+  width: 36rpx;
+  height: 31rpx;
+}
+
+.plus{
+  position: relative;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  margin-top: 20rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+  background-color: rgb(255, 180, 0);
+}
+
+.doc{
+  position: absolute;
+  width: 217rpx;
+  height: 308rpx;
+  top: 300rpx;
+  right: 0;
+}
+
+.setting-mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.setting{
+  position: fixed;
+  width: 537rpx;
+  height: 904rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+}
+.setting image{
+  width: 100%;
+  height: 537rpx;
+}
+
+.setting-main{
+  position: relative;
+  width: 100%;
+  padding: 18rpx 42rpx 10rpx 42rpx;
+  text-align: left;
+}
+
+.setting-title{
+  position: relative;
+  width: 100%;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: black;
+}
+
+.setting-main textarea{
+  box-sizing: border-box;
+  width: 100%;
+  height: 136rpx;
+  padding: 24rpx;
+  border: 2rpx solid rgb(146, 146, 146);
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: rgb(146, 146, 146);
+}
+
+.submit-info{
+  position: relative;
+  width: 454rpx;
+  height: 54rpx;
+  margin-top: 52rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 24rpx;
+  color: white;
+  background-color: rgb(251, 175, 48);
+}
+
+
+
+
+
+
+
+

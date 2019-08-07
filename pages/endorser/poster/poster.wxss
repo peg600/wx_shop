@@ -1,0 +1,64 @@
+/* pages/endorser/poster/poster.wxss */
+
+.canvas-wrapper{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.preview{
+  position: relative;
+  height: 5000rpx;
+  max-height: calc(100vh - 200rpx);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-container{
+  position: relative;
+  padding: 0 20rpx;
+}
+
+.images{
+  position: relative;
+  box-sizing: border-box;
+  height: 150rpx;
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.bac-wrapper{
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+.bac{
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  padding: 2rpx;
+  border: 2rpx solid rgba(0,0,0,0.3);
+  border-radius: 10rpx;
+}
+
+.chosen{
+  border-color: rgba(240,240,0,0.8);
+}
+
+.share{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+
+
+
+

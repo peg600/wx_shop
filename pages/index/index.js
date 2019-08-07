@@ -1,54 +1,85 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
+const app = getApp();
+var baseUrl = app.globalData.baseHttpUrl;
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    componentlist: [],
+    goodslist:[],
+    pageIndex:1,
+    hidden:false,
+    top: 0,
+    noMoreData:false
   },
-  //事件处理函数
-  bindViewTap: function() {
+
+  onLoad(options) {
+    var that = this;
+    //获取页面Head头
+    wx.request({
+      url: baseUrl + '/?c=page&a=getIndexPage&id=0',
+      method: "POST",
+      dataType: 'txt',
+      success: res => {
+        function Trim(str) {
+          return str.replace(/(^\s*)|(\s*$)/g, "");
+        }
+        var pages = JSON.parse(Trim(res.data));
+        that.data.componentlist = JSON.parse(pages.pages);
+
+        that.setData({
+          componentlist: that.data.componentlist
+        });
+      }
+    });
+  },
+
+  onReachBottom: function () {
+    var that = this;
+    that.setData({
+      hidden: false
+    });
+
+    this.selectComponent("#all_goods").pullNewData();
+  },
+
+  goSearch:function()
+  {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '/pages/index/search/search',
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
+
+  onPageScroll:function(e)
+  {
+    let that = this;
+    this.data.top = e.scrollTop;
+    this.setData({
+      top:e.scrollTop
+    })
+  },
+
+  goTop:function()
+  {
+    wx.pageScrollTo({
+      scrollTop: 0,
+    })
+  },
+
+  pullGoodFinished:function(e)
+  {
+    this.setData({
+      hidden: true
+    });
+
+    if(!e.detail.hasNewData)
+    {
+      this.data.noMoreData = true;
+      var that = this;
       this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+        noMoreData:that.data.noMoreData
       })
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+
+  onShareAppMessage: function () {
+
   }
 })

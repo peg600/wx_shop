@@ -1,0 +1,7 @@
+<!--component/navigator/navigator.wxml-->
+<view class="component-navigatorcontainer" wx:if="{{navigatorStyle==0?1:0}}">
+    <image src="{{item.image}}" mode="widthFix" wx:for="{{items}}" wx:for-item="item" data-url="{{item.url}}" bindtap="_gotoUrl"/>
+</view>
+<view class="component-navigatorcontainer">
+<text style='background:{{background}};color:{{foreColor}}' wx:for="{{items}}" wx:for-item="item" data-url="{{item.url}}" bindtap="_gotoUrl">{{item.text}}</text>
+</view> 

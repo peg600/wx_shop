@@ -1,0 +1,116 @@
+<!--pages/offlineShop/cash/cash.wxml-->
+
+<view class='tab-container'>
+  <view class='tab {{current_mode == 0 ? "selected" : ""}}' data-mode="0" catchtap='changeMode'>
+    <view class='mode'>提现记录</view>
+    <view class='border'></view>
+  </view>
+  <view class='tab {{current_mode == 1 ? "selected" : ""}}' data-mode="1" catchtap='changeMode'>
+    <view class='mode'>佣金详情</view>
+    <view class='border'></view>
+  </view>
+</view>
+
+<!-- <view class='wrapper' wx:if="{{current_mode == 0}}">
+  <view class='title'>可提现金额：<view>{{endorser_bonus / 100}}</view> 元</view>
+  <view class='title'>待结算金额：<view>{{endorser_virtual_bonus / 100}}</view> 元      </view>
+  <view class='title'>累计提现金额：<view>{{endorser_bonus / 100}}</view> 元</view>
+  <view class='draw-cash' bindtap='drawCash'>确认提现 {{price ? price + " 元" : ""}}</view>
+</view> -->
+
+<view class='cash-list' wx:if="{{current_mode == 0 && cash_list.length > 0}}">
+  <view class='cash' wx:for="{{cash_list}}" wx:for-item="cash" wx:key="{{cash.cash_id}}" data-cash_info="{{cash}}" catchtap='toggleShowDetail'>
+    <view class='left' wx:if="{{cash.success == 0}}">处理中</view>
+    <view class='left' wx:else>成功</view>
+
+    <view class='mid'>
+      <view wx:if="{{cash.success}}">佣金收益提现转出</view>
+      <view wx:if="{{!cash.success}}">上月佣金收益转入</view>
+      <view>{{cash.payment_time}}</view>
+    </view>
+
+    <view class='right'>
+      <view class='{{cash.success ? "green" : "red"}}'>{{cash.success ? "-" : "+"}}{{cash.amount / 100}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='mask' wx:if="{{show_detail}}" bindtap='toggleShowDetail'>
+  <view class='detail-wrapper'>
+    <view class='{{current_cash.success ? "amount green" : "amount red"}}'>{{current_cash.success ? "-" : "+"}}{{current_cash.amount / 100}}</view>
+    <view class='gray'>{{current_cash.success == 2 ? "处理中" : "已完成"}}</view>
+
+    <view class='detail'>
+      <view>交易类型</view>
+      <view>{{current_cash.success ? "佣金收益提现转出" : "上月佣金收益转入"}}</view>
+    </view>
+    <view class='detail'>
+      <view>发起日期</view>
+      <view>{{current_cash.payment_time}}</view>
+    </view>
+    <view class='detail'>
+      <view>交易单号</view>
+      <view>{{current_cash.partner_trade_no}}</view>
+    </view>
+
+    <view class='question' data-partner_trade_no="{{current_cash.partner_trade_no}}" catchtap='toService'>
+      <view>对此订单有疑问</view>
+      <image src="/pages/img/jump_icon.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class='mask' wx:if="{{show_change}}" bindtap='hideChange'>
+  <view class='detail-wrapper'>
+    <view class='amount'>之前处理中的订单结果如下：</view>
+    <view class='gray'>已失败订单会被删除并退还余额   </view>
+
+    <view class='detail-content' wx:for="{{changed_cash}}" wx:for-item="change" wx:key="{{change.cash_id}}">
+    <view class='detail'>
+      <view>处理结果</view>
+      <view wx:if="{{change.success < 0}}">交易失败，余额已退还</view>
+      <view wx:if="{{change.success == 0}}">处理中，请过段时间再查看</view>
+      <view wx:if="{{change.success > 0}}">交易成功</view>
+    </view>
+    <view class='detail'>
+      <view>交易类型</view>
+      <view>{{change.success ? "佣金收益提现转出" : "上月佣金收益转入"}}</view>
+    </view>
+    <view class='detail'>
+      <view>发起日期</view>
+      <view>{{change.payment_time}}</view>
+    </view>
+    <view class='detail'>
+      <view>交易单号</view>
+      <view>{{change.partner_trade_no}}</view>
+    </view>
+
+    <view class='question' data-partner_trade_no="{{change.partner_trade_no}}" catchtap='toService'>
+      <view>对此订单有疑问</view>
+      <image src="/pages/img/jump_icon.png"></image>
+    </view>
+    </view>
+  </view>
+</view>
+
+<view class='cash-list no-border' wx:if="{{current_mode == 1}}">
+  <view class='cash' wx:for="{{record_list}}" wx:for-item="record" wx:key="{{record.record_id}}">
+    <view class='left' wx:if="{{record.type == 1}}">粉丝领券</view>
+    <view class='left' wx:if="{{record.type == 2}}">消费返利</view>
+    <view class='left' wx:if="{{record.type == 3}}">粉丝返利</view>
+
+    <view class='record-mid'>
+      <view class='record-fan'>
+        <image src="{{record.avatar_url}}"></image>
+        <view>{{record.nick_name}}</view>
+      </view>
+      
+      <view class='record-time'>{{record.time}}</view>
+    </view>
+
+    <view class='right red'>+{{record.amount / 100}}</view>
+  </view>
+</view>
+
+

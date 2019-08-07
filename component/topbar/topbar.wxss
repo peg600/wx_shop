@@ -1,0 +1,64 @@
+/* component/topbar/topbar.wxss */
+
+.float-wrap {
+
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+  background: white;
+}
+
+.top_container {
+  background: white;
+}
+
+.scroll-container {
+  margin-right: 25rpx;
+  margin-left: 25rpx;
+}
+
+.float-wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 5rpx 15rpx 0 rgba(59, 67, 76, 0.1);
+}
+
+.no-shadow{
+  box-shadow: none;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  line-height: 60rpx;
+}
+
+.category {
+  position: relative;
+  flex: 0 0 200rpx;
+  padding: 0 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.selected {
+  background: linear-gradient(to right, #ec3721, #ff7442);
+  border-radius: 30rpx;
+  color: white;
+}
+
+.show_shadow {
+  position: relative;
+  width: 100%;
+  background: #ff7442;
+}
+

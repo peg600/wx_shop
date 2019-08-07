@@ -1,0 +1,165 @@
+<!--pages/group_purchase/group_purchase_join/group_purchase_join.wxml-->
+<view class='top'>
+  <view class='left'>
+    <view class='pic-wrapper' bindtap='gotoDetail'>
+      <image src='{{goods_info.goods_img}}'></image>
+    </view>
+  </view>
+  <view class='right'>
+    <text class='goods-name'>{{goods_info.goods_attr}}
+      {{goods_info.goods_name}}
+    </text>
+    <view class='goods-number'>{{current_order_info.group_number}}人拼单</view>
+    <view class='price'>
+      <text class='act-price'>￥{{goods_info.act_price}}</text>
+      <text class='bargain'>拼单省{{goods_info.shop_price - goods_info.act_price}}元</text>
+    </view>
+  </view>
+</view>
+<view class='icons' catchtap='showRule'>
+  <view class='icon-list'>
+    <view class='icon-item'>
+      <view class='icon-wrapper'>
+        <image src='/pages/img/group_icon_red.png'></image>
+      </view>
+      <view class='icon-text'>全场包邮</view>
+    </view>
+    <view class='icon-item'>
+      <view class='icon-wrapper'>
+        <image src='/pages/img/group_icon_red.png'></image>
+      </view>
+      <view class='icon-text'>七天退换</view>
+    </view>
+    <view class='icon-item'>
+      <view class='icon-wrapper'>
+        <image src='/pages/img/group_icon_red.png'></image>
+      </view>
+      <view class='icon-text'>48小时发货</view>
+    </view>
+  </view>
+  <view class='jump-icon'>
+    <image src='/pages/img/jump_icon.png'></image>
+  </view>
+</view>
+<view class='middle'>
+  <view class='users'>
+    <view class='captain-wrapper'>
+      <view class='captain'>
+        <image src='{{users_info[0].avatar_url}}'></image>
+      </view>
+      <view class='captain-mark'>拼主</view>
+    </view>  
+    <view class='others-list' wx:if='{{users_number.length>1}}'>
+      <view class='others' wx:for='{{users_info}}' wx:for-item = "other" 
+      wx:if='{{other.user_id !== users_info[0].user_id}}'>
+        <image src='{{other.avatar_url}}'></image>
+      </view>
+    </view> 
+  </view>
+  <text class='time-count' 
+  wx:if='{{current_order_info.group_number - users_number.length>0 && current_order_info.timer !== ""}}'>仅剩{{current_order_info.group_number - users_number.length}}个名额,{{current_order_info.timer}}后结束</text>
+  <text class='time-count' 
+  wx:if='{{current_order_info.group_number - users_number.length==0 && current_order_info.timer !== ""}}'>拼单已满</text>
+  <text class='time-count' 
+  wx:if='{{current_order_info.timer == ""}}'>拼单已结束</text>
+  <view class='join'  
+  wx:if='{{current_order_info.group_number - users_number.length>0 && current_order_info.timer !== ""}}'>
+    <view bindtap='joinGroup'>一件拼单</view>
+  </view>
+  <view class='join'  
+  wx:if='{{current_order_info.group_number - users_number.length==0 || current_order_info.timer == ""}}' bindtap='gotoDetail'>
+    <view>我来发起拼单</view>
+  </view>
+
+  <view class='group-list' wx:if='{{(current_order_info.group_number - users_number.length==0 || current_order_info.timer == "") && group_list.length>0}}'>
+    <text>
+      ———— 或参加别人的拼单 ————
+    </text>
+    <view class='group-item-list'>
+      <view class='group-item' wx:for="{{group_list}}" wx:for-item="group" data-order_id="{{group.order_id}}" wx:if='{{group.need_number>0 && group.timer !== ""}}'>
+        <view class='group-left'>
+          <image src='{{group.avatar_url}}'></image>
+          <text>{{group.nick_name}}</text>
+        </view>
+        <view class='group-right'>
+          <view class='group-info'>
+            <view class='need-number'>还差{{group.need_number}}人拼成</view>
+            <view class='group-time-count'>剩余 {{group.timer}}</view>
+          </view>
+          <view class='group-join' bindtap='joinGroup' data-order_info = '{{group}}'>
+            去拼单
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='info-list'>
+    <view class='info-left'>
+      拼单须知
+    </view>
+    <view class='info-right'>
+      <ul class='rule-info'>
+        <li class='rules'>
+          好友拼单
+        </li>
+        <li class='rules'>
+          人满发货
+        </li>
+        <li class='rules'>
+          人不满退款
+        </li>
+      </ul>
+    </view>
+  </view>
+</view>
+<view class='bottom'>
+
+</view>
+
+<view class='rule-mask' wx:if='{{show_rule}}' catchtap='hideRule'>
+  <view class='rule'>
+    <view class='rule-title'>
+      服务说明
+      <image src='/pages/img/51133509394742205.png' catchtap='hideRule'></image>
+    </view>
+    <view class='rule-content'>
+      <view class='rule-item'>
+        <view class='rule-up'>
+          <image src='/pages/img/group_icon_red.png'></image>
+          全场包邮
+        </view>
+      </view>
+      <view class='rule-down'>
+        所有商品均无条件包邮
+      </view>
+      <view class='rule-item'>
+        <view class='rule-up'>
+          <image src='/pages/img/group_icon_red.png'></image>
+          7天退换
+        </view>
+      </view>
+      <view class='rule-down'>
+        商家承诺7天无理由退换货
+      </view>
+      <view class='rule-item'>
+        <view class='rule-up'>
+          <image src='/pages/img/group_icon_red.png'></image>
+          48小时发货
+        </view>
+      </view>
+      <view class='rule-down'>
+        若超时未发货，商家将补偿3元无门槛代金券
+      </view>
+      <view class='rule-item'>
+        <view class='rule-up'>
+          <image src='/pages/img/group_icon_red.png'></image>
+          假一赔十
+        </view>
+      </view>
+      <view class='rule-down'>
+        若收到的商品是假冒品牌，可获得加倍赔偿
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<!--component/imagelist/imagelist.wxml--> 
+<view class="component-imagelist">
+  <swiper indicator-dots="true" autoplay="true" circular="true" wx:if="{{listStyle == 0 ? 1 : 0}}" indicator-color="gray" indicator-active-color="orange" style="margin:0 {{margin}}rpx">
+    <block wx:for="{{imageList}}" wx:for-item="item">
+      <swiper-item class="banner" style="border-radius:{{radius}}rpx;">
+        <image src="{{item.image}}" mode='widthFix' data-url="{{item.url}}" data-title="{{item.title}}" bindtap="_clickImage" />
+        <text class='imagelistItemTitle' wx:if="{{item.text != undefined && item.text.length > 0 ? 1 : 0}}">{{item.text}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="imageItemContainer{{listStyle}}" wx:if="{{listStyle == 1 ? 1 : 0}}" style="margin:0 {{margin}}rpx">
+    <view class="imagelistitemContainer" wx:for="{{imageList}}" wx:for-item="item" style="border-radius:{{radius}}rpx;">
+      <image class=".component-imagelist-scroll-item{{listStyle}}" src="{{item.image}}" mode='widthFix' style="margin-bottom:{{imageMargin}}rpx;margin-top:{{imageMargin}}rpx" data-url="{{item.url}}" data-title="{{item.title}}" bindtap="_clickImage" />
+      <text class='imagelistItemTitle' wx:if="{{item.text != undefined && item.text.length > 0 ? 1 : 0}}">{{item.text}}</text>
+    </view>
+  </view>
+  <scroll-view scroll-x="true" scroll-with-animation="true" scroll-left='0' totalLength="750" class="imagelist-scroll" windowWidth="375" wx:if="{{listStyle > 1 ? 1 : 0}}">
+    <view class="component-scrollwrap"  scroll-x="true">
+      <view wx:for="{{imageList}}" wx:for-item="item" class="imageItemContainer1" style="margin-left:{{imageMargin}}rpx;margin-right:{{imageMargin}}rpx">
+        <image src="{{item.image}}" class="component-imagelist-scroll-item{{listStyle}}{{listStyle==4?imageNumberOneScreen:''}}" mode='widthFix' data-url="{{item.url}}" data-title="{{item.title}}" bindtap="_clickImage" />
+        <text class="imagelistItemTitle" wx:if="{{item.text != undefined && item.text.length > 0 ? 1 : 0}}">{{item.text}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

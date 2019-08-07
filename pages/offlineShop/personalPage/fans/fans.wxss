@@ -1,0 +1,76 @@
+/* pages/offlineShop/personalPage/fans/fans.wxss */
+page{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 30rpx;
+}
+
+.title{
+  position: relative;
+  width: 100%;
+  padding: 0 30rpx;
+  font-size: 50rpx;
+  color: #333;
+}
+
+.list-wrapper{
+  position: relative;
+  width: 100%;
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+}
+
+.list{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  padding: 20rpx 0;
+}
+.list image{
+  flex: 0 0 60rpx;
+  height: 100%;
+  margin-right: 30rpx;
+  border-radius: 50%;
+}
+
+.name{
+  flex: 0 0 250rpx;
+  height: 100%;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.time{
+  flex: 1 1;
+  height: 100%;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.no-shop{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  padding: 30rpx;
+  text-align: center;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.no-shop-title{
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  margin-top: 350rpx;
+  line-height: 100rpx;
+  font-size: 50rpx;
+}
+
+
+

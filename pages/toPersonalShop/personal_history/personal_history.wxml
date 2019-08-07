@@ -1,0 +1,42 @@
+<!--pages/toPersonalShop/personal_history/personal_history.wxml-->
+<view class='history-top'>
+  <view class='list-title'>
+    我去过的店
+    <view>可以每天查看喜欢的店铺，或者好友的店铺</view>
+  </view>
+
+  <scroll-view class='scroll-wrapper' scroll-x>
+    <view class='scroll-list'>
+      <view class='history-head' wx:for="{{history_list}}" wx:for-item="history" data-user_id="{{history.visit_history_user_id}}" bindtap='toShop'>
+        <image src='{{history.master_thumb}}'></image>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>
+<view class='line'><view></view></view>
+
+<view class='history-list'>
+  <view class='history' wx:for="{{history_list}}" wx:for-item="history" >
+    <image class='bac' src='/pages/img/personal_wood_bac.png'></image>
+    <view class='main' data-user_id="{{history.visit_history_user_id}}" bindtap='toShop'>
+      <view class='left'>
+        <image src='/pages/img/personal_stamp.png'></image>
+        <view class='shop-img'>
+          <image src='{{history.personal_shop_thumb}}'></image>
+        </view>
+      </view>
+      <view class='middle-head'>
+        <image src='{{history.master_thumb}}'></image>
+      </view>
+      <view class='right'>
+        <view class='shop-name'>{{history.personal_shop_name}}</view>
+        <view class='shop-slogan'>{{history.personal_shop_slogan}}</view>
+      </view>
+    </view>
+    <view class='rope'>
+      <image class='rope-left' src='/pages/img/personal_rope.png'></image>
+      <image class='rope-right' src='/pages/img/personal_rope.png'></image>
+    </view>
+  </view>
+</view>

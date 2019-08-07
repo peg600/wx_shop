@@ -1,0 +1,99 @@
+
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="购物车" show_capsule="1" />
+  < view class='cart-container'>
+    <view class='shop'>
+      <view class='title flex' wx:if="{{carts.length > 0}}">
+        <!-- <view class="check-btn {{selectAllStatus==true?'selected':'normal'}}" bindtap='chengeChecked'></view> -->
+        <image class="check-btn" src="{{selectAllStatus==true?'/pages/img/select_yuan.png':'/pages/img/yuan.png'}}" bindtap='chengeChecked'></image>
+        <view class='shop-info'>
+          <image class='shop-icon' src='{{shop_logo}}'></image>
+          <text>{{shop_name}}</text>
+        </view>
+      </view>
+      <view wx:else class='carts-dafault'>
+        <image src='../img/carts_none.png'></image>
+      </view>
+
+      <view class='goods' wx:for="{{carts}}" wx:for-index="index">
+        <view class="container-goods-item  {{index == showDelIndex?'show-del-btn':''}}" bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index="{{index}}">
+          <view class='goods-btn'>
+            <!-- <view class="check-btn {{item.selected== true? 'selected' : 'normal'}}" bindtap='goodsSelected' data-index="{{index}}"></view> -->
+            <image class="check-btn" src="{{item.selected== true?'/pages/img/select_yuan.png':'/pages/img/yuan.png'}}" bindtap='goodsSelected'  data-index="{{index}}"></image>
+          </view>
+          <view class='goods-img' bindtap='toGoodsDetail' data-goodId="{{item.goods_id}}">
+            <image src="{{baseUrl+'/'+item.goods_thumb}}"></image>
+          </view>
+          <view>
+            <view class='goods-name' bindtap='toGoodsDetail' data-goodId="{{item.goods_id}}">{{item.goods_name}}</view>
+            <view class='goods-attr'>{{item.goods_attr?'商品规格：'+ item.goods_attr:''}}</view>
+            <view class='stock'>
+              <view>库存{{item.product_number}}件</view>
+              <view wx:if="{{item.number > item.product_number}}">库存不足</view>
+            </view>
+            <view class='goods-number-price'>
+              <text class='rmb'>￥</text>
+              <text class='price'>{{item.product_price > 0 ? item.product_price : item.shop_price}}</text>
+              <view class='number-box'>
+                <text class="{{item.number>0 ? 'reduce can-reduce':'reduce'}}" bindtap='reduce' data-num="{{item.number}}" data-index="{{index}}" >-</text>
+                <!-- <text class='goods-number'>{{item.number}}</text> -->
+                <input type='number' value="{{item.number}}" class='ipt-num' bindinput="keyUpInput" data-index="{{index}}" bindblur="inputFocus"></input>
+                <text class='add' bindtap='add' data-num="{{item.number}}" data-index="{{index}}">+</text>
+              </view>
+            </view>
+          </view>
+          <view class='del-goods' bindtap='delGoods' data-rec_id="{{item.rec_id}}">
+            删除
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 跳转到微信购物单 -->
+    <navigator wx:if='{{carts.length > 0}}' target='miniProgram' app-id='wx56c8f077de74b07c' path='/open/function-introduction/function-introduction'>
+      <image src='../img/shopping_list.png'></image>
+      <text>已同步至购物单</text>
+    </navigator>
+
+  </view>
+  <view class='balance' hidden="{{carts.length>0?false:true}}">
+    <view class='total-box'>
+      <text class='total'>合计:</text>
+      <text class='rmb'>￥</text>
+      <text class='total-price'>{{totalPrice}}</text>
+    </view>
+
+    <text class='freight'>免运费</text>
+    <!-- <button open-type='getUserInfo' bindgetuserinfo='toActions' class='friendly bt' plain>钟情购</button> -->
+    <text class='quantity bt' bindtap='payGoods'> 结算({{count}})</text>
+  </view>
+  <!-- <view class='to-actions'  wx:if="{{carts.length > 0}}"> <button open-type='getUserInfo' bindgetuserinfo='toActions'>活动入口</button> </view> -->
+  <view class='rule-mask' hidden="{{!isClickActions}}">
+    <view class='rule-container'>
+      <view class='close' bindtap="closeMask">[X]</view>
+      <view class='actions-rule'>活动规则</view>
+      <view class='ont'>
+        <view class='tit'>开团</view>
+        <view class='content'>邀请好友助力钟情购，在24小时内召集5位好友点赞，即可享受优惠价格。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'>流程</view>
+        <view class='content'>
+          参与活动时需要您先按照钟情价价格支付，完成后并召集一定数量好友撮合。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'></view>
+        <view class='content'>必须在规定时间前内召集好友撮合成功，没有达到则视为撮合失败，钱款会在通知后原路退回，您将无法享受钟情购价格。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'>成功</view>
+        <view class='content'>
+          活动成功后您将会收到提示通知，我们将尽快为您发货。</view>
+      </view>
+      <button bindtap='toActionsPay'>同意参加此活动</button>
+    </view>
+  </view>
+  <!-- <tabbar selectedIndex="3"/> -->
+</view>
+

@@ -1,0 +1,5 @@
+/* pages/index/list/list.wxss */
+.ls{
+  position:absolute;
+  bottom: 50px
+}

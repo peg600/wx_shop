@@ -1,0 +1,43 @@
+.component-gridcontainer
+{
+  width:100%;
+  padding:0 0 0 0;
+  display: block;
+  font-size:0;
+  position: relative;
+}
+
+.component-grid-layoutinrow
+{
+  display: flex;
+   position: relative;
+  flex-direction: row;
+}
+
+.component-grid-layoutincolumn
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.component-grid-single-column
+{
+  width:375rpx;
+  height:750rpx;
+}
+
+.component-grid-single-column image
+{
+  width:375rpx;
+}
+
+.component-grid-single-row
+{
+  width:750rpx;
+  height:375rpx;
+}
+
+.component-grid-single-row image
+{
+  height:375rpx;
+}

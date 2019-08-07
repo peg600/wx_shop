@@ -1,0 +1,49 @@
+/* pages/personCenter/setting/setting.wxss */
+page{
+  background: #f2f2f2;
+  height: 100%
+}
+.user-container{
+   padding: 50rpx 0 0rpx 25rpx;
+   background: #fff
+}
+.user-info-icon image{
+    width: 100rpx; 
+    height: 100rpx;
+     border-radius: 50%
+}
+.user-info-icon{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.flex{
+  justify-content:  flex-start
+}
+.user-name{
+  margin-left: 35rpx;
+  text-align: left
+}
+.user-name .user-tit{
+   font-size: 28rpx;
+   color: rgb(53, 53, 53)
+   
+}
+.user-name .users{
+  font-size: 24rpx;
+  color: rgb(136, 136,136);
+  margin-top: 3rpx;
+}
+.view_list{
+  padding: 20rpx 25rpx;
+   background: #fff;
+}
+.view_flex{
+  justify-content: space-between;
+  font-size: 28rpx;
+   padding: 30rpx 0;
+   border-top: 1px solid rgb(244, 244, 244);
+   color: rgb(53, 53, 53)
+   
+}

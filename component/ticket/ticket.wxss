@@ -1,0 +1,123 @@
+/* component/ticket/ticket.wxss */
+.component-ticket
+{
+  white-space: nowrap;
+  width: 750rpx;
+}
+
+.ticket_item
+{
+  width:345rpx;
+  background: red;
+  color: white;
+  display: inline-block;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  justify-content: center;
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+}
+
+.number
+{
+  flex: 1;
+  width:350rpx;
+  text-align: center;
+  font-size:50rpx;
+  font-weight: bold;
+}
+
+.description
+{
+  flex:1;
+  width:350rpx;
+  text-align: center;
+  font-size:20rpx;
+}
+
+.stamp {
+  width: 350rpx;
+  height: 150rpx;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  color: white;
+}
+
+.stamp:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10rpx;
+  right: 10rpx;
+  z-index: -1;
+}
+
+.stamp:after {
+  content: '';
+  position: absolute;
+  left: 10rpx;
+  top: 10rpx;
+  right: 10rpx;
+  bottom: 10rpx;
+  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+
+.stamp01 {
+  background: #ec3721;
+  background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5rpx, #ec3721 5rpx);
+  background-size: 15rpx 15rpx;
+  background-position: 9rpx 3rpx;
+}
+
+.stamp01:before {
+  background-color: #ec3721;
+}
+
+.stampdisable {
+  background: #c7c7c7;
+  background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5rpx, #c7c7c7 5rpx);
+  background-size: 15rpx 15rpx;
+  background-position: 9rpx 3rpx;
+}
+
+.stampdisable:before {
+  background-color: #c7c7c7;
+}
+
+.stamp .mainTitle{
+  font-size: 36rpx;
+  display: inline-block;
+}
+
+.stamp .sub
+{
+  font-size: 30rpx;
+  display: inline-block;
+  margin-left: 25rpx;
+  text-align: center;
+}
+
+.stamp .top
+{
+  padding:25rpx 10rpx 25rpx 0;
+}
+
+.stamp .bottomInfo{
+  font-size: 26rpx;
+  height: 50rpx;
+}
+
+.item_container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.top-margin-middle
+{
+  margin-top: 20rpx;
+}

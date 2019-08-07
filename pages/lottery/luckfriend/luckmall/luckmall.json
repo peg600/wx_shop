@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "幸运集市",
+  "usingComponents": {
+    "goodlist": "../../../../component/goodlist/goodlist",
+    "indicator": "../../../../component/indicator/indicator"
+  }
+}

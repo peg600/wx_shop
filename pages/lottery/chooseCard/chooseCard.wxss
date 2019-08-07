@@ -1,0 +1,41 @@
+/* pages/lottery/chooseCard/chooseCard.wxss */
+view{
+  box-sizing: border-box;
+}
+
+.share-wrapper{
+  position: relative;
+  width: 100%;
+}
+
+.share-cards{
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 30rpx;
+}
+
+.share-card{
+  position: relative;
+  flex: 1 1;
+  height: 300rpx;
+  margin-left: 30rpx;
+  line-height: 300rpx;
+  text-align: center;
+  background: #ddd;
+}
+.share-card:first{
+  margin-left: 0;
+}
+
+.share-rule{
+  position: relative;
+  width: 100%;
+  margin-top: 50rpx;
+  padding: 30rpx;
+  border-top: 1rpx solid #333;
+}
+
+.chosen-card{
+  background: yellow;
+}

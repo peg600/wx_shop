@@ -1,0 +1,17 @@
+<!--pages/lottery/chooseCard/chooseCard.wxml-->
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="开心小集" show_capsule="1" />
+<!-- 分享抽奖页 -->
+<view class='share-wrapper'>
+  <view class='share-cards'>
+    <view class='share-card' wx:for="{{share_bonus}}" wx:for-item="bonus" wx:key="{{bonus}}">
+      <view wx:if="{{!has_chosen}}" data-index="{{index}}" catchtap='chooseCard'>点击抽奖</view>
+      <view class="{{index == chosen_index ? 'chosen-card' : ''}}" wx:if="{{has_chosen}}">{{bonus}}分</view>
+    </view>
+  </view>
+  <view class='share-rule'>抽奖规则</view>
+</view>
+
+</view>
+

@@ -1,0 +1,144 @@
+/* pages/offlineShop/share/share.wxss */
+
+.wrapper{
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.editor{
+  position: relative;
+  width: 100%;
+}
+
+.canvas-wrapper{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.delete{
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  left: 50%;
+  transform: translate(-50%,-200rpx);
+  border-radius: 50%;
+  background-color: rgba(240, 0, 0, 1);
+  z-index: 100;
+}
+.delete image{
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.active{
+  width: 140rpx;
+  height: 140rpx;
+  transform: translate(-50%,-220rpx);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  margin: 20rpx 0;
+  padding: 0 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+}
+
+.change{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  margin-right: 50rpx;
+  border-radius: 15rpx;
+  background-color: orange;
+}
+
+.next{
+ position: relative;
+  flex: 1 1;
+  height: 100%;
+  border-radius: 15rpx;
+  background-color: rgb(20, 200, 20);
+}
+
+movable-area{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* background-color: rgba(0, 255, 0, 0.2); */
+  z-index: 100;
+}
+
+.tag-wrapper{
+  display: inline-flex;
+  align-items: center;
+  height: 50rpx;
+  width: 0;
+  line-height: 50rpx;
+  z-index: 100;
+}
+
+.tag-content{
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.dot{
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  padding: 10rpx;
+  border-radius: 50%;
+}
+.dot view{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.line{
+  position: relative;
+  width: 30rpx;
+  height: 4rpx;
+  background-color: #fff;
+}
+
+.text{
+  position: relative;
+  height: 100%;
+  padding: 0 20rpx;
+  border: 1rpx solid #fff;
+  border-radius: 25rpx;
+  line-height: 48rpx;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.chosen{
+  border-color: orange;
+  background-color: orange;
+}
+
+
+

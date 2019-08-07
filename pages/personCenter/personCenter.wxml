@@ -1,0 +1,180 @@
+<view class='per-container'>
+  <view class='bg-box'>
+    <image src='../img/bg_rectangle.png'></image>
+  </view>
+  <!-- <view class='img-set' bindtap='setToPages'>
+    <image src='../img/set.png'></image>
+  </view> -->
+  <view class='user-infor'>
+    <view class='user-img'>
+      <open-data type="userAvatarUrl" class='head-img'></open-data>
+    </view>
+    <view class='name-box'>
+      <view class='user-tit'>
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class='user-name'>用户名：
+        <open-data type="userNickName"></open-data>
+      </view>
+    </view>
+    <view class='order-tab conrainer flex'>
+      <view class='item' bindtap='checkTypelist' id="{{0}}">
+        <image src='../img/order.png'></image>
+        <view>
+          <text>全部订单</text>
+        </view>
+      </view>
+      <view class='item' bindtap='toAfterSale'>
+        <image src='../img/tuikuan.png'></image>
+        <view>
+          <text>退款售后  </text>
+        </view>
+      </view>
+      <view class='item' bindtap='toCollection'>
+        <image src='../img/collection.png'></image>
+        <view>
+          <text>我的收藏</text>
+        </view>
+      </view>
+      <view class='item'>
+        <button plain open-type='contact'>
+          <image src='../img/csd.png'></image>
+          <view>
+            <text>联系客服</text>
+          </view>
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class='order-box'>
+    <view class='tab'>
+      <view class='list' bindtap='checkTypelist' id="{{1}}">
+        <view>
+          <view class='yn-box'>
+            <image src='../img/pending_pay.png'></image>
+            <view class='yn' hidden="{{oNum.pay == undefined || oNum.pay == 0}}">{{oNum.pay}}</view>
+          </view>
+        </view>
+        <view>
+          <text>待付款</text>
+        </view>
+      </view>
+      <view class='list' bindtap='checkTypelist' id="{{5}}">
+        <view>
+          <view class='yn-box'>
+            <image src='../img/share.png'></image>
+            <view class='yn' hidden="{{oNum.share == undefined || oNum.share == 0}}">{{oNum.share}}</view>
+          </view>
+        </view>
+        <view>
+          <text>待分享</text>
+        </view>
+      </view>
+      <view class='list' bindtap='checkTypelist' id="{{2}}">
+        <view>
+           <view class='yn-box'>
+          <image src='../img/pending_delivery.png'></image>
+        <view class='yn'  hidden="{{oNum.sip == undefined || oNum.sip == 0}}">{{oNum.sip}}</view>
+          </view>
+        </view>
+        <view>
+          <text>待发货</text>
+        </view>
+      </view>
+      <view class='list' bindtap='checkTypelist' id="{{3}}">
+        <view>
+        <view class='yn-box'>
+          <image src='../img/goods_received.png'></image>
+          <view class='yn' hidden="{{oNum.sipd == undefined || oNum.sipd == 0}}">{{oNum.sipd}}</view>
+          </view>
+        </view>
+        <view>
+          <text>待收货</text>
+        </view>
+      </view>
+      <view class='list' bindtap='checkTypelist' id="{{4}}">
+        <view>
+        <view class='yn-box'>
+          <image src='../img/wait_evaluated.png'></image>
+          <view class='yn' hidden="{{oNum.eva == undefined || oNum.eva == 0}}">{{oNum.eva}}</view>
+          </view>
+        </view>
+        <view>
+          <text>已完成</text>
+        </view>
+      </view>
+      <!-- <view class='list' bindtap='checkTypelist' id="{{6}}">
+        <view>
+        <view class='yn-box'>
+          <image src='../img/group_gathering.png'></image>
+          <view class='yn' hidden="{{oNum.eva == undefined || oNum.eva == 0}}">{{oNum.eva}}</view>
+          </view>
+        </view>
+        <view>
+          <text>拼团中</text>
+        </view>
+      </view> -->
+    </view>
+    <view class="tab {{showCPA==1?'three':'half'}}">
+      <view class='list'>
+        <navigator url='/pages/personCenter/telnumber/telnumber'>
+          <view>
+            <image src='../img/bindtel.png'></image>
+          </view>
+          <view>
+            <text>绑定手机</text>
+          </view>
+        </navigator>
+      </view>
+      <view class='list'>
+        <navigator url='/pages/address/address' hover-class="none">
+          <view>
+            <image src='../img/addressc.png' class='address-imgs'></image>
+          </view>
+          <view>
+            <text>地址管理</text>
+          </view>
+        </navigator>
+      </view>
+      <view class='list' wx:if="{{showCPA==1?true:false}}">
+        <navigator url='/pages/CPA/CPA' hover-class="none">
+          <view>
+            <image src='../img/cpa.png' class='address-imgs'></image>
+          </view>
+          <view>
+            <text>我的权益</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- <view class='tab half'>
+      <view class='list'>
+        <view>
+          <image src='../img/integral.png'></image>
+        </view>
+        <view>
+          <text>我的积分</text>
+        </view>
+      </view>
+      <view class='list'>
+        <navigator url='/pages/coupon/coupon' hover-class="none">
+          <view>
+            <image src='../img/coupon.png'></image>
+          </view>
+          <view>
+            <text> 优惠券</text>
+          </view>
+        </navigator>
+      </view>
+    </view> -->
+
+    
+    
+  </view>
+  <view class='join-contact'>
+      <button plain open-type='contact'>
+        <text> 商家品牌合作入驻</text>
+      </button>
+    </view>
+</view>
+<tabbar selectedIndex="4"/>

@@ -1,0 +1,60 @@
+<!--component/container/container.wxml-->
+<view class="component-container"> 
+  <block wx:for="{{componentlist}}" wx:key="{{index}}">
+    <authorize wx:if="{{item.name == 'authorize' ? 1:0}}"/>
+    <goodlist wx:if="{{item.name == 'goodlist' ? 1:0}}" 
+    goods="{{item.goods}}" 
+    page_number="{{item.page_number ? item.page_number : 20 }}" 
+    limit_number="{{item.limit_number ? item.limit_number : 0 }}" 
+    order="{{item.order}}"  
+    id="all_goods"
+    promotionStyle="{{item.promotionStyle}}"
+    pull_down_refresh="{{item.pull_down_refresh}}" 
+    listStyle="{{item.listStyle}}" 
+    imageStyle="{{item.imageStyle}}" 
+    imageRatio="{{item.imageRatio}}" 
+    itemStyle="{{item.itemStyle}}" 
+    itemGoodsName="{{item.itemGoodsName}}" 
+    itemGoodsDesc="{{item.itemGoodsDesc}}"
+    itemGoodPrice="{{item.itemGoodPrice}}" 
+    itemBuyStyle="{{item.itemBuyStyle}}" 
+    itemCornerStyle="{{item.itemCornerStyle}}"
+    bindcomplete="onComplete" />
+    <searchbar wx:if="{{item.name == 'searchbar'?1:0}}"/>
+    <tabbar wx:if="{{item.name == 'tabbar'?1:0}}" selected_index="{{item.selected_index}}"/>
+    <topbar wx:if="{{item.name == 'topbar' ? 1:0}}"
+    bindchangeCat="onChangCat" 
+    float="{{item.float}}" 
+    top="{{top}}" 
+    goods="{{item.goods}}" 
+    page_number="{{item.page_number ? item.page_number : 20 }}" 
+    limit_number="{{item.limit_number ? item.limit_number : 0 }}" 
+    order="{{item.order}}" 
+    id="all_goods" 
+    pull_down_refresh="{{item.pull_down_refresh}}" 
+    listStyle="{{item.listStyle}}" 
+    imageStyle="{{item.imageStyle}}" 
+    imageRatio="{{item.imageRatio}}" 
+    itemStyle="{{item.itemStyle}}" 
+    itemGoodsName="{{item.itemGoodsName}}" 
+    itemGoodsDesc="{{item.itemGoodsDesc}}"
+    itemGoodPrice="{{item.itemGoodPrice}}" 
+    itemBuyStyle="{{item.itemBuyStyle}}" 
+    itemCornerStyle="{{item.itemCornerStyle}}" />
+    <imagelist wx:elif="{{item.name == 'imagelist' ? 1:0}}" images="{{item.images}}" texts="{{item.texts}}" URLs="{{item.URLs}}" listStyle="{{item.listStyle}}" imageStyle="{{item.imageStyle}}" imageMargin="{{item.imageMargin}}" imageNumberOneScreen="{{item.imageNumberOneScreen}}" margin="{{item.margin}}" radius="{{item.radius}}" titles="{{item.titles}}"/>
+    <grid wx:elif="{{item.name == 'grid' ? 1:0}}" images="{{item.images}}" URLs="{{item.URLs}}" gridStyle="{{item.gridStyle}}" imageMargin="{{item.imageMargin}}" margin="{{item.margin}}" />
+    <holonavigator wx:elif="{{item.name == 'holonavigator' ? 1:0}}" images="{{item.images}}" URLs="{{item.URLs}}" texts="{{item.texts}}" margin="{{item.margin}}" />
+    <textpanel wx:elif="{{item.name == 'textpanel' ? 1:0}}" text="{{item.text}}" textSize="{{item.textSize}}" textAlignment="{{item.textAlignment}}" margin="{{item.margin}}" background="{{item.background}}" foreColor="{{item.foreColor}}"/>
+    <headpanel wx:elif="{{item.name == 'headpanel' ? 1:0}}" title="{{item.title}}" subtitle="{{item.subtitle}}" alignment="{{item.alignment}}" background="{{item.background}}" textsize="{{item.textsize}}" margin="{{item.margin}}" />
+    <blank wx:elif="{{item.name == 'blank' ? 1:0}}" height="{{item.height}}" background="{{item.background}}" />
+    <splitter wx:elif="{{item.name == 'splitter' ? 1:0}}" margin="{{item.margin}}" background="{{item.background}}" />
+    <ticket wx:elif="{{item.name == 'ticket' ? 1:0}}" tickets="{{item.tickets}}" color="{{item.color}}" background="{{item.background}}" margin="{{item.margin}}" />
+    <board wx:elif="{{item.name == 'board' ? 1:0}}" text="{{item.text}}" color="{{item.color}}" background="{{item.background}}" margin="{{item.margin}}" />
+    <shoplist wx:if="{{item.name == 'shoplist' ? 1:0}}" shops="{{item.shops}}" listStyle="{{item.listStyle}}" imageStyle="{{item.imageStyle}}" imageRatio="{{item.imageRatio}}" itemStyle="{{item.itemStyle}}" mode="{{item.mode}}" limit="{{item.limit}}" params="{{item.params}}" itemShopName="{{item.itemGoodsName}}" itemShopDesc="{{item.itemGoodsDesc}}" margin="{{item.margin}}" 
+    />
+    <branchlist wx:if="{{item.name == 'branchlist' ? 1:0}}" branches="{{item.branches}}" listStyle="{{item.listStyle}}" imageStyle="{{item.imageStyle}}" imageRatio="{{item.imageRatio}}" itemStyle="{{item.itemStyle}}" mode="{{item.mode}}" limit="{{item.limit}}" params="{{item.params}}" itemBranchName="{{item.itemBranchName}}" itemBranchDesc="{{item.itemBranchDesc}}" margin="{{item.margin}}" 
+    />
+    <indicator wx:elif="{{item.name == 'indicator' ? 1:0}}" title="{{item.text}}" tip="{{item.tip}}" URL="{{item.URL}}" color="{{item.color}}" background="{{item.background}}" margin="{{item.margin}}" tipType="{{item.tipType}}" showDot="{{item.showDot}}" subTitle="{{item.subTitle}}" />
+    <indicator wx:elif="{{item.name == 'ticket' ? 1:0}}" tickets="{{item.tickets}}" background="{{item.background}}" color="{{item.color}}"/>
+  </block>
+</view>

@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "商品搜索",
+  "usingComponents": {
+    "searchbar": "../../component/searchbar/searchbar",
+    "goodlist": "../../component/goodlist/goodlist"
+  }
+}

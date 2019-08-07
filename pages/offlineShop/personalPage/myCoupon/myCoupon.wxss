@@ -1,0 +1,157 @@
+/* pages/offlineShop/personalPage/myCoupon/myCoupon.wxss */
+
+.title{
+  position: relative;
+  padding: 30rpx;
+}
+
+.coupons-wrapper{
+  position: relative;
+  width: 100%;
+  margin: 30rpx 0;
+  padding: 0 20rpx; 
+}
+
+.coupon-list{
+  position: relative;
+  width: 100%;
+}
+
+.coupon{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 170rpx;
+  margin-top: 30rpx;
+  background-color: red;
+}
+.coupon:before, .coupon:after {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+    top: 10rpx;
+}
+
+.coupon:before {
+    /* 圆点型的border */
+    border-right: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -4rpx;
+}
+
+.coupon:after {
+    /* 圆点型的border */
+    border-left: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    right: -4rpx;
+}
+
+.coupon-left{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  padding: 0 20rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: white;
+}
+
+.coupon-right{
+  position: relative;
+  flex: 0 0 200rpx;
+  height: 100%;
+  line-height: 170rpx;
+  text-align: center;
+  font-size: 50rpx;
+  color: #fff;
+}
+.coupon-right:before {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+    top: 0rpx;
+    /* 圆点型的border */
+    border-right: 10rpx dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -4rpx;
+}
+
+.coupon-used{
+  color: #333;
+  background-color: #ccc;
+}
+
+.shop{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 200rpx;
+  margin: 30rpx 0;
+  padding: 0 30rpx;
+}
+
+.shop-left{
+  position: relative;
+  flex: 0 0 200rpx;
+  height: 100%;
+  margin-right: 30rpx;
+  padding: 20rpx;
+}
+.shop-left image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.shop-mid{
+  position: relative;
+  flex: 1 1 ;
+  height: 100%;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #aaa;
+}
+
+.shop-name{
+  position: relative;
+  width: 100%;
+  height: 140rpx;
+  line-height: 140rpx;
+  font-size: 50rpx;
+  color: #333;
+}
+
+.shop-right{
+  position: relative;
+  flex: 0 0 150rpx;
+  height: 100%;
+  line-height: 200rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #333;
+}
+
+.no-shop{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  padding: 30rpx;
+  text-align: center;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.no-shop-title{
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  margin-top: 350rpx;
+  line-height: 100rpx;
+  font-size: 50rpx;
+}

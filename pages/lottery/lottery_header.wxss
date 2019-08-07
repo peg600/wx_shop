@@ -1,0 +1,33 @@
+page {
+  background: #fdebbc;
+}
+
+.head {
+  position: absolute;
+  width: 750rpx;
+  top: 0rpx;
+  bottom: 0rpx;
+  background: url(https://wao-files.oss-cn-beijing.aliyuncs.com/holo/spring_bg_2.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  text-align: center;
+}
+
+.no_submit {
+  background: url(https://wao-files.oss-cn-beijing.aliyuncs.com/holo/spring_bg_2.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.rule_region {
+  margin-top: 30rpx;
+  width: 750rpx;
+  height: 100rpx;
+}
+
+.rule_region image {
+  position: absolute;
+  right: 0rpx;
+  width: 141rpx;
+  height: 68rpx;
+}

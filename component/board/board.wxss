@@ -1,0 +1,33 @@
+/* component/board/board.wxss */
+.component-board
+{
+  width:750rpx;
+  padding-top: 9rpx;
+  padding-bottom: 9rpx;
+  margin: 0rpx;
+  font-size: 12px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.component-board::before
+{
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background-image: url("https://img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png");
+  background-size: 16px 16px;
+}
+
+.component-boardtext
+{
+    flex: 1;
+    height: 18px;
+    margin-left: 65rpx;
+    margin-right: 35rpx;
+    overflow: hidden;
+    position: relative;
+}

@@ -1,0 +1,33 @@
+<!--component/grid/grid.wxml--> 
+<view class="component-gridcontainer">
+  <!--一行排列-->
+  <view class="component-grid-layoutinrow" wx:if="{{gridStyle==0?1:0}}">
+    <image src="{{item.image}}" mode='widthFix' wx:for="{{imageList}}" wx:for-item="item" data-url="{{item.url}}" bindtap='_gotoURL' />
+  </view>
+
+  <!--两行排列-->
+  <view wx:if="{{gridStyle==1?1:0}}">
+    <view class="component-grid-layoutinrow">
+      <image src="{{item.image}}" mode='widthFix' wx:for="{{imageList}}" wx:for-item="item" wx:for-index="index" data-url="{{item.url}}" bindtap='_gotoURL' wx:if="{{index < imageList.length / 2}}" />
+    </view>
+    <view class="component-grid-layoutinrow">
+      <image src="{{item.image}}" mode='widthFix' wx:for="{{imageList}}" wx:for-item="item" wx:for-index="index" data-url="{{item.url}}" bindtap='_gotoURL' wx:if="{{index >= imageList.length / 2}}" />
+    </view>
+  </view>
+
+  <!--一左两右-->
+  <view wx:if="{{gridStyle==2?1:0}}" class="component-grid-layoutinrow">
+    <image src="{{item.image}}" mode='aspectFill' wx:for="{{imageList}}" wx:for-item="item" wx:for-index="index" class="component-grid-single-column" data-url="{{item.url}}" bindtap='_gotoURL' wx:if="{{index < 1 ? 1:0}}" style="margin-right:{{imageMargin}}rpx" />
+    <view class="component-grid-single-column component-grid-layoutincolumn">
+      <image src="{{item.image}}" mode='aspectFill' wx:for="{{imageList}}" wx:for-item="item" wx:for-index="index" data-url="{{item.url}}" bindtap='_gotoURL' wx:if="{{index ==1 || index == 2? 1:0}}"  style="{{index==1?'margin-bottom:' + imageMargin + 'rpx' : ''}}"/>
+    </view>
+  </view>
+
+  <!--一上两下-->
+  <view wx:if="{{gridStyle==3?1:0}}" class="component-grid-layoutincolumn">
+    <image src="{{item.image}}" mode='aspectFill' wx:for="{{imageList}}" wx:for-item="item" wx:for-index="index" class="component-grid-single-row" data-url="{{item.url}}" bindtap='_gotoURL' wx:if="{{index < 1 ? 1:0}}" style="margin-bottom:{{imageMargin}}rpx" />
+    <view class="component-grid-single-row component-grid-layoutinrow">
+      <image src="{{item.image}}" mode='aspectFill' wx:for="{{imageList}}" wx:for-item="item" wx:for-index="index" data-url="{{item.url}}" style="{{index==1?'margin-right:' + imageMargin + 'rpx' : ''}}" bindtap='_gotoURL' wx:if="{{index ==1 || index == 2? 1:0}}" />
+    </view>
+  </view>
+</view>

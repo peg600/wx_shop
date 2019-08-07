@@ -1,0 +1,66 @@
+<!--pages/offlineShop/pay/pay.wxml-->
+
+<view class='wrapper'>
+  <view class='price-wrapper'>
+    <view class='price'>应付金额：</view>
+    <input wx:if="{{!base_price}}" class="input" type='text' placeholder="输入应付金额" bindinput='listenInput' bindconfirm='calcCoupon' value="{{price}}" />
+    <view wx:if="{{base_price}}" class='input'>{{base_price}}</view>
+  </view>
+
+  <view class='title' wx:if="{{shop_info.claimed_coupons && type == 1}}" catchtap='toggleShowCoupons'>可使用的优惠券
+    <image class='{{show_coupons ? "icon rotate" : "icon"}}' src="/pages/img/jump_icon.png"></image>
+  </view>
+  <view class='title' wx:if="{{!shop_info.claimed_coupons}}">暂无可用的优惠券   </view>
+
+<view class='title' wx:if="{{(shop_info.claimed_cash_coupons || shop_info.user_cash_coupon > 0) && type == 1}}" catchtap='toggleShowCashCoupons'>可使用的现金券
+  <image class='{{show_cash_coupons ? "icon rotate" : "icon"}}' src="/pages/img/jump_icon.png"></image>
+</view>
+<view class='title' wx:if="{{!shop_info.claimed_cash_coupons}}">暂无可用的现金券</view>
+
+<view class='title'>实付金额：{{final_price ? final_price : 0}}</view>
+
+<view class='pay' catchtap='pay'>{{final_price ? final_price : ""}} 确认支付</view>
+
+</view>
+
+<view class='mask' wx:if="{{shop_info.claimed_coupons && show_coupons}}" bindtap='toggleShowCoupons'>
+  <view class='coupons-wrapper' animation="{{animationData}}">
+  <view class='coupon-list'>
+    <view class='coupon' wx:for="{{shop_info.claimed_coupons}}" wx:for-item="claimed_coupon" wx:key="{{claimed_coupon.coupon_id}}">
+      <view class='coupon-left'>
+        <view>{{claimed_coupon.coupon_name}}</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 1}}">无条件抵扣 {{claimed_coupon.discount}} 元</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 2}}">消费满 {{claimed_coupon.quota}} 元减 {{claimed_coupon.discount}} 元</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 3}}">无条件打 {{claimed_coupon.percent * 10}} 折</view>
+        <view wx:if="{{claimed_coupon.coupon_type == 4}}">消费满 {{claimed_coupon.quota}} 元打 {{claimed_coupon.percent * 10}} 折</view>
+        <view>{{claimed_coupon.start_time}} ~ {{claimed_coupon.end_time}}</view>
+        <view>剩余 {{claimed_coupon.can_use}} 张，可同时使用 {{claimed_coupon.max_together_number}} 张</view>
+      </view>
+      <view class='coupon-right' wx:if="{{!claimed_coupon.selected &&claimed_coupon.usable}}" data-coupon="{{claimed_coupon}}" data-index="{{index}}" catchtap='toggleChooseCoupon'>使用</view>
+      <view class='coupon-right coupon-used' wx:if="{{!claimed_coupon.selected && !claimed_coupon.usable}}">不可用</view>
+      <view class='coupon-right selected' wx:if="{{claimed_coupon.selected}}" data-coupon="{{claimed_coupon}}" data-index="{{index}}" catchtap='toggleChooseCoupon'>已选</view>
+    </view>
+  </view>
+  </view>
+</view>
+
+<view class='mask' wx:if="{{(shop_info.claimed_cash_coupons || shop_info.user_cash_coupon > 0) && show_cash_coupons}}" bindtap='toggleShowCashCoupons'>
+  <view class='coupons-wrapper' animation="{{animationData2}}">
+  <view class='coupon-list'>
+    <view class='coupon yellow' wx:for="{{shop_info.claimed_cash_coupons}}" wx:for-item="claimed_cash_coupon" wx:key="{{claimed_cash_coupon.coupon_id}}">
+      <view class='coupon-left'>
+        <view class='cash'>￥{{claimed_cash_coupon.goods_discount}}</view>
+      </view>
+      <view class='coupon-right' wx:if="{{!claimed_cash_coupon.selected}}" data-coupon="{{claimed_cash_coupon}}" data-index="{{index}}" catchtap='toggleChooseCashCoupon'>使用</view>
+      <view class='coupon-right selected' wx:if="{{claimed_cash_coupon.selected}}" data-coupon="{{claimed_cash_coupon}}" data-index="{{index}}" catchtap='toggleChooseCashCoupon'>已选</view>
+    </view>
+  </view>
+  <view class='coupon yellow' wx:if="{{shop_info.user_cash_coupon > 0}}">
+      <view class='coupon-left'>
+        <view class='cash'><view class='small'>余额</view>￥{{shop_info.user_cash_coupon}}</view>
+      </view>
+      <view class='coupon-right' wx:if="{{!use_user_cash_coupon}}" catchtap='toggleUseUserCashCoupon'>使用</view>
+      <view class='coupon-right selected' wx:if="{{use_user_cash_coupon}}" catchtap='toggleUseUserCashCoupon'>已选</view>
+    </view>
+  </view>
+</view>

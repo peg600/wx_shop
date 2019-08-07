@@ -1,0 +1,299 @@
+/* pages/offlineShop/share/chooseTag/search/search.wxss */
+
+
+.searchContain {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  padding:0 25rpx;
+  flex-direction: column;
+}
+
+.float-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 5rpx 15rpx 0 rgba(59, 67, 76, 0.1);
+}
+
+.search {
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 68rpx;
+  border-radius: 35rpx;
+  border:1px solid #e4e4e4;
+  position: relative;
+}
+.search image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+   margin-right: 15rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.search .search_input {
+  font-size: 26rpx;
+  width: 435rpx;
+  display: block;
+  height: 61rpx;
+  line-height: 61rpx;
+  text-overflow: clip;
+  white-space: nowrap;
+  color:#9d9d9d;
+  font-family: UICTFontTextStyleBody;
+}
+
+.fake-search-btn
+{
+  width: 120rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  margin-right: 0rpx;
+  font-size: 28rpx;
+  align-items: center;
+  color: #e63117;
+  border: none;
+  position: absolute;
+  text-align: center;
+  right: 10rpx;
+}
+
+.fake-search-btn text{
+  height: 63rpx;
+  line-height: 63rpx;
+}
+
+.search_input text{
+  line-height: 61rpx;
+  height: 61rpx;
+}
+.clear-ipt{
+  width: 35rpx;
+  height: 35rpx;
+  float: right;
+  font-size: 20rpx;
+  /* position: absolute; */
+  /* right: 160rpx; */
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35rpx;
+  font-weight: bold;
+}
+.clear-ipt image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.clear-ipt text{
+    background: #888888;
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%；
+}
+
+.search button {
+  width: 120rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  margin-right: 0rpx;
+  font-size: 28rpx;
+  align-items: center;
+  color: #e63117;
+  border: none;
+  position: absolute;
+  right: 10rpx;
+}
+
+.view_contain{
+  text-align: left;
+}
+
+
+.tab-container{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab{
+  position: relative;
+  flex: 0 0 150rpx;
+  height: 80rpx;
+  color: #aaa;
+}
+
+.mode{
+  position: relative;
+  width: 100%;
+  height: 75rpx;
+  line-height: 75rpx;
+  text-align: center;
+  font-size: 34rpx;
+}
+
+.border{
+  position: relative;
+  width: 50rpx;
+  height: 5rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.selected view{
+  color: #333;
+}
+.selected .border{
+  background-color: red;
+}
+
+.history-wrapper{
+  position: relative;
+  width: 100%;
+  padding: 20rpx;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #aaa;
+}
+.title view{
+  flex: 1 1;
+  line-height: 50rpx;
+}
+.title image {
+  flex: 0 0 30rpx;
+  height: 30rpx;
+  padding: 10rpx;
+}
+
+.history-list{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin-top: 50rpx;
+}
+
+.history{
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  height: 50rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+  line-height: 50rpx;
+  border-radius: 30rpx;
+  background-color: #eee;
+}
+.history image{
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.history view{
+  display: inline-block;
+  position: relative;
+  top: -4rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.banner{
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  /* margin-top: 50rpx; */
+  padding: 0 30rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #333;
+  background-color: #eee;
+}
+
+.shop-list{
+  position: relative;
+  width: 100%;
+}
+
+.shop{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 121rpx;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.shop image{
+  position: relative;
+  flex: 0 0 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}
+
+.right{
+  position: relative;
+  flex: 1 1;
+}
+.name{
+  width: 100%;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.small{
+  height: 24rpx;
+  margin-top: 10rpx;
+  line-height: 24rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+.more-wrapper{
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+}
+
+.more{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  line-height: 100rpx;
+}
+.more view{
+  display: inline-block;
+  position: relative;
+  font-size: 28rpx;
+  color: #333;
+}
+.more image{
+  position: relative;
+  flex: 0 0 15rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}

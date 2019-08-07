@@ -1,0 +1,29 @@
+page {
+  background: #4b2177;
+}
+
+.head {
+  position: absolute;
+  width: 750rpx;
+  top: 0rpx;
+  bottom: 0rpx;
+  background: url(https://wao-files.oss-cn-beijing.aliyuncs.com/holo/luckfriend_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  text-align: center;
+}
+
+.navi_region {
+  position: absolute;
+  display: block;
+  top: 20rpx;
+  width: 141rpx;
+  height: 100rpx;
+}
+
+.navi_region image {
+  position: absolute;
+  right: 0rpx;
+  width: 141rpx;
+  height: 68rpx;
+}

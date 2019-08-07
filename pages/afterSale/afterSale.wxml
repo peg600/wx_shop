@@ -1,0 +1,17 @@
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar title="退款售后" show_capsule="1" />
+<view class='sale-container' wx:if='{{orderArr.length>0}}'>
+  <view class='sale-list' wx:for="{{orderArr}}">
+    <view class='sale-tit'><text class='sn'>订单编号:{{item.goods_sn}}</text>   <text class='x-time'>下单时间:{{item.created_time}}</text></view>
+    <view class='goods-detail' bindtap="toRefundPage"  data-recid="{{item.rec_id}}">
+      <view class='goods-img'>  <image src="{{dataUrl+'/'+item.goods_thumb}}"></image> </view>
+      <view class='goods-name'>  <view class='name'>{{item.goods_name}}</view> <view class='num'>数量：{{item.number}}</view> </view>
+    </view>
+    <view class='sale-btn'>  <text class='' bindtap='cancelRefund' data-recid="{{item.rec_id}}">撤消申请</text></view>
+  </view>
+</view>
+<view class='default' wx:else>
+  <image src='/pages/img/order_default.png'></image>
+</view>
+</view>

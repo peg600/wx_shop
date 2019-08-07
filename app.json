@@ -1,13 +1,102 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/authorize/authorize",
+    "pages/offlineShop/cash/cash",
+    "pages/offlineShop/share/share",
+    "pages/offlineShop/share/chooseTag/search/search",
+    "pages/offlineShop/share/chooseTag/chooseTag",
+    "pages/offlineShop/personalPage/myCoupon/myCoupon",
+    "pages/offlineShop/personalPage/personalPage",
+    "pages/offlineShop/addressSelect/addressSelect",
+    "pages/offlineShop/map/map",
+    "pages/offlineShop/shopPage/shopPage",
+    "pages/offlineShop/couponPage/couponPage",
+    "pages/offlineShop/pay/pay",
+    "pages/jdList/jdList",
+    "pages/New/index",
+    "pages/action/spokesman/spokesman",
+    "pages/lottery/ticket/ticket",
+    "pages/faceTest/choosePhoto/choosePhoto",
+    "pages/user/user",
+    "pages/detailPage/detailPage",
+    "pages/group_purchase/group_purchase_join/group_purchase_join",
+    "pages/group_purchase/group_purchase",
+    "pages/group_purchase/group_purchase_complete/group_purchase_complete",
+    "pages/order-pay/order-pay",
+    "pages/zActions/zActions",
+    "pages/orderInfo/orderInfo",
+    "pages/refundPage/refundDetail/refundDetail",
+    "pages/refundPage/refundExamine/refundExamine",
+    "pages/orderInfoPage/orderInfoPage",
+    "pages/personCenter/personCenter",
+    "pages/logistics/logistics",
+    "pages/refundPage/refundPage",
+    "pages/sharePage/sharePage",
+    "pages/address/address",
+    "pages/coupon/coupon",
+    "pages/personCenter/setting/setting",
+    "pages/payCenter/payCenter",
+    "pages/fitview/fitview",
+    "pages/takephoto/takephoto",
+    "pages/CPA/CPA",
+    "pages/innerPage/index",
+    "pages/faceTest/faceTest",
+    "pages/faceTest/cutPhoto/cutPhoto",
+    "pages/action/spokesman/preview/preview",
+    "pages/fittingList/fittingList",
+    "pages/offlineShop/personalPage/fans/fans",
+    "pages/offlineShop/service/service",
+    "pages/offlineShop/personalPage/myOrder/myOrder",
+    "pages/offlineShop/cashCouponPage/cashCouponPage",
+    "pages/offlineShop/personalPage/myCashCoupon/myCashCoupon"
   ],
   "window": {
+    "enablePullDownRefresh": false,
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "Holo",
     "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx56c8f077de74b07c",
+    "wx13e41a437b8a1d2e"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要获取您当前的位置以展示附近的店铺"
+    }
+  },
+  "tabBar": {
+    "selectedColor": "#353535",
+    "color": "#888888",
+    "list": [
+      {
+        "pagePath": "pages/New/index",
+        "text": "首页",
+        "iconPath": "pages/img/home.png",
+        "selectedIconPath": "pages/img/shome.png"
+      },
+      {
+        "pagePath": "pages/offlineShop/personalPage/personalPage",
+        "text": "个人中心",
+        "pageTum": "navigate",
+        "iconPath": "pages/img/person1.png",
+        "selectedIconPath": "pages/img/sperson1.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "authorize": "/component/authorize/authorize",
+    "goodlist": "/component/goodlist/goodlist",
+    "form-button": "/component/formButton/formButton",
+    "tabbar": "/component/tabbar/tabbar",
+    "sign": "/component/sign/sign",
+    "topbar": "/component/topbar/topbar",
+    "navbar": "/component/navbar/navbar",
+    "goodprice": "/component/goodprice/goodprice",
+    "popup": "/component/popup/popup",
+    "sharepanel": "/component/sharepanel/sharepanel",
+    "searchbar": "/component/searchbar/searchbar"
   },
   "sitemapLocation": "sitemap.json"
 }

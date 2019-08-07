@@ -1,0 +1,5 @@
+<!--component/board/board.wxml-->
+<view class="component-board" style='background:{{background}};color:{{foreColor}};'>
+<view class="component-boardtext">{{text}}</view>
+</view>
+

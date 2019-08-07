@@ -1,0 +1,16 @@
+<!--component/searchbar/searchbar.wxml-->
+<!-- <view wx:if="{{is_float}}" style="width: 100%;height: 88rpx;background: searchNewList;"></view>  -->
+<view class="searchContain">
+  <view class="section search">
+    <image src="../../pages/img/search.png"></image>
+    <input type='text' class="search_input" placeholder="{{placeholder}}"
+     confirm-type='搜索' bindinput='listenSearch' bindconfirm='searchNewList'
+     value="{{searchInput}}" wx:if="{{!isguide}}" focus='true'/>
+     <view class="search_input" catchtap='getfocus'wx:if="{{isguide}}"><text>搜好物，颜值抵现金</text></view>
+     <view class='clear-ipt'  wx:if="{{showClear}}">
+      <image src='/pages/img/51133509394742205.png' bindtap='clearValue'></image>
+    </view>
+    <button bindtap='searchNewList' class='search-btn' plain wx:if="{{!isguide}}">搜索</button> 
+    <view catchtap='getfocus' class='fake-search-btn' wx:if="{{isguide}}"><text>搜索</text></view> 
+  </view>
+</view>

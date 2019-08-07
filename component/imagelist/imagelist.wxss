@@ -1,0 +1,132 @@
+/* component/imagelist/imagelist.wxss */
+.component-imagelist{
+width:100%;
+font-size: 0rpx;
+display: block;
+align-content:center;
+align-items: center;
+text-align: center;
+justify-content:space-between;
+}
+
+.banner{
+  width: 100%;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.banner image{
+  width: 100%;
+}
+
+.banner text{
+  padding-left: 30rpx;
+}
+
+.imagelistItemTitle{
+  color:#ffffff;
+  font-size: 35rpx;
+  line-height: 80rpx;
+  position: relative;
+  margin-top: -80rpx;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+
+.imageItemContainer1
+{
+  display: flex;
+  background: #ffffff;
+  flex-direction: column;
+  padding: 0;
+  font-size: 0;
+}
+
+.imagelistitemContainer
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rpx;
+  overflow: hidden;
+}
+
+.imagelistitemContainer text
+{
+  text-align: center;
+}
+
+.imagelist-scroll
+{
+  white-space: nowrap;
+  font-size: 0rpx;
+  width: 750rpx;
+  position: relative;
+}
+
+.component-scrollwrap
+{
+  display: flex; 
+  display: -webkit-box;
+  position: relative;
+  flex-direction: column;
+}
+
+.component-scrollwrap text
+{
+  text-align: center;
+}
+
+.component-imagelist-scroll-item2
+{
+  width:670rpx;
+}
+
+.component-imagelist-scroll-item1
+{
+  width:750rpx;
+  
+}
+
+.component-imagelist-scroll-item3
+{
+  width:305rpx;
+}
+
+.component-imagelist-scroll-item44
+{
+  width:232rpx;
+}
+
+ .component-imagelist-scroll-item45
+{
+  width:177rpx;
+}
+
+.component-imagelist-scroll-item46
+{
+  width:142rpx;
+}
+
+.component-imagelist-scroll-item47
+{
+  width:119rpx;
+}
+
+.component-imagelist-scroll-item48
+{
+  width:102rpx;
+}
+
+.component-imagelist-scroll-item49
+{
+  width:89rpx;
+}
+
+.component-imagelist-scroll-item410
+{
+  width:80rpx;
+}

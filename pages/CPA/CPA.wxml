@@ -1,0 +1,40 @@
+<!--pages/CPA/CPA.wxml-->
+<view class='logistics-container'>
+  <view class='express wrap'>
+    <view class='express-info'>
+      <view class='express-name'>
+        <text>可提现金额:</text>
+        <text class='cash'>￥{{cash}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="box">
+  <view class="tab">
+    <view class="item">
+      <view class="info">
+        <text>订单数量:</text>
+        </view><view>
+        <text class='number'>{{orderCount}}</text>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="info">
+        <text>预估收入:</text>
+        </view><view>
+        <text class='number'>{{income}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="intro">
+<view><text class="name">订单数量：</text><text>通过你的分享进入Holo并形成的订单数</text></view>
+<view><text class="name">预估收入：</text><text>指你预期获得的收益，计算公式：预估收入=当前成交的订单金额*佣金比例(5%)</text></view>
+<view><text class="sub">1.预估收入不等于实际收入。当订单发生退货、退款等情况时，将不会计算佣金</text></view>
+<view><text class="sub">2.实际收入等于结算周期内，所有确认收货的订单的佣金之和</text></view>
+<view><text class='name'>可提现金额：</text>指你当前可以提现的金额。</view>
+<view><text class="sub">1.每一个月为一个结算周期。每月的20号结算上一月的预估收入，本月的收入则在下月的20号结算。</text></view>
+</view>

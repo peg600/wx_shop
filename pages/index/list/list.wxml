@@ -1,0 +1,6 @@
+<!--pages/index/list/list.wxml-->
+<view>
+<view class="ls">
+<web-view src="{{pathUrl}}" bindmessage="handle_data"></web-view>
+</view>
+</view>

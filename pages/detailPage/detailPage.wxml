@@ -1,0 +1,228 @@
+
+<!-- 引入wxParse组件，解析商品详情 -->
+<import src="../wxParse/wxParse.wxml" />
+<wxs module="Utils" src="../../lib/Utils.wxs"/>
+
+<!-- 轮播图 -->
+<view class="swiper-container" id='top' wx:if="{{}}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" bindchange="swiperChange" class="swiper">
+
+    <swiper-item wx:if="{{goods_info.goods_video}}">
+      <image class='video-play' wx:if="{{!show_video}}" src='/pages/img/play_button.png' catchtap='showVideo'></image>
+      <image src="{{image_scroll_list[0].img_url}}" class="img"  mode="aspectFit"></image>
+      <!-- <view class="promotion_tip_container reverseGradientBackground" wx:if="{{(promotionStyle == 0 || (promotionStyle == 1 && hasScore)) ? 1 : 0}}">
+        <view class="promotion_tip">
+          <text>颜值{{hasScore?'已':'最高'}}抵￥{{Utils.toFix(goods_info.promotion_base * score,2)}}</text>
+        </view>
+      </view> -->
+
+      <video id='myVideo' wx:if="{{show_video}}" src="{{goods_info.goods_video}}"
+        autoplay=true 
+        bindended='hideVideo' 
+        binderror='videoError'
+      ></video>
+      <cover-view class='hide-video' wx:if="{{show_video}}" catchtap='hideVideo'>退出播放</cover-view>
+    </swiper-item>
+
+    <swiper-item wx:for="{{image_scroll_list}}" wx:for-item="item" wx:key="{{item.img_id}}" wx:for-index="index">
+      <image src="{{item.img_url}}" class="img" bindtap="swipClick" mode="aspectFit"></image>
+      <!-- <view class="promotion_tip_container reverseGradientBackground" wx:if="{{(promotionStyle == 0 || (promotionStyle == 1 && hasScore)) ? 1 : 0}}">
+        <view class="promotion_tip">
+          <text>颜值{{hasScore?'已':'最高'}}抵￥{{Utils.toFix(goods_info.promotion_base * score,2)}}</text>
+        </view>
+      </view> -->
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 商品信息 -->
+<view class='goods-info'>
+<view class='name'>{{goods_info.goods_name}}</view>
+  <view class='price'>
+    <!-- <view class='shop-price' wx:if="{{!group_action_info && priceStyle < 2}}">
+      <text class='main-price' wx:if="{{min_price == max_price ? 1 : 0}}">￥{{Utils.toFix(goods_info.shop_price  - (hasScore?goods_info.promotion_base * score:0),2)}}</text>
+      <text class='main-price' wx:if="{{min_price != max_price ? 1 : 0}}">￥{{Utils.toFix(min_price - (hasScore?goods_info.promotion_base * score:0),2)}}~￥{{Utils.toFix(max_price - (hasScore?goods_info.promotion_base * score:0),2)}}</text>
+      <text class='market-price'>{{goods_info.market_price}}</text>
+    </view>
+    <view class='shop-price' wx:if="{{group_action_info && priceStyle < 2}}">
+      <text>￥{{group_action_info.act_price}}</text>
+      <text class='market-price'>￥{{goods_info.market_price}}</text>
+    </view>
+    <view class="star_price" wx:if="{{priceStyle==2?1:0}}"><view>{{goods_info.star_price}}</view><image src="/pages/img/star_1.png" mode="widthFix"></image></view> -->
+
+    <goodprice goods_info="{{goods_info}}" price_type="{{priceStyle==2?2:1}}" 
+    show_style="2" price_class="main-price" market_price_class="market-price" />
+  </view>
+  
+  <!-- <view class='promise'>
+    <view class='promise-item'>
+      <image src='/pages/img/web_duihao.png'></image>
+      <text>全场包邮</text>
+    </view>
+    <view class='middle-item promise-item'>
+      <image src='/pages/img/web_duihao.png'></image>
+      <text>7天无理由退换</text>
+    </view>
+    <view class='last-item promise-item '>
+      <image src='/pages/img/web_duihao.png'></image>
+      <text>正品保证</text>
+    </view>
+  </view> -->
+</view>
+
+<!-- 拼团中的订单列表 -->
+<view class='group-list' wx:if='{{group_action_info && group_list.length>0}}'>
+  <text>
+    ———— 参加别人的拼单 ————
+  </text>
+  <view class='group-item-list'>
+    <view class='group-item' wx:for="{{group_list}}" wx:for-item="group" data-order_id="{{group.order_id}}" wx:if='{{group.need_number>0 && group.timer !== ""}}'>
+      <view class='group-left'>
+        <image src='{{group.avatar_url}}'></image>
+        <text>{{group.nick_name}}</text>
+      </view>
+      <view class='group-right'>
+        <view class='group-info'>
+          <view class='need-number'>还差{{group.need_number}}人拼成</view>
+          <view class='group-time-count'>剩余 {{group.timer}}</view>
+        </view>
+        <view class='group-join' catchtap='joinGroup' data-order_info='{{group}}'>
+          去拼单
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 详情部分 -->
+<view class='detail' id='detail'>
+  <view class="detail-intro-title">商品详情</view>
+  <view>{{goods_info.goods_brief}}</view>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+
+<!-- 底部推荐 -->
+<!-- <view class='bottom-hot-title'>看了又看</view>
+<view class='bottom-hot'>
+  <goodlist id="all_goods" goods="hot" keywords="Hot" order="new" page_number="10" limit_number="20" listStyle="1" imageStyle="0" imageRatio="1.5" itemGoodPrice="1" itemBuyStyle="1" itemCornerStyle="0" bindpullFinished="pullGoodFinished" />
+</view> -->
+
+<!-- 底部导航栏 -->
+<view class='tabbar-bottom'>
+  <view class='icons-wrapper border-top'>
+  <view class='icons' catchtap='toHome'>
+      <image src='/pages/img/home.png'></image>
+      <text>首页</text>
+    </view>
+    <!-- <button class='icons' open-type='contact' show-message-card="true" send-message-path="{{contact_path}}" send-message-title="{{goods_info.goods_name}}">
+      <image src='/pages/img/csd_icon.png'></image>
+      <text>客服</text>
+    </button>
+    <view class='icons' catchtap='toggleCollect'>
+      <image src='{{is_collected ? "/pages/img/collected_icon.png" : "/pages/img/collect_icon.png"}}'></image>
+      <text>收藏</text>
+    </view> -->
+    <view class='icons' catchtap='toShop'>
+      <image src='/pages/img/shop.png'></image>
+      <text>店铺</text>
+    </view>
+    <!-- <view class='icons' catchtap='toShoppingCart'>
+      <image src='/pages/img/cart_icon.png'></image>
+      <text>购物车</text>
+      <view>{{cart_num}}</view>
+    </view> -->
+  </view>
+  <!-- <view class='add-cart' wx:if="{{!group_action_info}}" catchtap='toggleShowAttr'>加入购物车</view> -->
+  <view class='add-cart' wx:if="{{group_action_info}}" catchtap='ShowAttrGroup'>我要开团</view>
+  <view class="setStar" wx:if="{{user_id==488 && priceStyle < 2}}" catchtap='setStarPrice'>幸运商品</view>
+  <form-button class='fixed_buy_now  {{priceStyle==2?"secondRowButton twoButton":"oneButton"}}' add_class="fixed_buy_now {{priceStyle < 2 ? 'gradientBackground oneButton':'secondRowButton twoButton border-left border-top'}}" catchtap='toPay' data-buystyle="0" >
+    <view slot="slot1" class='{{priceStyle==2?"blackword":""}} buy-now-word'>
+      <view wx:if="{{priceStyle==2}}" class="firstRow">￥{{Utils.toFix(current_stock.price - (hasScore?goods_info.promotion_base * score:0),2)}}</view>
+      <view  class="{{priceStyle==2?'secondRow':''}}">立即购买</view>
+    </view>
+  </form-button>
+  <form-button class='fixed_buy_now {{priceStyle==2?"twoButton":"oneButton"}}' add_class='fixed_buy_now gradientBackground  {{priceStyle==2?"twoButton":"oneButton"}}' catchtap='toggleShowAttr' data-buystyle="{{priceStyle}}" wx:if="{{priceStyle == 2}}">
+    <view slot="slot1" class='buy-now-word'>
+      <view class="firstRow">{{goods_info.star_price}}幸运星</view>
+      <view class="secondRow">直接兑换</view>
+    </view>
+  </form-button>
+  <view class='buy-now no-goods' wx:if="{{current_stock.product_number <= 0}}">无货</view>
+</view>
+
+<!-- 选择规格弹出框 -->
+<view class='mask' wx:if="{{show_attr}}" catchtap='toggleShowAttr'>
+  <view class='attr-wrapper' catchtap='prevent' animation="{{animationData3}}">
+    <image class='attr-close' src='/pages/img/51133509394742205.png' catchtap='toggleShowAttr'></image>
+    <view class='attr-goods-info'>
+      <image src='{{Utils.scaleThumb(current_attr[0].attr_thumb,250,250)}}' mode="aspectFit"></image>
+      <view class='goods-info-content'>
+        <view class='attr-shop-price' wx:if="{{!is_buy_group && buyStyle<2}}">￥{{Utils.toFix((is_new && current_stock.new_user_price?current_stock.new_user_price:current_stock.price) - (hasScore?goods_info.promotion_base * score:0),2)}}</view>
+        <view class='attr-shop-price' wx:if="{{is_buy_group&& buyStyle<2}}">￥{{group_action_info.act_price}}</view>
+         <view class="star_price" wx:if="{{buyStyle==2?1:0}}"><view>{{goods_info.star_price}}</view><image src="/pages/img/star_1.png" mode="widthFix"></image></view>
+        <view class='stock'>库存：{{current_stock.product_number}}</view>
+      </view>
+    </view>
+    <view class='attr-form'>
+      <view class='choose-number'>
+        <text>数量</text>
+        <view class='edit-cart'>
+          <view class='count {{cart_add==1?"disabled":""}}' catchtap='minus'>-</view>
+          <input type='number' min="1" max="999" step="1" bindinput='getCartAdd' value='{{cart_add}}'></input>
+          <view class='count {{cart_add>=current_stock.product_number -1?"disabled":""}}' catchtap='{{cart_add>=current_stoccurrent_stock.product_number -1?"":"add"}}'>+</view>
+        </view>
+      </view>
+      <view wx:for="{{goods_attr}}" wx:for-item="attr_type" wx:key="{{attr_type.name}}"   wx:index="{{index}}" wx:for-index="attr_type_index" class="attr_container">
+        <view class='attr-form-subtitle'>{{attr_type.name}}</view>
+        <view class='attr-content'>
+          <view class='attrs {{current_attr[attr_type_index].goods_attr_id == attr.goods_attr_id?"current-attr":""}}' wx:for="{{attr_type.values}}" wx:for-item="attr" wx:key="{{attr.goods_attr_id}}" data-attrid="{{attr.goods_attr_id}}" data-index="{{attr_type_index}}" data-attr="{{attr}}" bindtap='chooseAttr'>{{attr.label}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='attr-buttons'>
+      <!-- <view class='{{current_stock.product_number=="0"?"disabled":""}} attr-button has-goods gradientBackground' wx:if="{{!is_buy_group && !is_add_group && buyStyle < 2}}" catchtap='{{current_stock.product_number=="0"?"":"buyNow"}}'>{{current_stock.product_number=="0"?"售罄":"立即购买"}}</view>
+      <view class='{{current_stock.product_number=="0"?"disabled":""}} attr-button has-goods gradientBackground' wx:if="{{!is_buy_group && !is_add_group && buyStyle == 2}}" catchtap='{{current_stock.product_number=="0"?"":"buyNow"}}'>{{current_stock.product_number=="0"?"售罄":"立即兑换"}}</view> -->
+      <view class='{{current_stock.product_number=="0"?"disabled":""}} attr-button has-goods gradientBackground' wx:if="{{!is_buy_group && !is_add_group && buyStyle < 2}}" catchtap='toPay'>{{current_stock.product_number=="0"?"售罄":"立即购买"}}</view>
+
+      <view class='attr-button no-goods' wx:if="{{!is_buy_group && !is_add_group && (cart_add > current_stock.product_number)}}">库存不足</view>
+      <view class='attr-button' wx:if="{{is_buy_group}}" catchtap='buyGroup'>开团</view>
+      <view class='attr-button' wx:if="{{is_add_group}}" catchtap='buyGroup'>参团</view>
+    </view>
+  </view>
+</view>
+
+<!-- 轮播图点击后的预览图 -->
+<view class='preview-mask' wx:if="{{show_swiper_img}}" catchtap='toggleShowSwiperImage'>
+  <image src='{{image_scroll_list[swiperCurrent].img_url}}' mode='widthFix'></image>
+</view>
+
+<!-- 分享方式选择栏 -->
+<sharepanel id="sharepanel" bind:getShareImage="drawShareImage" share_img="{{share_img}}"></sharepanel>
+
+<!-- 分享图canvas -->
+<view class='canvas-wrapper'>
+  <canvas style="width: {{canvas_width + 'px'}}; height: {{canvas_height + 'px'}};" canvas-id="firstCanvas"></canvas>
+</view>
+
+<!-- 自拍跳转 -->
+<!-- <form-button add_class="fixButton firstButtonNormal" catchtap='goTest'>
+  <view slot="slot1" class='test-beauty'>
+    <image src="/pages/img/testBeauty.png"></image>
+  </view>
+</form-button>
+
+<view class="fixButton topFirstButton minFixButton" catchtap='toggleShowShare'>
+  <image src="/pages/img/share1.png"></image>
+</view> -->
+
+<!-- 其它正在浏览此商品的用户的弹窗 -->
+<cover-view class='socket' wx:if="{{show_socket}}">
+  <cover-image src="{{other_user.avatarUrl}}"></cover-image>
+  <cover-view>{{other_user.nickName}}  正在浏览此商品</cover-view>
+</cover-view>
+
+<!-- 试戴跳转 -->
+<view class='to-fitview' catchtap='toFitview'>
+  <image src='/pages/img/toFitviewBac.png'></image>
+  <view>试戴</view>
+</view>

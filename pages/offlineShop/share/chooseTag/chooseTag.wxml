@@ -1,0 +1,56 @@
+<!--pages/offlineShop/share/chooseTag/chooseTag.wxml-->
+
+<view class="searchContain">
+  <view class="section search">
+    <image src="/pages/img/search.png"></image>
+    <input type='text' class="search_input" placeholder="搜索"
+     confirm-type='搜索' bindinput='listenSearch' bindconfirm='search'
+     value="{{searchInput}}"/>
+     
+     <view class='clear-ipt'  wx:if="{{showClear}}">
+      <image src='/pages/img/51133509394742205.png' bindtap='clearValue'></image>
+    </view>
+    <button bindtap='search' class='search-btn' plain>搜索</button> 
+  </view>
+</view>
+
+<view class='tab-container'>
+  <view class='tab' data-mode="1" catchtap='search'>
+    <image src="/pages/img/addressc.png"></image>
+    <view>店铺</view>
+  </view>
+  <view class='tab' data-mode="2" catchtap='search'>
+    <image src="/pages/img/pending_pay.png"></image>
+    <view>品牌</view>
+  </view>
+</view>
+
+<view class='history-wrapper'>
+  <view class='title'>
+    <view>最近搜索</view>
+    <image src="/pages/img/del.png" catchtap='clearHistory'></image>
+  </view>
+
+  <view class='history-list'>
+    <view class='history' wx:for="{{history_search}}" wx:for-item="history" wx:key="{{history}}" data-tag_data="{{history}}" catchtap='chooseTag'>
+      <image src="{{history.icon}}" wx:if="{{history.icon}}"></image>
+      <view>{{history.name}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='banner'>推荐店铺</view>
+
+<view class='shop-list'>
+  <view class='shop' wx:for="{{shop_list}}" wx:for-item="shop" wx:key="{{shop.shop_id}}" data-tag_data="{{shop}}" catchtap='chooseTag'>
+    <image src="/pages/img/addressc.png"></image>
+    <view class='right'>
+      <view>{{shop.shop_name}}</view>
+      <view>{{shop.address}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+

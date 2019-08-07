@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "春节免费机票",
+  "navigationBarBackgroundColor":"#f53b22",
+  "navigationBarTitleFrontColor":"white",
+  "usingComponents": {
+    "tabbar": "../components/tabbar/tabbar",
+    "authorize": "../../component/authorize/authorize",
+    "dialog": "../../component/dialog/dialog"
+  }
+}

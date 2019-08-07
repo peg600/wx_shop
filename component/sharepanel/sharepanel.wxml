@@ -1,0 +1,28 @@
+<view class='mask' wx:if="{{visible}}" catchtouchmove="prevent" catchtap='toggleShowShare'>
+  <view class='share-wrapper' animation="{{animationData}}">
+    <view class='share-top'>
+      分享
+      <image src='/pages/img/close.png' catchtap='toggleShowShare'></image>
+    </view>
+    <view class='share-bottom'>
+      <button class='share-type' open-type='share'>
+        <image src='/pages/img/weixin.png'></image>
+        <text>{{shareWeiXin}}</text>
+      </button>
+      <view class='share-type' catchtap='toggleSharePage'>
+        <image src='/pages/img/friend.png'></image>
+        <text>{{shareQuan}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='share-page' wx:if="{{show_share_image}}" animation="{{savePicAnimation}}">
+    <view class='share-top'>
+      保存海报
+      <image src='/pages/img/close.png' catchtap='toggleSharePage'></image>
+    </view>
+    <image class='share-img' src='{{share_img}}' mode='widthFix'></image>
+    <button class='save-pic gradientBackground' catchtap='prepareSaveImage'>保存图片</button>
+    <text>{{shareTip}}</text>
+  </view>
+</view>

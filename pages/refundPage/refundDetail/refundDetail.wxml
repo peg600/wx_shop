@@ -1,0 +1,96 @@
+<view class='refund-container'>
+  <view class='tit-img'>
+    <image src="../../img/wait_tit.jpg"></image>
+  </view>
+  <view class='ph'>
+    <view class='ph-tit'>
+      <text>您已成功发起退款申请，请耐心等待商家处理。</text> </view>
+    <view class='ph-p'>· 卖家同意后，请按照给出的退货地址退货，并请记录退货运单号</view>
+    <view class='ph-p'>· 如商家拒绝，您可以修改申请后再次发起，商家会重新处理</view>
+    <!--<view class='ph-p'>· 如商家超时未处理，退货申请将达成，请按照系统给出的退货地址退货</view>-->
+    <view class='ph-btn'>
+      <text class='btn ch-btn' bindtap='cancelRefund'>撤销申请</text>
+    </view>
+  </view>
+  <view class='progress'>
+    <view class='pro-tit'>售后进度</view>
+    <view class='chart'>
+      <view class='c-img'>
+        <view class='qiu rgt'>
+          <view class='q-img'>
+            <image src='/pages/img/select_yuan.png'></image>
+          </view>
+          <view class='r-line select-bg'></view>
+        </view>
+        <view class='qiu'>
+          <view class='l-line select'></view>
+          <view class='q-img'>
+            <image src='/pages/img/d_yuan.png'></image>
+          </view>
+          <view class='r-line'></view>
+        </view>
+        <view class='qiu lft'>
+          <view class='l-line select'></view>
+          <view class='q-img'>
+            <image src='/pages/img/d_yuan.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='an'>
+        <view class='itm l1'><view class='commit select-cr'>提交申请</view><view class='ct'>{{goodsInfo.refund_time}}</view></view>
+        <view class='itm l2'><view class='commit '>后台审核</view><view class='ct'></view></view>
+        <view class='itm l1'><view class='commit'>处理完成</view><view class='ct'></view></view>
+       
+      </view>
+      <!-- <view class='commit f1'> <view class='ci'> <image src='/pages/img/d_yuan.png'></image> </view> <view class='an'>提交申请</view> <view class='ct'>{{goodsInfo.refund_time}}</view></view>
+      <view class='liner'> <view class='l-line select'></view><view class='r-line'></view>  </view>
+      <view class='backstage f1'><view class='ci'> <image src='/pages/img/d_yuan.png'></image> </view><view class='an'>后台审核</view> <view class='ct'>时间</view></view>
+      <view class='liner'> <view class='l-line'></view><view class='r-line'></view></view>
+      <view class='complete f1'><view class='ci'> <image src='/pages/img/d_yuan.png'></image> </view><view class='an'>处理完成</view> <view class='ct'>时间</view></view> -->
+    </view>
+  </view>
+  <view class='refund-info'>
+    <view class='re-tit'>退款信息</view>
+    <view class='goods-box'>
+      <view class='goods-img'>
+        <image src="{{baseUrl+'/'+goodsInfo.goods_thumb}}"></image>
+      </view>
+      <view class='goods-detail'>
+        <view class='goods-name'>{{goodsInfo.goods_name}}</view>
+        <view class='goods-deail'>
+          <!-- <view class='goods-sn'>{{goodsInfo.goods_sn?'商品货号：'+goodsInfo.goods_sn:''}}</view> -->
+          <view class='goods-spe'>{{goodsInfo.goods_attr?'商品规格：'+goodsInfo.goods_attr:''}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='re-item'>
+    <view>
+      <text>退款原因：</text>
+      <text>  {{goodsInfo.refund_reason}}</text> </view>
+    <view>
+      <text>退款金额：</text>
+      <text>  {{goodsInfo.goods_number*goodsInfo.shop_price}} </text> </view>
+    <view>
+      <text>申请件数：</text>
+      <text>  {{goodsInfo.goods_number}}</text> </view>
+    <view>
+      <text>申请时间：</text>
+      <text>  {{goodsInfo.refund_time}}</text> </view>
+    <view class='line'>
+      <text>退款编号：</text>
+      <text>  {{goodsInfo.refund_sn}}</text> </view>
+  </view>
+  <view class='contact-tel'>
+    <view class='contact'>
+      <image src='../../img/csd.png'></image>
+      <button plain open-type='contact'>联系卖家</button>
+      <!-- <text>联系卖家</text> -->
+    </view>
+    <!-- <view class='dial'> -->
+    <!-- <image src='../img/tel.png'></image>
+        <text>拨打电话</text> -->
+    <!-- </view> -->
+
+  </view>
+</view>

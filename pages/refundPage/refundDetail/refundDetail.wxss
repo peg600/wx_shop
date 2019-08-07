@@ -1,0 +1,217 @@
+page {
+  background: #f7f7f7;
+  height: 100%;
+}
+
+tit-img, .tit-img image {
+  width: 100%;
+  height: 140rpx;
+  display: block;
+}
+
+.ph {
+  padding: 25rpx 25rpx;
+  background: #fff;
+}
+
+.ph-tit {
+  font-size: 30rpx;
+  color: #353535;
+  padding-bottom: 25rpx;
+  margin-bottom: 25rpx;
+  border-bottom: 1px solid #888;
+}
+
+.ph-p {
+  font-size: 24rpx;
+  color: #888;
+  margin-bottom: 25rpx;
+}
+
+.ph-btn {
+  text-align: right;
+}
+
+.btn {
+  display: inline-block;
+  width: 140rpx;
+  height: 60rpx;
+  border: 1px solid #888;
+  color: #353535;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  margin-right: 14rpx;
+}
+
+.ph-btn .ch-btn {
+  color: #ff9d02;
+  border-color: #ff9d02;
+}
+.goods-box {
+  background: #f7f7f7;
+  display: flex;
+  height: 265rpx;
+}
+.goods-img {
+  width: 261rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goods-img image {
+  width: 215rpx;
+  height: 215rpx;
+}
+.goods-detail {
+  flex: 1;
+}
+.goods-name {
+  font-size: 26rpx;
+  color: #353535;
+  margin: 30rpx 0 10rpx 0;
+  line-height: 40rpx;
+}
+.goods-deail {
+  font-size: 22rpx;
+  color: #888;
+  margin-bottom: 10rpx;
+}
+.refund-info {
+  margin-top: 20rpx;
+}
+.re-tit {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #353535;
+  height: 83rpx;
+  line-height: 83rpx;
+  padding-left: 28rpx;
+  background: #fff;
+}
+.goods-box {
+  padding: 10rpx 28rpx 10rpx 10rpx;
+}
+.re-item {
+  padding: 0 28rpx;
+  background: #fff;
+}
+.re-item text {
+  font-size: 24rpx;
+  color: #888;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.line {
+  border-bottom: 1px solid #e6e6e6;
+}
+.contact-tel {
+  background: #fff;
+  height: 90rpx;
+  display: flex;
+  font-size: 26rpx;
+  color: #353535;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 50rpx;
+}
+.contact {
+  border-right: 1px solid #e6e6e6;
+}
+.contact, .dial {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45rpx;
+}
+.contact image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.contact-tel image {
+  vertical-align: middle;
+  margin-right: 26rpx;
+}
+.contact button {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: auto;
+  font-weight: normal;
+  font-size: 28rpx;
+}
+.progress {
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 28rpx 28rpx;
+}
+ .chart{
+  margin-top: 28rpx;
+}
+.pro-tit {
+  font-size: 26rpx;
+  color: rgb(53, 53, 53);
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+.l-line, .r-line {
+  width: 59rpx;
+  height: 2rpx;
+  background: rgb(212, 212, 212);
+}
+.qiu image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.qiu {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.c-img {
+  display: flex;
+}
+.an{
+  display: flex;
+}
+.commit{
+  font-size: 24rpx;
+  color: rgb(212, 212, 212);
+}
+.ct{
+  font-size: 20rpx;
+  color: rgb(136, 136, 136);
+  width: 130rpx;
+  margin: 0 auto;
+}
+.rgt{
+  justify-content: flex-end;
+}
+.q-img{
+   margin: 0 51rpx; 
+}
+.lft{
+  justify-content: flex-start;
+}
+.itm{
+  text-align: center;
+}
+.l1{
+  width: 195rpx;
+}
+.l2{
+  flex: 1;
+}
+.select-bg{
+  background:  rgb(1, 197, 5);
+}
+.select-cr{
+  color: rgb(1, 197, 5);
+}
+

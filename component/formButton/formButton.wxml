@@ -1,0 +1,71 @@
+<!--components/formButton/formButton.wxml-->
+<view class='{{add_class}}' id='wrapper' style="width:{{bounds.width}}px;height:{{bounds.height}}px;top:{{bounds.top}}px;left:{{bounds.left}}px;position:fixed">
+  <form bindsubmit="saveFormId" report-submit="true">
+    <button class='btn' formType="submit" hover-class='btn-hover'>
+      <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+        <form bindsubmit="saveFormId" report-submit="true">
+          <button class='btn' formType="submit" hover-class='btn-hover'>
+            <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+              <form bindsubmit="saveFormId" report-submit="true">
+                <button class='btn' formType="submit" hover-class='btn-hover'>
+                  <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+                    <form bindsubmit="saveFormId" report-submit="true">
+                      <button class='btn' formType="submit" hover-class='btn-hover'>
+                        <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+                          <form bindsubmit="saveFormId" report-submit="true">
+                            <button class='btn' formType="submit" hover-class='btn-hover'>
+                              <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+                                <form bindsubmit="saveFormId" report-submit="true">
+                                  <button class='btn' formType="submit" hover-class='btn-hover'>
+                                    <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+                                      <form bindsubmit="saveFormId" report-submit="true">
+                                        <button class='btn' formType="submit" hover-class='btn-hover'>
+                                          <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+                                            <form bindsubmit="saveFormId" report-submit="true">
+                                              <button class='btn' formType="submit" hover-class='btn-hover'>
+                                                <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+                                                  <form bindsubmit="saveFormId" report-submit="true">
+                                                    <button class='btn' formType="submit" hover-class='btn-hover'>
+                                                      <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px'>
+                                                        <form bindsubmit="saveFormId" report-submit="true">
+                                                          <button class='btn' formType="submit" hover-class='btn-hover'>
+                                                            <view class='aa' style='width: {{position ? position.width:0}}px; height: {{position ? position.height:0}}px; top: {{position ? position.top:0}}px; left: {{position ? position.left:0}}px; line-height: {{position ? position.height:0}}px'>
+                                                              <!-- 最多可插入5个slot节点，在父组件插入如下： -->
+                                                              <!-- <view slot="slot1">这里是插入到组件slot1中的内容</view> -->
+                                                              <text wx:if="{{button_word}}">{{button_word}}</text>
+                                                              <slot name='slot1'></slot>
+                                                              <slot name='slot2'></slot>
+                                                              <slot name='slot3'></slot>
+                                                              <slot name='slot4'></slot>
+                                                              <slot name='slot5'></slot>
+                                                            </view>
+                                                          </button>
+                                                        </form>
+                                                      </view>
+                                                    </button>
+                                                  </form>
+                                                </view>
+                                              </button>
+                                            </form>
+                                          </view>
+                                        </button>
+                                      </form>
+                                    </view>
+                                  </button>
+                                </form>
+                              </view>
+                            </button>
+                          </form>
+                        </view>
+                      </button>
+                    </form>
+                  </view>
+                </button>
+              </form>
+            </view>
+          </button>
+        </form>
+      </view>
+    </button>
+  </form>
+</view>

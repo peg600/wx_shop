@@ -1,0 +1,24 @@
+/* component/loadingpanel/loadingpanel.wxss */
+.loadingpanel-container
+{
+  width:100%;
+  text-align: center;
+  font-size: 30rpx;
+  color:#999;
+}
+
+.loading_tip
+{
+  margin-top: 200rpx;
+  margin-bottom: 100rpx;
+}
+
+.error_tip
+{
+  margin-top: 200rpx;
+  margin-bottom: 100rpx;
+  width: 100%;
+  height: 300rpx;
+  color:#444;
+}
+

@@ -1,0 +1,58 @@
+/* component/dialog/dialog.wxss */
+.component-dialog-container
+{
+  width: 100%;
+  height: 100%;
+}
+
+.component-dialog-container .mask
+{
+  position: absolute;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.7);
+  z-index: 10000;
+}
+
+.component-dialog-container .content-body
+{
+  position: absolute;
+  z-index: 10001;
+  display: relative;
+}
+
+.component-dialog-container .title-container
+{
+  font-size: 50rpx;
+  height: 110rpx;
+  padding-top: 25rpx;
+  font-weight: bold;
+  border-radius: 20rpx 20rpx 0 0;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient(to right, #fc3e24, #fe5935);
+  width: 100%;
+}
+
+.component-dialog-container .content-container
+{
+  font-size: 30rpx;
+  height: 500rpx;
+  text-align: left;
+  background: white;
+  overflow: scroll;
+  width: 100%;
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+.close
+{
+  position: absolute;
+  left: 349rpx;
+  width: 52rpx;
+  height: 52rpx;
+  z-index: 100001;
+}

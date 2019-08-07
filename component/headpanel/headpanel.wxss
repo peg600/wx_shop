@@ -1,0 +1,41 @@
+/* component/headpanel/headpanel.wxss */
+.component_headpanel
+{
+  padding:20rpx;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.component_headpanel_head0
+{
+  font-size: 50rpx;
+}
+
+.component_headpanel_head1
+{
+  font-size: 40rpx;
+}
+
+.component_headpanel_head2
+{
+  font-size: 30rpx;
+}
+
+.component_headpanel_subtitle0
+{
+  font-size: 35rpx;
+  color: #999999;
+}
+
+.component_headpanel_subtitle1
+{
+  font-size: 25rpx;
+  color: #999999;
+}
+
+.component_headpanel_subtitle2
+{
+  font-size: 20rpx;
+  color: #999999;
+}

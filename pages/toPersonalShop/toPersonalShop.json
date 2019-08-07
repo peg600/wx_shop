@@ -1,0 +1,11 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "人人店",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "container": "../../component/container/container",
+    "tabbar": "../../component/tabbar/tabbar"
+  }
+}

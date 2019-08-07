@@ -1,0 +1,28 @@
+<!--pages/personalShop/personalShare/personalShare.wxml-->
+<image class='bac' src='/pages/img/personal_share_bac.jpg'></image>
+
+<view class='btn-wrapper'>
+  <view class='btn'>
+    <button open-type='share' hover-class="none">
+      <image src='/pages/img/weixin.png'></image>
+    </button>  
+    <view>微信好友</view>
+  </view>
+  <view class='btn'>
+    <button hover-class="none" catchtap='saveImageToPhotosAlbum'>
+      <image src='/pages/img/personal_share_download.png'></image>
+    </button>  
+    <view>保存照片</view>
+  </view>
+  
+</view>
+
+<image class='share-shop' src='{{pic_url}}' wx:if='{{share_shop}}'></image>
+<view class='shop-canvas-wrapper'  wx:if='{{share_shop}}'>
+  <canvas style="width: {{canvas_width + 'px'}}; height: {{canvas_height + 'px'}};" canvas-id="firstCanvas"></canvas>
+</view>
+
+<image class='share-goods' src='{{pic_url}}' wx:if='{{!share_shop}}'></image>
+<view class='goods-canvas-wrapper'  wx:if='{{!share_shop}}'>
+  <canvas style="width: {{canvas_width + 'px'}}; height: {{canvas_height + 'px'}};" canvas-id="secondCanvas"></canvas>
+</view>

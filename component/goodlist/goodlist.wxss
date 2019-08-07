@@ -1,0 +1,382 @@
+/* component/goodlist/goodlist.wxss */
+
+.component_goodslist_container {
+  padding: 25rpx;
+  padding-top: 0rpx;
+  padding-bottom: 0;
+  padding-right: 0;
+  margin: 0;
+  margin-top: 1rpx;
+  margin-bottom: 1rpx;
+}
+
+.component-goodlist-layout2 .component_goodlist_item_ui:nth-child(3n + 1) {
+  width: 710rpx;
+}
+
+.component-goodlist-layout2 .component_goodlist_item_ui:nth-child(3n + 1) image {
+  width: 710rpx;
+  height: 710rpx;
+}
+
+.component-goodlist-layout2 .component_goodlist_item_ui:nth-child(3n + 2) {
+  width: 340rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.component-goodlist-layout2 .component_goodlist_item_ui:nth-child(3n + 2) image {
+  width: 340rpx;
+  height: 340rpx;
+}
+
+.component-goodlist-layout2 .component_goodlist_item_ui:nth-last-child(2) {
+  margin-bottom: 0;
+}
+
+.component-goodlist-layout2 .component_goodlist_item_ui:nth-child(3n + 3) {
+  width: 340rpx;
+  display: inline-block;
+}
+
+.component-goodlist-layout2 .component_goodlist_item_ui:nth-child(3n + 3) image {
+  width: 340rpx;
+  height: 340rpx;
+}
+
+.view_good0 {
+  width: 710rpx;
+}
+
+.view_good0 .image100 {
+  width: 710rpx;
+  height: 710rpx;
+}
+
+.view_good0 .image150 {
+  width: 710rpx;
+  height: 460rpx;
+}
+
+.view_good1 {
+  width: 340rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.view_good1:nth-child(2n+2) {
+  margin-right: 0;
+}
+
+.view_good1 .image1 {
+  width: 340rpx;
+  height: 340rpx;
+}
+
+.view_good3 {
+  width: 710rpx;
+}
+
+.view_good4 {
+  width: 220rpx;
+  margin-right: 15rpx;
+  display: inline-block;
+}
+
+.view_good4 image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.component-goodlist-itemContainer {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.component-goodlist-detail-itemContainer {
+  width: 710rpx;
+  height: 220rpx;
+  display: flex;
+  padding-bottom: 0;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.component-goodlist-detail-itemContainer image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.component-goodlist-detail-desc {
+  width: 470rpx;
+  height: 220rpx;
+  align-items: baseline;
+}
+
+.component-goodlist-detail-info-container {
+  width: 450rpx;
+}
+
+.component_goodlist_item_ui {
+  padding-bottom: 10rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-top: 0rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+/* .component_goodlist_item_ui:last-child
+{
+  margin-bottom: 0;
+} */
+
+.component_goodlist_item_border {
+  box-shadow: 0rpx 5rpx 30rpx 0 rgba(59, 67, 76, 0.1);
+  text-shadow: 0rpx 5rpx 30rpx 0 rgba(59, 67, 76, 0.1);
+}
+
+.view_contain {
+  position: relative;
+  overflow: hidden;
+  padding: 0rpx 15rpx;
+  padding-bottom: 0rpx;
+  justify-content: space-between;
+}
+
+.view_price {
+  position: relative;
+  overflow: hidden;
+  color: #f41010;
+  font-size: 24rpx;
+}
+
+.info_container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.view_buy {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 42rpx;
+  color: #f44;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 1px solid #f44;
+  border-radius: 50%;
+}
+
+.jd-buy {
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 48rpx;
+  color: #f44;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 30rpx;
+  vertical-align: middle;
+  border: 1px solid #f44;
+  border-radius: 10rpx;
+}
+
+.corner_back {
+  position: absolute;
+  background-color: #fff;
+  top: 0rpx;
+  left: 0;
+  width: 28px;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.corner_back0 {
+  display: none;
+}
+
+.corner_back1 {
+  top: 0rpx;
+}
+
+.corner-icon1::before {
+  top: -10rpx;
+}
+
+.corner_back2 {
+  top: 5rpx;
+  left: 5rpx;
+}
+
+.corner-icon2::before {
+  top: 5rpx;
+  content: "\F02A";
+}
+
+.corner_back3 {
+  top: 0rpx;
+}
+
+.corner-icon3::before {
+  top: 0rpx;
+  content: "\F035";
+}
+
+.corner_back4 {
+  top: 5rpx;
+  left: 5rpx;
+}
+
+.corner-icon4::before {
+  top: 5rpx;
+  content: "\F02B";
+}
+
+.view_buy_button::before {
+  display: inline-block;
+  margin-top: 8rpx;
+  padding: 0;
+  border: 0;
+  line-height: 40rpx;
+  vertical-align: baseline;
+  font: normal normal normal 14px/1 vant-icon-76f274;
+  font-size: 28rpx;
+  content: "\F042";
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.view_title {
+  text-align: left;
+  font-size: 28rpx;
+  margin-bottom: 8rpx;
+  /*white-space: nowrap;*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*横向滑动*/
+
+.component-goodlist-scroll {
+  white-space: nowrap;
+  width: 710rpx;
+  position: relative;
+}
+
+.component-goodlist-scrollwrap {
+  display: flex;
+  display: -webkit-box;
+  flex-direction: column;
+}
+
+.component-goodlist-scroll-itemContainer {
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  padding: 0;
+  width: 230rpx;
+  margin-right: 15rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.component-goodlist-scroll-itemContainer image {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.promotion_tip_container {
+  font-size: 24rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+  height: 50rpx;
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10rpx 25rpx 25rpx 0;
+  background: linear-gradient(to right, #ff7442, #ec3721);
+}
+
+.promotion_tip {
+  padding: 0rpx 0rpx;
+}
+
+.promotion_tip text {
+  padding: 5rpx 30rpx 5rpx 25rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+}
+
+.noPage {
+  position: relative;
+  width: 100%;
+}
+
+.noPage image {
+  position: relative;
+  width: 150rpx;
+  height: 50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loading-tip {
+  font-size: 26rpx;
+  color: #9d9d9d;
+  width: 100%;
+  text-align: center;
+}
+
+.star_price {
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.star_price image {
+  width: 40rpx;
+  margin-left: 10rpx;
+}
+
+.titleLogo {
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.jdOwner {
+  display: inline-block;
+  width: 70rpx;
+  transform: translateY(-2rpx);
+  border-radius: 10rpx;
+  background: #ca1622;
+  color: white;
+  font-size: 20rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  justify-content: center;
+  text-align: center;
+  margin-right: 10rpx;
+}

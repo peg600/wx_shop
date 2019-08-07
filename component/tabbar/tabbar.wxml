@@ -1,0 +1,15 @@
+<view class="{{add_class}}" wx:if='{{show == "true"}}'>
+  <view class="component-tabBar-item">
+    <view class="item-wrapper {{item.showType == 'big'? 'big':''}}" 
+    wx:if='{{index<5}}' wx:for="{{tabbar_data}}" wx:for-item="item" wx:key="tabBar" wx:index="index" data-index="{{index}}" bindtap="{{index==selected_index?'':'_select'}}" data-path="{{item.pagePath}}">
+      <form-button tabbar_num="{{tabbar_data.length}}">
+        <view slot="slot1">
+          <view class="component-icon">
+            <image src='{{index==selected_index?item.selectedIconPath:item.iconPath}}'                    mode="aspectFit" ></image>
+          </view>
+          <text >{{item.text}}</text>
+        </view>
+      </form-button>
+    </view>
+  </view>
+</view>

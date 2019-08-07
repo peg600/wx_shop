@@ -1,0 +1,148 @@
+<!--pages/lottery/luckfriend/luckfrient.wxml-->
+<authorize/>
+<view class='head'>
+  <view class="navi_region rule_region" catchtap='showrule'>
+    <image src="/pages/img/rule.png"></image>
+  </view>
+</view>
+
+<view class="pk_info_container" style="{{selected_index == 1 ? 'background-image:url(https://wao-files.oss-cn-beijing.aliyuncs.com/holo/second_tab.png);':''}}">
+  <view class="tabheader">
+    <view class="tabitem {{selected_index == 0 ? 'selectedtab':''}}" data-index='0' catchtap='switchtab'>
+      <text>颜值之星</text>
+    </view>
+    <view class="tabitem {{selected_index == 1 ? 'selectedtab':''}}" data-index='1' catchtap='switchtab'>
+      <text>我的评测</text>
+    </view>
+    <view class="tabitem" catchtap='goLuckMall'>
+      <text>幸运集市</text>
+    </view>
+    <view class="tabcontent" wx:if="{{selected_index == 0?1:0}}">
+    <view class="star_title margin-bottom">昨日颜值之星</view>
+      <view class="beauty_star_container">
+        <view class="beauty_item margin-bottom">
+          <view class="firstItem flexItem" wx:if="{{firstUser.score > 0}}">
+            <view class="user_image"><image src="{{firstUser.avatar_url}}" mode="widthFix"></image><view class="score_value">+{{firstUser.score}}</view></view>
+            <view class="user_name">{{firstUser.nick_name}}</view>
+          </view>
+        </view>
+         <view class="beauty_item">
+          <view class="secondItem flexItem" wx:if="{{secondUser.score > 0}}">
+            <view class="user_image"><image src="{{secondUser.avatar_url}}" mode="widthFix"></image>
+            <view class="score_value">+{{secondUser.score}}</view></view>
+            <view class="user_name">{{secondUser.nick_name}}</view>
+          </view>
+          <view class="thirdItem flexItem" wx:if="{{thirdUser.score > 0}}">
+            <view class="user_image"><image src="{{thirdUser.avatar_url}}" mode="widthFix"></image><view class="score_value">+{{thirdUser.score}}</view></view>
+            <view class="user_name">{{thirdUser.nick_name}}</view>
+          </view>
+        </view>
+      </view>
+            <indicator title="颜值之星" subTitle="颜值即正义，每日颜值榜前三，购物免单" />
+            <indicator title="颜值累计方法" subTitle="每邀请一个好友参与评测，自动累加好友的颜值得分。单日提升颜值得分排行前三的用户，获得一次免单奖励，榜单每天产生一期。奖励请到'我的评测'领取。" />
+    </view>
+    <view class="tabcontent" wx:if="{{selected_index == 1?1:0}}">
+      <view class="luck_score_container">
+        <view class="score_item">
+          <view class="score">{{luck_score}}</view>
+          <view class="normal">幸运值</view>
+        </view>
+        <view class="score_item">
+          <view class="score">{{beauty_score}}</view>
+          <view class="normal">颜值分</view>
+        </view>
+      </view>
+      <view class="luck_score_container">
+        <view class="score_item">
+          <view class="score">{{star_number}}</view>
+          <view class="normal">
+            <image src="/pages/img/star_1.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="score_item">
+          <view class="score">{{star2019_number}}</view>
+          <view class="normal">
+            <image src="/pages/img/star_2019.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+      <view class="score_tip">
+        <image src="/pages/img/star_1.png" mode="widthFix" class="star_img" wx:if="{{(new_star_number_from_score + new_star_number + new_star2019_number+new_star_number_from_beauty)== 0}}"></image>可以在“幸运集市”免费领商品，赶紧去领吧。
+      </view>
+      <view class="newInfo" wx:if="{{(new_star_number_from_score + new_star_number + new_star2019_number+new_star_number_from_beauty) > 0}}">
+        <view class="info_container" wx:if="{{new_star2019_number > 0}}" catchtap="addStars" data-index="2">
+          <view class="new_score_container">
+            <view class="new_score">
+              <view>+{{new_star2019_number}}</view>
+              <image src="/pages/img/star_2019.png" mode='widthFix'></image>
+            </view>
+            <view class="desc">"20.19"好友</view>
+          </view>
+        </view>
+        <view class="info_container" wx:if="{{new_star_number > 0}}" catchtap="addStars" data-index="1">
+          <view class="new_score_container">
+            <view class="new_score">
+              <view>+{{new_star_number}}</view>
+              <image src="/pages/img/star_1.png" mode='widthFix'></image>
+            </view>
+            <view class="desc">"20.19"好友</view>
+          </view>
+        </view>
+        <view class="info_container" wx:if="{{new_star_number_from_score > 0}}" catchtap="addStars" data-index="3">
+          <view class="new_score_container">
+            <view class="new_score">
+              <view>+{{new_star_number_from_score}}</view>
+              <image src="/pages/img/star_1.png" mode='widthFix'></image>
+            </view>
+            <view class="desc">幸运值累加</view>
+          </view>
+        </view>
+
+        <view class="info_container" wx:if="{{new_star_number_from_beauty > 0}}" catchtap="addStars" data-index="4">
+          <view class="new_score_container">
+            <view class="new_score">
+              <view>+{{new_star_number_from_beauty}}</view>
+              <image src="/pages/img/star_1.png" mode='widthFix'></image>
+            </view>
+            <view class="desc">颜值排行</view>
+          </view>
+        </view>
+      </view>
+      <view class="newinfo_tip" wx:if="{{(new_star_number_from_score + new_star_number + new_star2019_number+new_star_number_from_beauty) > 0}}">点击领取新增幸运星</view>
+      <view class="splitter" />
+      <view class="summary" wx:if="{{(new_star_number_from_score + new_star_number + new_star2019_number+new_star_number_from_beauty) == 0}}">
+        <view class="summary_item">
+          你共发起
+          <text>{{action_num}}</text>次测试，有
+          <text>{{friend_num}}</text>名好友参与了测试。 平均相似程度为
+          <text>{{match}}%</text>，好友平均颜值
+          <text>{{beauty}}</text>，平均年龄
+          <text>{{age}}</text>。
+        </view>
+      </view>
+
+      <view class="buttons" wx:if="{{(new_star_number_from_score + new_star_number + new_star2019_number+new_star_number_from_beauty) == 0}}">
+        <view class="button" catchtap='goList'>查看所有评测</view>
+      </view>
+      <!-- <view class="navi_tip">
+        <view>拍照并分享到更多的社交媒体，邀请更多好友参与评测，有更多机会获取春节机票。</view>
+      </view> -->
+      <!-- <image src="/pages/img/down_arrow.png" class="down_arrow"></image> -->
+      <view class="error_container" wx:if="{{hasError}}" catchtap='refresh'>
+        <image src="/pages/img/error_retry.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='newPK' bindtap='newFinding'>
+    <text>发起新的相似度评测</text>
+  </view>
+</view>
+
+<dialog visible="{{show_rule}}" width="700" height="800" title="规则" autoHide="{{autoHide}}" contentPadding="15" content="" showCloseButton="true">
+  <rule scrollHeight="760" />
+</dialog>
+
+<view class="homeButton fixButton" catchtap='backhome'>
+  <image src="/pages/img/back_home_1.png"></image>
+</view>

@@ -1,0 +1,158 @@
+/* pages/goods-evaluate/goods-evaluate.wxss */
+page{
+  height: 100%;
+  background: #fff;
+  font-size: 26rpx;
+  position: relative
+}
+.evl_goods image{
+  width: 188rpx; 
+  height: 188rpx;
+  
+}
+.flex{
+  justify-content: flex-start
+}
+.star_goods{
+ font-size: 30rpx;
+  color: rgb(53, 53, 53);
+   margin-left: 40rpx;
+}
+.star_goods .star_compare{
+  text-align: left;
+  margin-bottom: 15rpx;
+ 
+}
+.star_more image{
+  width: 40rpx; 
+  height: 40rpx;
+  margin-right: 20rpx;
+
+}
+.section{
+  background: #f7f7f7;
+  position: relative;
+
+}
+text{font-size: 28rpx;}
+.evaluate_photo{
+  width: 150rpx;
+  height: 150rpx;
+  border: 1px dashed #bbbbbb;
+  position: absolute;
+  bottom: 20rpx;
+  color: #bbbbbb;
+  left: 25rpx;
+  text-align: center;
+  font-size: 22rpx;
+  z-index: 9999
+  
+  }
+.evaluate_photo image{
+  width: 35rpx;
+  height: 35rpx;
+  text-align: center;
+  display: block;
+  margin: 0rpx auto;
+  margin-top: 26rpx;
+  margin-bottom: 12rpx
+}
+textarea{
+  padding: 25rpx;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  height: 250rpx;
+  padding-top: 30rpx;
+  width: 700rpx;
+
+}
+.shop_buy text{
+   margin-left: 20rpx;
+}
+.shop_server{
+  margin-top: 40rpx;
+  margin-left: 55rpx;
+}
+.evl_shop{
+  margin-top: 50rpx;
+}
+.shop_bottom{
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 25rpx;
+}
+.evl_shop .bit_star{
+  margin-left: 65rpx;
+
+}
+.pop_image{
+  position: absolute;
+  bottom: -53rpx;
+  left: 200rpx;
+  
+}
+.evl_shop .bit_star image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.fix_btn button{
+  /* width: 100%;
+  background-color: #fec300;
+  color: #fff;
+  border-radius: 30rpx;
+  border: none;
+  outline: none */
+ 
+}
+.button-hover {
+  background-color: red;
+}
+.bit_star image{
+   margin-right:20rpx; 
+}
+.shop_buy image{
+    width: 35rpx; 
+    height: 35rpx;
+}
+.fix_btn{
+
+  width: 93%;
+  position: fixed;
+  bottom: 25rpx;
+  left: 0;
+  right: 0;
+  padding: 0 25rpx;
+  height: 90rpx;
+}
+.fix_btn image{
+  width: 100%;
+   height: 90rpx;
+}
+.fix_btn button{
+   position: absolute;
+   color: #fff;
+   text-align: center;
+   bottom: 0;
+   width: 93%;
+   height: 90rpx;
+   line-height: 90rpx;
+   border: none;
+   outline: none
+}
+.checkActive{
+  width: 35rpx;
+  height: 35rpx;
+  padding: 0;
+  margin:0;
+  line-height: 35rpx;
+  background: transparent;
+  border: 0;
+}
+.checkActive image{
+  width: 100%;
+  height: 100%;
+}
+button[plain]{
+  border: 0;
+}

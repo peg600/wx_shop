@@ -1,0 +1,35 @@
+<!--pages/offlineShop/couponPage/couponPage.wxml-->
+
+<view class='shop'>
+  <view class='shop-left' wx:if="{{shop_info.shop_logo}}">
+    <image src="{{shop_info.shop_logo}}" mode="aspectFit"></image>
+  </view>
+  <view class='shop-mid'>
+    <view class='shop-name'>{{shop_info.shop_name}}</view>
+  </view>
+</view>
+
+<view class='title' wx:if="{{shop_info.coupons.length>0}}">本店有以下优惠券可供领取：</view>
+<view class='title' wx:if="{{shop_info.coupons.length==0}}">无可领取的优惠券</view>
+
+<view class='coupons-wrapper' wx:if="{{shop_info.coupons}}">
+  <view class='coupon-list'>
+    <view class='coupon' wx:if="{{!coupon.full}}" wx:for="{{shop_info.coupons}}" wx:for-item="coupon" wx:key="{{coupon.coupon_id}}">
+      <view class='coupon-left'>
+        <view>{{coupon.coupon_name}}</view>
+        <view wx:if="{{coupon.coupon_type == 1}}">无条件抵扣 {{coupon.discount}} 元</view>
+        <view wx:if="{{coupon.coupon_type == 2}}">消费满 {{coupon.quota}} 元减 {{coupon.discount}} 元</view>
+        <view wx:if="{{coupon.coupon_type == 3}}">无条件打 {{coupon.percent * 10}} 折</view>
+        <view wx:if="{{coupon.coupon_type == 4}}">消费满 {{coupon.quota}} 元打 {{coupon.percent * 10}} 折</view>
+        <view>{{coupon.start_time}} ~ {{coupon.end_time}}</view>
+        <view>限领 {{coupon.max_claim_number}} 张     已领 {{coupon.number?coupon.number:0}} 张</view>
+      </view>
+      <view class='coupon-right' wx:if="{{!coupon.used}}" data-coupon_id="{{coupon.coupon_id}}" data-max_claim_number="{{coupon.max_claim_number}}" data-index="{{index}}" catchtap='getAllCoupons'>领取</view>
+      <view class='coupon-right coupon-used' wx:if="{{coupon.used}}">已领取</view>
+    </view>
+  </view>
+</view>
+
+<view class='back' wx:if="{{shop_info.coupons}}" catchtap='getAllCoupons'>一键领取</view>
+
+<authorize  />

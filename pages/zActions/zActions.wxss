@@ -1,0 +1,27 @@
+
+.act-container {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 168rpx 0;
+  text-align: center;
+}
+
+.act-container image{
+  width: 750rpx;
+  height: 3150rpx;
+}
+
+.goto-fitview {
+  display: inline-block;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: 1;
+}
+
+.goto-fitview image {
+  width: 250rpx;
+  height: 98rpx;
+}

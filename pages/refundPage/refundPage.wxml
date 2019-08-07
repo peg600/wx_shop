@@ -1,0 +1,34 @@
+<view class='refund-container' hidden="{{isShow}}">
+  <view class='goods-box'>
+    <view class='goods-img'>
+      <image src="{{baseUrl+'/'+goodsInfo.goods_thumb}}"></image>
+    </view>
+    <view class='goods-detail'>
+      <view class='goods-name'>{{goodsInfo.goods_name}}</view>
+      <view class='goods-deail'>
+        <!-- <view class='goods-sn'>{{goodsInfo.goods_sn?'商品货号：'+goodsInfo.goods_sn:''}}</view> -->
+        <view class='goods-spe'>{{goodsInfo.goods_attr?'规格：'+goodsInfo.goods_attr:''}}</view>
+      </view>
+      <!-- <view class='price-num'>
+            <text class='rmb'>￥{{item.shop_price}}</text>
+            <text class='num'>X{{item.number}}</text>
+          </view> -->
+
+    </view>
+  </view>
+  <view class='reason'>
+   
+     <view class='hg'>
+      <view class='re-txt'><text class='onli'>退款原因</text><text> {{selectContent}}</text> </view> 
+      <view class='re-cho'> <picker range="{{reasonArr}}" bindchange="selectReason">请选择<image src='../img/next_img.png' class='next-img'></image></picker> </view>
+    </view>
+    <view class='hg'> <view class='d-left'> 退款金额 </view>  <view><text class='red-txt'>￥{{goodsInfo.goods_number*goodsInfo.shop_price}}</text> </view>  </view>
+    <view class='hg detail'> <view class='d-left'> 退款说明 </view> <view class='d-right'> <textarea auto-height placeholder='选填' Number='140'  bindinput='textInput' show-confirm-bar="{{false}}"></textarea> </view></view>
+  </view>
+  <!-- <view class='up-photo'>
+    <view class='up-txt'>上传凭证</view>
+    <view>  </view>
+  </view> -->
+  
+</view>
+<view class='confirm' hidden="{{isShow}}"> <button plain bindtap='submission'>提交</button> </view>

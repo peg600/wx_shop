@@ -1,0 +1,106 @@
+<!--pages/payCenter/payCenter.wxml-->
+<view class="container-shop">
+  <form>
+    <view class="address-box container-order" style='padding:0'>
+      <view class="add-address" hidden="{{!curAddressData}}">
+        <view class="title" bindtap="addAddress"> <image src='../img/add_address.png'></image> 新增收货地址</view>
+       
+      </view>
+      <image src='../img/color_line.png' class='color-line'></image>
+      <view class="show-address" hidden="{{curAddressData}}" bindtap="selectAddress">
+          <view class='address-icon'> <image src='../img/158284779956461513.png'></image> </view>
+          <view class='r-detail'> 
+           <view class="name-tel">{{addressInfo.consignee}}         {{addressInfo.mobile}}</view>
+            <view class="addr-text">{{addressInfo.province_name}}{{addressInfo.city_name}}{{addressInfo.district_name=='请选择'?'':addressInfo.district_name}}{{addressInfo.address}}</view>
+          </view>
+           
+        </view>
+    </view>
+    <view class="goods-list" >
+<view class="container-order">
+        <view class="goods_shop_name fl">
+          <image src="../img/shopIcon.png"></image> 
+        </view>
+        <view class="list-title fl">{{shop}}</view>
+      </view>
+      </view>
+    <view wx:for-items="{{cartlist}}">
+    <view class="goods-list" >
+      <view class="a-goods container-order">
+        <view class="img-box">
+          <image src="{{baseUrl+'/'+item.goods_thumb}}" class="img" />
+        </view>
+        <view class="text-box">
+          <view class="arow arow01">
+            <view class="goods-name">{{item.goods_name}}</view>
+            <!-- <view class="goods-huo" style='margin-top:20rpx;'>{{item.goods_sn?'货号 : '+item.goods_sn:''}}</view> -->
+            <view class="goods-huo">{{item.goods_attr?'商品规格 : '+item.goods_attr:''}}</view>
+            <view><text class="goods-price"> ¥{{item.act_id>0?item.bargain_price:item.shop_price}} </text> <text class="goods-number">x {{item.number}}</text>
+             <text class='goods-g'>{{item.act_id>0?'原价'+item.shop_price:''}} </text>
+            </view>
+          </view>
+          <view class="arow" hidden>
+            <view class="goods-label">{{item.label}}</view>
+            <view class="goods-num">x {{item.number}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
+<view class="peisong-way">
+     <view class="row-box" wx:if="{{promotion > 0 ? true:false}}">
+         <view class="row-label">首购优惠</view>
+        <view class="right-text-num">
+          ¥{{promotionValue}}
+        </view>
+      </view>
+    </view>
+
+    <view class="goods-info" wx:if="{{(isNeedLogistics > 0 && yunPrice > 0) || (!hasNoCoupons)}}" hadden>
+      <view class="row-boxs" wx:if="{{!hasNoCoupons}}">
+        <view class="row-label"><icon type="success" color='red'></icon></view>
+         <view class="row-label wechat_icon"><image src='../img/wechat.png'></image></view>
+        <view class="right-text pay_title">微信支付</view>
+      </view>
+    </view>
+
+    <view class='rule-box' bindtap='toggleRule' wx:if="{{isActions}}">
+ <view class='gd-b'><view class='dt'>钟情购：邀请好友参谋撮合，24小时内满10人发货，不满退款</view> </view>
+    </view>
+    <view class="jiesuan-box">
+      <view class="left-price">
+        <view class="total"> <text class='pay-text'>实付款：</text><text class='rmb-num'> ¥ {{act_type ? act_price - promotionValue : totalPrice - promotionValue}}</text> </view>
+      </view>
+      
+      <button open-type='getUserInfo' bindgetuserinfo='toActions' 
+      class="{{!buyNow ? 'to-pay-btn view_show':'to-pay-btn view_hide'}}">
+      立即支付</button>
+      <button class="{{buyNow ? 'to-pay-btn view_show':'to-pay-btn view_hide'}}" bindtap='createOrder' disabled='{{readToPay == 1 ? false:true}}' >立即支付</button>
+    </view>
+  </form>
+</view>
+<!-- <view class='rule-mask' hidden="{{!isClickActions}}" bindtap="closeMask"> 
+    <view class='rule-container'>
+      <view class='close' bindtap="closeMask">[X]</view>
+      <view class='actions-rule'>活动规则</view>
+      <view class='ont'>
+        <view class='tit'>开团</view>
+        <view class='content'>邀请好友助力钟情购，在24小时内召集5位好友点赞，即可享受优惠价格。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'>流程</view>
+        <view class='content'>
+          参与活动时需要您先按照钟情价价格支付，完成后并召集一定数量好友撮合。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'></view>
+        <view class='content'>必须在规定时间前内召集好友撮合成功，没有达到则视为撮合失败，钱款会在通知后原路退回，您将无法享受钟情购价格。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'>成功</view>
+        <view class='content'>
+          活动成功后您将会收到提示通知，我们将尽快为您发货。</view>
+      </view>
+      <button bindtap='createOrder'>同意参加此活动</button>
+    </view>
+  </view> -->

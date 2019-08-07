@@ -1,0 +1,13 @@
+.back_home_region {
+  position: absolute;
+  top: 20rpx;
+  width: 141rpx;
+  height: 100rpx;
+}
+
+.back_home_region image {
+  position: absolute;
+  left: 0rpx;
+  width: 141rpx;
+  height: 68rpx;
+}

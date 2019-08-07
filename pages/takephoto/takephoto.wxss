@@ -1,0 +1,64 @@
+/**index.wxss**/
+page, view, scroll-view, swiper, movable-area, cover-view, text, icon, rich-text,
+progress, button, checkbox-group, checkbox, form, input, label, picker,
+picker-view, radio-group, slider, switch, textarea, navigator, audio, image,
+video, live-player, live-pusher, open-data, web-view {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.background-pic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.choose {
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.choose image {
+  height: 98rpx;
+  width: 444rpx;
+}
+
+.pic-border {
+  position: absolute;
+  top: calc(13% + 58rpx);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pic-border image {
+  width: 444rpx;
+  height: 459rpx;
+}
+
+.takephoto {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.takephoto image {
+  width: 444rpx;
+  height: 98rpx;
+}

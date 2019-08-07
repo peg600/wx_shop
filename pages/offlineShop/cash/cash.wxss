@@ -1,0 +1,325 @@
+/* pages/offlineShop/cash/cash.wxss */
+
+page{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.tab-container{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 0 50rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab{
+  position: relative;
+  flex: 1 1;
+  height: 80rpx;
+  color: #aaa;
+}
+
+.mode{
+  position: relative;
+  width: 100%;
+  height: 75rpx;
+  line-height: 75rpx;
+  text-align: center;
+  font-size: 34rpx;
+}
+
+.border{
+  position: relative;
+  width: 150rpx;
+  height: 5rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.selected view{
+  color: #333;
+}
+.selected .border{
+  background-color: red;
+}
+
+.wrapper{
+  position: relative;
+  width: 100%;
+  margin: 30rpx 0;
+  padding: 0 30rpx;
+}
+
+.title{
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  margin-top: 1rpx;
+  padding: 0 30rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #333;
+  background-color: #fff;
+}
+.title view{
+  display: inline-block;
+  height: 100%;
+  color: red;
+}
+
+.cash-wrapper{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  background-color: #fff;
+}
+
+.cash-wrapper view{
+  position: relative;
+  flex: 0 0 170rpx;
+  text-align: left;
+  font-size: 32rpx;
+}
+
+.cash-wrapper input{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  font-size: 32rpx;
+}
+
+.draw-cash{
+  position: relative;
+  width: 650rpx;
+  height: 80rpx;
+  margin: 30rpx 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+  background-color: red;
+}
+
+.cash-list{
+  position: relative;
+  width: 100%;
+  margin: 50rpx 0;
+  border-top: 1rpx solid #eee;
+}
+
+.no-border{
+  margin: 0;
+  border: none;
+}
+
+.cash{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 30rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.left{
+  flex: 0 0 130rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+
+.mid{
+  position: relative;
+  flex: 1 1;
+  margin-left: 50rpx;
+  overflow: hidden;
+  text-align: left;
+}
+.mid view{
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32rpx;
+}
+.mid view:last-child{
+  font-size: 26rpx;
+  color: #aaa;
+}
+
+.right{
+  display: inline-flex;
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 20px;
+  font-size: 36rpx;
+}
+.right view{
+  display: inline-block;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.red{
+  color: red;
+}
+
+.green{
+  color: rgb(20, 220, 20);
+}
+
+.mask{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 50rpx 30rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.detail-wrapper{
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+  border-radius: 15rpx;
+  overflow: scroll;
+  background-color: #fff;
+  padding: 30rpx 40rpx;
+}
+
+.amount{
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 40rpx;
+}
+
+.gray{
+  position: relative;
+  width: 100%;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.detail-content{
+  margin-top: 100rpx;
+}
+
+.detail{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  color: #333;
+}
+.detail view{
+  flex: 0 0 150rpx;
+  height: 100%;
+  color: #aaa;
+}
+.detail view:last-child{
+  flex: 1 1;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+}
+
+.question{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #ccc;
+  line-height: 100rpx;
+  font-size: 34rpx;
+}
+.question view{
+  flex: 1 1;
+}
+.question image{
+  flex: 0 0 20rpx;
+  height: 36rpx;
+  margin-left: 30rpx;
+}
+
+.record-mid{
+  position: relative;
+  flex: 1 1;
+  margin-left: 50rpx;
+  overflow: hidden; 
+}
+
+.record-fan{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-align: left;
+}
+.record-fan image{
+  position: relative;
+  flex: 0 0 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.record-fan view{
+  flex: 1 1;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.record-time{
+  position: relative;
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: left;
+  font-size: 26rpx;
+  color: #aaa;
+}
+
+
+

@@ -1,0 +1,4 @@
+<!--pages/fittingList/fittingList.wxml-->
+
+<view class='title'>你已选择这些商品</view>
+<goodlist id="goodlist" wx:if="{{goods_list}}" goods="{{goods_list}}" listStyle="3" itemGoodPrice="1" itemBuyStyle="4"/>

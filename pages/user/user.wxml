@@ -1,0 +1,12 @@
+<!--pages/user/user.wxml-->
+<text>pages/user/user.wxml</text>
+<button open-type='getUserInfo' bindgetuserinfo='onGoUserInfo'>获取用户授权按钮</button> 
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userGender" lang="zh_CN"></open-data> -->
+  <button send-message-title="分享标题" send-message-img="分享的单个图片链接" show-message-card="true" send-message-path="../New/index" class='details_button' open-type='contact' plain>客服
+  </button>
+  <button open-type='share'>分享</button>
+  <button open-type='openSetting'>打开设置授权页</button>
+  <button bindtap='sendMsg'>发起消息通知</button>
+  
+

@@ -1,0 +1,118 @@
+<wxs module="Utils" src="../../../../lib/Utils.wxs">
+</wxs>
+<authorize bind:authorized="onAuthorized" />
+<airlineChecker id="airlineChecker" autoChecked="{{autoChecked}}" bind:noAirSetting="noAirSetting" bind:hasAirSetting="hasAirSetting" />
+<view class='head'>
+  <view class="navi_region rule_region" catchtap='showrule'>
+    <image src="/pages/img/rule.png"></image>
+  </view>
+</view>
+
+<view class="preview_container" style="{{child_action_id > 0 ? 'padding:0':''}}">
+  <view class="image-container" wx:if="{{child_action_id==0?1:0}}">
+    <image src="{{imgSource}}" mode="widthFix" class="mainImage"></image>
+    <view class="face_area" style="left:{{face_rectangle.left * img_scale}}rpx;top:{{face_rectangle.top * img_scale}}rpx;width:{{face_rectangle.width * img_scale }}rpx;height:{{face_rectangle.height * img_scale}}rpx;">
+    </view>
+    <image src="/pages/img/line_join.png" width="modeFix" class="face_indicator" style="left:{{face_rectangle.left * img_scale - 2}}rpx;top:{{face_rectangle.top * img_scale - 2}}rpx;"></image>
+    <image src="/pages/img/line_join_1.png" width="modeFix" class="face_indicator" style="left:{{face_rectangle.left * img_scale + face_rectangle.width * img_scale - 40}}rpx;top:{{face_rectangle.top * img_scale - 2}}rpx;"></image>
+    <image src="/pages/img/line_join_2.png" width="modeFix" class="face_indicator" style="left:{{face_rectangle.left * img_scale + face_rectangle.width * img_scale - 40}}rpx;top:{{face_rectangle.top * img_scale + face_rectangle.height * img_scale - 40}}rpx;"></image>
+    <image src="/pages/img/line_join_3.png" width="modeFix" class="face_indicator" style="left:{{face_rectangle.left * img_scale - 2}}rpx;top:{{face_rectangle.top * img_scale + face_rectangle.height * img_scale -40}}rpx;"></image>
+    <view class="face_info" style="left:{{face_rectangle.left * img_scale + 5}}rpx;top:{{face_rectangle.top * img_scale - 10 * 4.0/3.0 - 20}}rpx">Beauty:{{Utils.toFix(beauty)}} Age:{{age}} {{gender}}</view>
+    <!--<view class="face_info02._1.png" mode="aspectFit" class="fake-head-image" style="left:{{face_rectangle.left * img_scale + face_rectangle.width * img_scale - 40}}rpx;top:{{face_rectangle.top * img_scale - 38}}rpx;border:none;"></image> -->
+  </view>
+  <view class="match-image-container" wx:if="{{child_action_id>0?1:0}}">
+    <view class="inner">
+      <view class="flexItem">
+        <view class="user_image">
+          <image src="{{currentAction.avatar_url}}" class="head_image" mode="widthFix"></image>
+        </view>
+        <view class="user_name">
+          <text class="user_name">{{currentAction.nick_name}}</text>
+        </view>
+      </view>
+      <view class="flexItem largeItem">
+        <view class="similarity">相似度{{Utils.toFix(similarity) + "%"}}</view>
+        <view class="similarity"></view>
+      </view>
+      <view class="flexItem">
+        <view class="user_image">
+          <image src="{{childAction.avatar_url}}" class="head_image" mode="widthFix"></image>
+        </view>
+        <view class="user_name">
+          <text class="user_name">{{childAction.nick_name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="inner">
+      <view class="flexItem">
+        <image class="firstImage" src="{{imgSource}}" mode="widthFix"></image>
+      </view>
+      <view class="flexItem">
+        <image class="secondImage" src="{{matchImgSource}}" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="inner">
+      <view class="flexItem">
+        <view class="info">Beauty:{{Utils.toFix(beauty)}} Age:{{age}} {{gender}}</view>
+      </view>
+      <view class="flexItem" wx:if="{{similarity >= 85}}">
+        <view class="info">Beauty:{{Utils.toFix(beauty)}} Age:{{age}} {{gender}}</view>
+      </view>
+      <view class="flexItem" wx:if="{{similarity < 85}}">
+        <view class="info">Beauty:{{Utils.toFix(matchBeauty)}} Age:{{matchAge}} {{matchGender}}</view>
+      </view>
+    </view>
+    <view class="inner">
+      <view class="flexItem">
+        <view class="similarity">{{resultText}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="action-buttons" wx:if="{{child_action_id==0?1:0}}" style="{{isOwner?'margin-top:50rpx':''}}">
+    <view class='newPK {{isOwner?"":"noOwnerButton"}}' bindtap='submitAction'>
+      <text>{{isOwner?'邀请好友评测':'测我和Ta的相似度'}}</text>
+    </view>
+    <view class="tip" wx:if="{{isOwner}}">分享给更多好友，更易中奖</view>
+  </view>
+
+  <view class="match-buttons" wx:if="{{child_action_id>0?1:0}}">
+    <view class="recommand">
+      <view class="buttonItem">
+        <view class='newPK' bindtap='{{isOwner?"showSharePanel":"goIndex"}}'>
+          <text>{{isOwner?"分享结果":"发起相似度评测"}}</text>
+        </view>
+      </view>
+      <view class="tip" wx:if="{{isOwner}}" catchtap='goIndex'>
+            <view class="button">发起相似度评测</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 分享方式选择栏 -->
+<sharepanel id="sharePanel" bind:getShareImage="drawShareImage" share_img="{{share_img}}"></sharepanel>
+
+<view class='canvas-wrapper' style="width:0;height:0;overflow:hidden">
+  <canvas style="postion:absolute;left:2000rpx;width: 750px; height:1334px;" canvas-id="firstCanvas"></canvas>
+  <canvas style="postion:absolute;left:2000rpx;width: 750px; height:1240px;" canvas-id="firstCanvas1"></canvas>
+</view>
+
+<view class="fixButton topSecondButton" catchtap='backhome'>
+  <image src="/pages/img/back_home_1.png"></image>
+</view>
+
+<dialog visible="{{show_rule}}" width="700" height="800" title="规则" autoHide="{{autoHide}}" contentPadding="15" content="" showCloseButton="true">
+  <rule scrollHeight="760" />
+</dialog>
+
+<dialog visible="{{(luck_type==0 && child_action_id > 0) ? 1:0}}" width="600" height="200" title="提示" autoHide="{{autoHide}}" contentPadding="25" content="{{luck_info}}" color="#4b2177">
+</dialog>
+
+<dialog visible="{{(luck_type>0&& child_action_id > 0) ? 1 : 0}}" width="600" height="250" title="恭喜中奖" autoHide="{{autoHide}}" contentPadding="25" content="" color="#4b2177">
+  <view class="luck_container">
+    <view class="luck_image_container">
+      <image src='{{luck_type==2?"/pages/img/star_2019.png":"/pages/img/star_1.png"}}' mode="widthFix"></image>
+    </view>
+    <view class="luck_text_container">{{luck_info}}</view>
+  </view>
+</dialog>

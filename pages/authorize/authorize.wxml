@@ -1,0 +1,26 @@
+<!--pages/authorize/authorize.wxml-->
+
+<view class="page-container" style="height:{{screenHeight}}rpx" wx:if="{{ready}}">
+  <view class="logo-info" style="top:{{screenHeight/8}}rpx">
+    <image src="/pages/img/shopicon.png" mode='widthFix'></image>
+  </view>
+  <view class='user-info' wx:if='{{type == "1"}}'>
+    <view class="title">需要申请权限以完成登录</view>
+    <view class="subtitle">获取您的公开信息（头像、昵称等）.</view>
+    <!-- <button class="login gradientBackground" open-type='getUserInfo' bindgetuserinfo='onGoUserInfo'>授权登录</button> -->
+
+<form-button add_class="form-button">
+  <view slot="slot1" class='login'>
+    <button class="login gradientBackground" open-type='getUserInfo' bindgetuserinfo='onGoUserInfo'>授权登录</button>
+  </view>
+</form-button>
+    
+  </view> 
+  <view class='user-info' wx:if='{{type != "1"}}'>
+    <view class="title">需要获得权限以完成相应操作</view>
+    <view class="subtitle">请进入设置页打开权限</view>
+    <button class="login gradientBackground" open-type='openSetting' bindopensetting='onOpenSetting'>进入授权</button>
+  </view>
+</view>
+
+

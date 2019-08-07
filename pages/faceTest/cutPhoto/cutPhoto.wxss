@@ -1,0 +1,65 @@
+@import "../../../style/common.wxss";
+
+page{
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.cropper-text{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-top: 50rpx;
+  margin-bottom: 80rpx;
+}
+.cropper-txt{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: white;
+}
+
+.cropper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.cropper-buttons{
+  position:fixed;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #04b00f;
+}
+
+.cropper-config{
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 100rpx;
+  padding: 0 50rpx;
+}
+.cropper-config cover-view{
+  position: relative;
+  width: 260rpx;
+  height: 90rpx;
+  float: left;
+  border-radius: 10rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+  background: rgb(26, 173, 25);
+}
+.cropper-config cover-view:nth-child(2){
+  float: right;
+}

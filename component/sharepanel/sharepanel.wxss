@@ -1,0 +1,112 @@
+.mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100; 
+}
+
+
+.share-wrapper{
+  position: fixed;
+  width: 100%;
+  height: 300rpx;
+  bottom: 0;
+  transform: translateY(100%);
+  background-color: #fff;
+}
+
+.share-top{
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  padding: 0 30rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: rgb(51, 51, 51);
+  background-color: #eee;
+}
+.share-top image{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  top: 50%;
+  right: 20rpx;
+  padding: 10rpx;
+  transform: translateY(-50%);
+}
+
+.share-bottom{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 220rpx;
+  padding: 50rpx 0;
+  overflow: hidden;
+}
+
+.share-type{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  overflow: hidden;
+}
+.share-type:first-child{
+  border-right: 1rpx solid #ddd;
+}
+.share-type image{
+  display: block;
+  position: relative;
+  width: 60rpx;
+  height: 60rpx;
+  top: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+.share-type text{
+  position: relative;
+  font-size: 24rpx;
+}
+
+.share-page{
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(100%);
+  padding-bottom: 50rpx;
+  text-align: center;
+  overflow: hidden;
+  background-color: #fff;
+}
+.share-page text{
+  font-size: 24rpx;
+  color: rgb(173, 173, 173);
+}
+
+.share-img{
+  display: block;
+  position: relative;
+  width: 50%;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 5rpx 10rpx 55rpx rgba(0, 0, 0, 0.5); 
+}
+
+.save-pic{
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 10rpx;
+  color: #fff;
+  background: linear-gradient(to right, #ec3721, #ff7442);
+}

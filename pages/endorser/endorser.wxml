@@ -1,0 +1,4 @@
+<!--pages/endorser/endorser.wxml-->
+<view class='test' bindtap='toTakePhoto' data-destination='similar'>测相似</view>
+<view class='test' bindtap='toTakePhoto' data-destination='poster'>海报</view>
+<authorize/>

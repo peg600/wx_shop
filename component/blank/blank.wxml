@@ -1,0 +1,4 @@
+<!--component/blank/blank.wxml-->
+<view class="component_blank" style="height:{{height}}rpx;background:{{background}};">
+
+</view>

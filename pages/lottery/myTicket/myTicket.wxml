@@ -1,0 +1,39 @@
+<wxs module="Utils" src="../../../lib/Utils.wxs">
+</wxs>
+
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="春节免费机票" show_capsule="1" />
+<view class="ticket_container">
+  <view class="title">
+    <view class="head {{selectedIndex == 0 ? 'selected':''}}" catchtap='switchTab' data-index="0" wx:if="lotter_id > 0">第{{lottery_index}}期抽奖奖券</view>
+    <view class="head {{selectedIndex == 1 ? 'selected':''}}" catchtap='switchTab' data-index="1">全部奖券</view>
+  </view>
+  <view class="content">
+    <view class="info" wx:if="{{currentTickets.length == 0}}">
+      <view class="lottery_info" wx:if="{{selectedIndex == 0}}">你还未参加此期抽奖！
+      </view>
+      <view class="all_info" wx:if="{{selectedIndex == 1}}">
+        <view class="all_info_title">当前无可用的奖券，马上选购好东西，每个订单就可以获取一张奖券。</view>
+        <view class="but_other">
+          <view class="but_text">你可能想买</view>
+          <goodlist keywords="Hot" id="goodlist" pull_down_refresh="true" />
+        </view>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="stamp stamp01" style="{{item.is_used=='1'?'background:#f5f5f5;color:#9d9d9d':''}}" wx:for="{{currentTickets}}" wx:key="{{item}}">
+        <view class="top">
+          <view class="mainTitle">春节免费机票</view>
+          <view class="sub">抽奖券</view>
+        </view>
+        <view class="bottomInfo">
+          {{Utils.formatDate(item.time)}} - 2019.02.20 {{item.is_used == "1"?'已用':''}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+

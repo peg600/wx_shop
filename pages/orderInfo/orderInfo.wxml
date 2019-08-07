@@ -1,0 +1,84 @@
+<view class='order-infor-box'>
+  <view class='tab'>
+  <!-- 添加下方wx:if="{{item.id != '4'}}用以隐藏待评价 -->
+    <view class='tab-item' wx:for="{{statusNameList}}" wx:for-item="item" bindtap='seletGoodStatus' data-id="{{item.id}}">
+      <text class="{{currentId == item.id? 'selected' : ''}}">{{item.text}}</text>
+    </view>
+  </view>
+  <view class='infor-container'>
+    <view class='infor-wrap' wx:if="{{orderArr[0].goods_list.length>0?true:false}}">
+      <view class="goods-list" wx:for="{{orderArr}}" wx:for-item="commodity">
+        <view class='top-line'></view>
+        <view class="container-t">
+          <view class="shop_name">
+            <image src="../img/shopIcon.png"></image>
+          </view>
+          <view class="shopname">Holo</view>
+        </view>
+        <view class="container-order">
+          <view class='fx' data-id="{{commodity.goods_list[0].order_id}}" bindtap='toOrderInfoPage'>
+            <view class="img-box" >
+              <image src="{{baseUrl+'/'+commodity.goods_list[0].goods_thumb}}" class="img" />
+              <image wx:if="{{commodity.goods_list.length > 1 ? true: false}}" src="{{baseUrl+'/'+commodity.goods_list[1].goods_thumb}}" class="img"/>
+            </view>
+            <view class="text-box" wx:if="{{commodity.goods_list.length==1?true:false}}" >
+              <view class="arow arow01">
+                <view class="goods-name" >{{commodity.goods_list[0].goods_name}}</view>
+                <view class="goods-huo">{{commodity.goods_list[0].goods_attr?'商品规格:'+commodity.goods_list[0].goods_attr:''}}</view>
+                <view class="goods-price">¥ {{commodity.goods_list[0].shop_price}}
+                  <text>X{{commodity.goods_list[0].number}}</text>
+                </view>
+              </view>
+              <view class="arow" hidden>
+                <view class="goods-label">{{commodity.goods_list[0].label}}</view>
+                <view class="goods-num">x {{commodity.goods_list[0].number}}</view>
+              </view>
+            </view>
+          </view>
+          <view class='goods-detail'>
+            <text>共{{commodity.numberOfGoods}}件商品</text>
+            <text wx:if="{{commodity.goods_list[0].pay_status==1?true:false}}">实付款：</text>
+            <text class="goods_total" wx:if="{{commodity.goods_list[0].pay_status==1?true:false}}">￥{{commodity.total}}</text>
+            <text wx:if="{{commodity.goods_list[0].pay_status==0?true:false}}">待支付：</text><text class="goods_total" wx:if="{{commodity.goods_list[0].pay_status==0?true:false}}">￥{{commodity.needPay}}</text> </view>
+          <view class='b-gap'>
+            <view class='btn' wx:if="{{commodity.goods_list[0].pay_status=='0'?true:false}}">
+              <navigator url="/pages/payCenter/payCenter?order_id={{commodity.goods_list[0].order_id}}" class='r-magin' data-id="{{commodity.goods_list[0].order_id}}" bindtap='payGoods'>付款</navigator>
+              <navigator url='javascript::' class='r-magin' data-id="{{commodity.goods_list[0].order_id}}" bindtap='delOrder'>删除</navigator>
+              <navigator url='javascript::' class='prominent' data-id="{{commodity.goods_list[0].order_id}}" bindtap='toOrderInfoPage'>查看订单</navigator>
+
+            </view>
+            <view class='btn' wx:if="{{commodity.goods_list[0].pay_status==1&&commodity.goods_list[0].share_status==0&&(currentId==5||currentId==0)?true:false}}">
+
+              <navigator url='javascript::' class='r-magin' data-id="{{commodity.goods_list[0].order_id}}" bindtap='toOrderInfoPage'>查看订单</navigator>
+              <navigator url="{{'/pages/actions/actionsShare/actionsShare?act_id='+commodity.goods_list[0].act_id+'&order_id='+commodity.goods_list[0].order_id}}" class='prominent' data-id="{{commodity.goods_list[0].order_id}}" bindtap='invitationJoin'>邀请好友撮合</navigator>
+
+            </view>
+            <view class='btn' wx:elif="{{commodity.goods_list[0].shipping_status==0&&commodity.goods_list[0].pay_status==1?true:false}}">
+              <navigator class='r-magin'target='miniProgram' app-id='wx56c8f077de74b07c' path='{{"/open/order-comment/order-comment?appid=wxfa5fa558b65bef3c&order_id=" + commodity.goods_list[0].order_id}}'>评价</navigator>
+              <navigator url='javascript::' class='r-magin' data-id="{{commodity.goods_list[0].order_id}}" bindtap='toOrderInfoPage'>查看订单</navigator>
+              <navigator url='javascript::' class='prominent' bindtap='promptDelivery'>催促发货</navigator>
+            </view>
+            <view class='btn' wx:elif="{{commodity.goods_list[0].shipping_status==1&&commodity.goods_list[0].collect==0?true:false}}">
+              <navigator class='r-magin'target='miniProgram' app-id='wx56c8f077de74b07c' path='{{"/open/order-comment/order-comment?appid=wxfa5fa558b65bef3c&order_id=" + commodity.goods_list[0].order_id}}'>评价</navigator>
+              <navigator url='javascript::' class='r-magin' data-id="{{commodity.goods_list[0].order_id}}" bindtap='toOrderInfoPage'>查看订单</navigator>
+              <navigator url='javascript::' class='prominent' data-id="{{commodity.goods_list[0].order_id}}" bindtap='confirmCollect'>确认收货</navigator>
+            </view>
+            <view class='btn' wx:elif="{{commodity.goods_list[0].collect==1&&commodity.goods_list[0].evaluate==0?true:false}}">
+              <navigator class='r-magin'target='miniProgram' app-id='wx56c8f077de74b07c' path='{{"/open/order-comment/order-comment?appid=wxfa5fa558b65bef3c&order_id=" + commodity.goods_list[0].order_id}}'>评价</navigator>
+              <navigator url='javascript::' class='r-magin' data-id="{{commodity.goods_list[0].order_id}}" bindtap='toOrderInfoPage'>查看订单</navigator>
+              <!--
+              <navigator url="{{'/pages/goods-evaluate/goods-evaluate?rec_id='+commodity.goods_list[0].rec_id}}" class='prominent' hidden>评价</navigator>-->
+            </view>
+            <view class='btn' wx:elif="{{commodity.goods_list[0].collect==1&&commodity.goods_list[0].evaluate==1?true:false}}">
+              <navigator class='r-magin'target='miniProgram' app-id='wx56c8f077de74b07c' path='{{"/open/order-comment/order-comment?appid=wxfa5fa558b65bef3c&order_id=" + commodity.goods_list[0].order_id}}'>评价</navigator>
+              <navigator url='javascript::' class='prominent' data-id="{{commodity.goods_list[0].order_id}}" bindtap='toOrderInfoPage'>查看订单</navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class='default-show'>
+      <image src='../img/order_default.png'></image>
+    </view>
+  </view>
+</view>

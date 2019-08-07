@@ -1,0 +1,4 @@
+<!--pages/offlineShop/map/map.wxml-->
+
+<map id="myMap" longitude="{{shop_info.longitude}}" latitude="{{shop_info.latitude}}" show-location="true" markers="{{markers}}"></map>
+

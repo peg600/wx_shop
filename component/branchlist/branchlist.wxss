@@ -1,0 +1,246 @@
+.component_branchslist_container {
+  padding: 30rpx;
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-right: 0;
+  margin: 0;
+  margin-top: 1rpx;
+  margin-bottom:1rpx;
+}
+
+.component-branchlist-layout2 .component_branchlist_item_ui:nth-child(3n + 1) {
+  width: 690rpx;
+}
+
+.component-branchlist-layout2 .component_branchlist_item_ui:nth-child(3n + 1) image {
+  width: 690rpx;
+  height: 460rpx;
+}
+
+.component-branchlist-layout2 .component_branchlist_item_ui:nth-child(3n + 2) {
+  width: 330rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.component-branchlist-layout2 .component_branchlist_item_ui:nth-child(3n + 2) image {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.component-branchlist-layout2 .component_branchlist_item_ui:nth-child(3n + 3) {
+  width: 330rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.component-branchlist-layout2 .component_branchlist_item_ui:nth-child(3n + 3) image {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.view_branch0 {
+  width: 690rpx;
+}
+
+.view_branch0 .image100 {
+  width: 690rpx;
+  height: 690rpx;
+}
+
+.view_branch0 .image150 {
+  width: 690rpx;
+  height: 460rpx;
+}
+
+.view_branch1 {
+  width: 330rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.view_branch1 .image1 {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.view_branch3 {
+  width: 690rpx;
+}
+
+.view_branch4 {
+  width: 220rpx;
+  margin-right: 15rpx;
+  display: inline-block;
+}
+
+.view_branch4 image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.component-branchlist-itemContainer {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.component-branchlist-detail-itemContainer {
+  width: 690rpx;
+  height: 150rpx;
+  display: flex;
+  padding-bottom: 0;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.component-branchlist-detail-itemContainer image {
+  width: 155rpx;
+  height: 155rpx;
+}
+
+.component-branchlist-detail-desc {
+  width: 540rpx;
+  align-items: baseline;
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+
+.component-branchlist-detail-info-container
+{
+  width: 450rpx;
+}
+
+.component_branchlist_item_ui {
+  padding-bottom: 5rpx;
+  border-radius: 15rpx;
+  margin-top: 0rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.component_branchlist_item_border {
+  box-shadow: 0px 0px 5rpx #8f8d8d;
+}
+
+.component_branchlist_view_contain {
+  position: relative;
+  overflow: hidden;
+  padding: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.component_branchlist_info_container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.component_branchlist_view_title {
+  text-align: left;
+  font-size: 30rpx;
+  margin-bottom: 8rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.component_branchlist_view_title text
+{
+  font-size: 20rpx;
+  margin-left: 10rpx;
+   color:#8f8d8d;
+}
+
+.component_branchlist_view_desc {
+  text-align: left;
+  font-size: 25rpx;
+  color:#8f8d8d;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/*横向滑动*/
+
+.component-branchlist-scroll {
+  white-space: nowrap;
+  width: 690rpx;
+  position: relative;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.component-branchlist-scrollwrap {
+  display: flex;
+  display: -webkit-box;
+  flex-direction: column;
+}
+
+.component-branchlist-scroll-itemContainer {
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  padding: 0;
+  width: 330rpx;
+  margin-right: 30rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.component-branchlist-scroll-itemContainer image {
+  width: 330rpx;
+  height: 330rpx;
+  border-radius: 15rpx;
+}
+
+.component_branchlist_view_master
+{
+  align-items: right;
+  position: relative;
+  margin-top: -60rpx;
+}
+
+.component_branchlist_view_master_container
+{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.component_branchlist_view_master_container image
+{
+  border-radius: 50%;
+  margin-right: 15rpx;
+  border:1px solid white;
+}
+
+.component_branchlist_view_master_container text
+{
+  color:white;
+  font-size: 28rpx;
+   margin-right: 20rpx;
+}
+
+.component_branchlist_view_master_container_detail
+{
+   display: flex;
+  flex-direction: row;
+}
+
+.component_branchlist_view_master_container_detail image
+{
+  border-radius: 50%;
+  margin-right: 15rpx;
+  border:1px solid white;
+}
+
+.component_branchlist_view_master_container_detail text
+{
+  font-size: 28rpx;
+   margin-right: 20rpx;
+}

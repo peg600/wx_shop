@@ -1,0 +1,154 @@
+/* pages/personalShop/personalCenter/personalCenter.wxss */
+page{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.shop-info-wrapper{
+  position: relative;
+  width: 100%;
+  padding: 10rpx 78rpx 0 78rpx;
+  border-top: 2rpx solid rgb(229, 229, 229);
+  text-align: center;
+}
+
+.shop-info-content{
+  position: relative;
+  width: 596rpx;
+  height: 425rpx;
+  padding: 40rpx 55rpx 60rpx 55rpx;
+}
+
+.bac{
+  position: absolute;
+  width: 596rpx;
+  height: 425rpx;
+  transform: translateX(-50%);
+}
+
+.top{
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+.line{
+  position: relative;
+  width: 100%;
+  height: 3rpx;
+}
+
+.head-thumb{
+  display: inline-block;
+  position: relative;
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 48rpx;
+  margin-left: 24rpx;
+  border-radius: 50%;
+  border: 2rpx solid rgb(255, 177, 47);
+  overflow: hidden;
+}
+.head-thumb image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.shop-info{
+  display: inline-block;
+  position: relative;
+  max-width: 335rpx;
+  margin-top: 62rpx;
+  margin-left: 40rpx;
+}
+
+.shop-name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  color: rgb(255, 251, 251);
+}
+
+.shop-slogan{
+  font-size: 20rpx;
+  color: rgb(223, 223, 223);
+}
+
+.edit{
+  position: absolute;
+  width: 45rpx;
+  height: 45rpx;
+  top: 15rpx;
+  right: 15rpx;
+}
+
+.sales{
+  position: relative;
+  width: 100%;
+  height: 120rpx;
+  padding: 42rpx 40rpx 46rpx 74rpx;
+  line-height: 40rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: rgb(223, 223, 223);
+}
+
+.sales view{
+  position: relative;
+  width: 120rpx;
+  height: 40rpx;
+  float: right;
+  border: 2rpx solid rgb(241, 236, 230);
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.man{
+  position: relative;
+  width: 128rpx;
+  height: 120rpx;
+  margin-top: 10rpx;
+  margin-left: 84rpx;
+}
+.man image{
+  width: 100%;
+  height: 100%;
+}
+
+.rule{
+  position: relative;
+  width: 100%;
+  padding: 0 82rpx;
+}
+
+.rule-out{
+  position: relative;
+  width: 100%;
+  padding: 44rpx 62rpx 120rpx 62rpx;
+  border: 22rpx solid rgb(207, 169, 144);
+  border-radius: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: rgb(62, 62, 62);
+}
+
+.rule-title{
+  font-size: 30rpx;
+}
+
+.rule-text{
+  position: relative;
+  width: 100%;
+  margin-top: 34rpx;
+  text-align: left;
+}

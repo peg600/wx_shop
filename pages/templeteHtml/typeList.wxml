@@ -1,0 +1,17 @@
+<template name="templateView">  
+ <view class="glasses_list" wx:for-item = "glass">
+      <view class="view_glass fl"
+        >
+        <image src="../img/glass_29.png"></image>
+        <view class="view_contain">
+          <view class="view_title">{{glass.title}}</view>
+          <view class="view_price fl">
+            <text>{{glass.price}}</text>
+            <text>销量：{{glass.comment_count}}</text>
+            <!-- <image src="../img/togethIcon.png" class="fr" width="36" height="36"></image> -->
+          </view>
+          <view class="view_even">原价:{{glass.evenPrice}}</view>
+        </view>
+      </view>
+    </view>
+</template>  

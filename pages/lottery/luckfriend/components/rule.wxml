@@ -1,0 +1,24 @@
+      <view class="inner" style="height:{{scrollHeight}}rpx">
+        <view class="title">定义：</view>
+        <view>据说2019年，长得和你相似(20+19=39)%的好友("20.19"好友)最好运。</view>
+
+        <view class="title hasMargin">活动规则：</view>
+        <view class="hasBottomMargin">拍照上传->邀请好友->好友拍照上传->后台AI(人工智能)自动评估，相似度为39%中奖。</view>
+        <view class="listitem">
+          <text class="index">1、</text>长得39%相似的两个人，每人获得一颗幸运星，每颗幸运星可用于兑换"幸运集市"中的商品。</view>
+        <view class="listitem">
+          <text class="index">2、</text>长得39%相似，并且符合：</view>
+        <view class="hasLeftMargin hasBottomMargin"><text class="index">a)</text> 外表年龄相差<text class="numberIndex">2</text>岁以内(AI自动判定)</view>
+        <view class="hasLeftMargin hasBottomMargin"><text class="index">b)</text> 异性(性别<text class="numberIndex">0</text>相似)(AI自动判定)</view>
+        <view class="hasLeftMargin hasBottomMargin"><text class="index">c)</text> 在同<text class="numberIndex">1</text>个城市</view>
+        <view class="hasLeftMargin hasBottomMargin"><text class="index">d)</text> 相似度3<text class="numberIndex">9</text>%(AI自动判定)</view>
+        <view class="listitem">每个人可获得一颗"2019幸运星"，最早集齐5颗"2019幸运星"的前5名用户，每人可获得一张免费的春节机票。</view>
+        <view class="listitem">
+          <text class="index">3、</text>相同的两个人只能领取一次幸运星，多余的评测将不会产生幸运星。</view>
+        <view class="listitem">
+          <text class="index">4、</text>注意，必须先提交春节航程信息才能获得"2019幸运星"，否则即便符合2,0,1,9标准，也只能获得普通幸运星。</view>
+         <view class="listitem">
+          <text class="index">5、</text>参与活动必须是本人拍照，不得采取作弊（包括但不限于翻拍照片，换号重拍等）手段获取奖励，否则所有获得的奖励都将作废。</view>
+          <view class="listitem">
+          <text class="index">5、</text>开心小集保留活动的解释权。</view>
+      </view>

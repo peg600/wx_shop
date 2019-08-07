@@ -1,13 +1,220 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<view class="xingxing" wx:if="{{takeDown}}">*****</view>
+<view class="holo">
+
+  <!-- 首页标题类型选择入口 -->
+  <view class="title_type flexs">
+    <view wx:for="{{typeList}}" wx:for-item="type" data-id="{{type.id}}" class="{{currentId == type.id? 'active':''}}" bindtap='search'>
+      {{type.name}}
+    </view>
+
+    <view class="type_search" bindtap='showSearch'>
+      <image src="../img/search.png"></image>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view wx:if="{{firstPageShow}}" class='active-img'>
+    <!-- banner入口 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{bannerList}}" wx:for-item="item">
+        <swiper-item class="banner banner_top">
+          <image src="{{item.ad_code}}" class="slide-image " width="355" height="150" bindtap='toActionPage' data-ad="{{item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="container">
+      <view class="first_page">
+        <!-- 模块类型入口 -->
+        <view class="module_type">
+          <view class="list_fit">
+            <view wx:for="{{list_type}}" wx:for-item="item" data-url='{{item.url}}' wx:for-index="index" bindtap='modeCategoryTap'>
+              <view wx:if="{{item.nav_type == 8?true:false}}">
+                <navigator url="/pages/shoppingCart/shoppingCart">
+                  <view class="list_update fl {{index>3? 'fit_updata' : ''}}">
+                    <image src="{{item.pic}}"></image>
+                    <view class="list_word">{{item.name}}</view>
+                  </view>
+                </navigator>
+
+              </view>
+              <view wx:else>
+                <view class="list_update fl {{index>3? 'fit_updata' : ''}}">
+                  <image src="{{item.pic}}"></image>
+                  <view class="list_word">{{item.name}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 线 -->
+     <view class="line"> </view> 
+
+    <!-- <view class="container distence">
+      <!-- //主业务数据渲染 -->
+
+      <!-- 1 : 活动板块，根据业务运营决定数据 -->
+      <!-- <view class="active_list">
+        <view class='active_title'>
+          <view>热门活动</view>
+           <view>实时推荐最适合您的宝贝</view> 
+          <image src="../img/up_bg_box.png"></image>
+        </view>
+         活动banner渲染 
+        <view class="active_mode">
+          <view class="banner mode_list" wx:for="{{promotionList}}" wx:for-item="mode" wx:key="{{index}}">
+            <view class="mode_show">
+              <image src="{{mode.ad_code}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+    <!-- 线 -->
+    <!-- <view class="line"> </view> -->
+    <view class="container">
+      <!-- 新商品推荐 -->
+      <view class='active_title'>
+        <view>新品上架</view>
+        <image src="../img/down_bg_box.png"></image>
+      </view>
+      <!-- start -->
+      <view class="glasses_list">
+        <view class="view_glass" wx:for="{{new_data}}" wx:for-item="glass" data-goodId="{{glass.goods_id}}" bindtap="toDetailListPage">
+          <image src="{{glass.goods_img}}"></image>
+          <view class="view_contain">
+            <view class="view_title">{{glass.goods_name}}</view>
+            <view class="view_price fl">
+              <text>￥{{glass.shop_price}}元</text>
+              <!--<text>销量：{{glass.count_goods_num}}</text>-->
+              <!-- <image src="../img/togethIcon.png" class="fr" width="36" height="36"></image> -->
+            </view>
+            <view class="view_even">原价 :{{glass.market_price}}元</view>
+          </view>
+        </view>
+      </view>
+
+ <view class="line"> </view> 
+
+      <!-- glasses 模型数据渲染 -->
+      <view class='active_title'>
+        <view>热门推荐</view>
+        <!-- <view>实时推荐最适合您的宝贝</view> -->
+        <image src="../img/down_bg_box.png"></image>
+      </view>
+
+      <!-- start -->
+
+      <view class="glasses_list">
+        <view class="view_glass" wx:for="{{glasses_data}}" wx:for-item="glass" data-goodId="{{glass.goods_id}}" bindtap="toDetailListPage">
+          <image src="{{glass.goods_img}}"></image>
+          <view class="view_contain">
+            <view class="view_title">{{glass.goods_name}}</view>
+            <view class="view_price fl">
+              <text>{{glass.shop_price}}</text>
+              <!--<text>销量：{{glass.count_goods_num}}</text>-->
+              <!-- <image src="../img/togethIcon.png" class="fr" width="36" height="36"></image> -->
+            </view>
+            <view class="view_even">原价 :{{glass.market_price}}</view>
+          </view>
+
+        </view>
+
+      </view>
+      <view class="noPage" wx:if='{{hasMoreList.length == 0}}'>
+        <image src="../img/hasmore.png"></image>
+      </view>
+
+
+      <!-- <import src="./../templeteHtml/typeList.wxml" />   -->
+
+
+    </view>
+
+  </view>
+
+  <!-- 导航分类管理 -->
+  <view class="fit_container" wx:if="{{otherPageShow}}">
+    <swiper autoplay="{{false}}" duration="{{500}}" display-multiple-items="{{navLength>4?4:navLength}}" class='nav-swiper'>
+      <block wx:for="{{fitTypeList}}">
+        <swiper-item class='nav-item'  >
+          <view class="fit_list" data-id='{{item.cat_id}}' bindtap='fitCutModuleList'>
+            <image src="{{baseUrl+'/'+item.image}}"></image>
+            <view class="fit_title {{onPushListId == item.cat_id?'set':''}}">{{item.cat_name}}</view>
+            <!-- <view class='sel_active' wx:if="{{onPushListId == item.cat_id?true:false }}"> <image src='/pages/img/754204134346579639.png' class='sel-img'></image></view> -->
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+     <!-- <view class="fit_type flex">
+      <view class="fit_list" wx:for-items="{{fitTypeList}}" data-id='{{item.cat_id}}' bindtap='fitCutModuleList'>
+        <image src="./../img/glass.jpg"></image>
+        <view class="fit_title">{{item.cat_name}}</view>
+      </view>
+    </view>  -->
+    <view class="glasses_list">
+      <view class="view_glass fl" wx:for="{{allType_data}}" wx:for-item="glass" data-goodId="{{glass.goods_id}}" bindtap="toDetailListPage">
+        <image src="{{glass.goods_img}}"></image>
+        <view class="view_contain">
+          <view class="view_title">{{glass.goods_name}}</view>
+          <view class="view_price fl">
+            <text>{{glass.shop_price}}</text>
+            <!--<text>销量：{{glass.comment_count}}</text>-->
+            <!-- <image src="../img/togethIcon.png" class="fr" width="36" height="36"></image> -->
+          </view>
+          <view class="view_even">原价 :{{glass.market_price}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="noPage" wx:if='{{hasList.length == 0}}'>
+      <image src='../img/hasmore.png'></image>
+    </view>
   </view>
 </view>
+<view class='mask' wx:if="{{false}}" bindtap='showHideMask'>
+  <view class='dh'> <image src='/pages/img/2ce26acd36377657760239.png'></image> </view>
+</view>
+
+<!-- 红包活动 -->
+<view class='actions' wx:if="{{isShowActions}}" bindtap='hideActions'>
+  <view class='aton'><image src="{{actionsArr[0].img_url}}" bindtap='toActionsDetail' data-index="0"></image> 
+  </view>
+</view>
+
+
+
+<!-- <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class="section section_gap">
+    <view class="section__title">switch</view>
+    <switch name="switch"/>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">slider</view>
+    <slider name="slider" show-value ></slider>
+  </view>
+
+  <view class="section">
+    <view class="section__title">input</view>
+    <input name="input" placeholder="please input here" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">radio</view>
+    <radio-group name="radio-group">
+      <label><radio value="radio1"/>radio1</label>
+      <label><radio value="radio2"/>radio2</label>
+    </radio-group>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">checkbox</view>
+    <checkbox-group name="checkbox">
+      <label><checkbox value="checkbox1"/>checkbox1</label>
+      <label><checkbox value="checkbox2"/>checkbox2</label>
+    </checkbox-group>
+  </view>
+  <view class="btn-area">
+    <button formType="submit" type='warn' class='warn'>Submit</button>
+    <button formType="reset">Reset</button>
+  </view>
+</form> -->

@@ -1,0 +1,104 @@
+<wxs module="Utils" src="../../lib/Utils.wxs">
+</wxs> 
+<view class="component_goodslist_container component-goodlist-layout{{listStyle}}" style="background:{{background}}">
+  <view class="view_good{{listStyle}} component_goodlist_item_ui {{listStyle<=3?'component_goodlist_item_border':''}}" wx:for="{{new_data}}" wx:for-item="good" wx:if="{{listStyle<=4?1:0}}" wx:key="{{good.goods_id}}">
+    <view class="component-goodlist-itemContainer" wx:if="{{listStyle!=3?1:0}}" data-goodId="{{good.goods_id}}" bindtap='_toDetailListPage' data-good="{{good}}">
+      <image src="{{good.goods_img}}" mode='aspectFill' class="image{{listStyle==0? imageRatio*10 :''}}{{listStyle}}"></image>
+      <view class="view_contain">
+        <view class="view_title"><image src="/pages/img/jd.jpg" class="titleLogo" mode="widthFix" wx:if="{{good.isJD?1:0}}"></image><image src="/pages/img/jd_ticket.png" class="titleLogo" mode="widthFix" wx:if="{{good.isJD && good.couponList.length>0?1:0}}"></image><view class="jdOwner" wx:if="{{good.owner=='g'?1:0}}">自营</view>{{good.goods_name}}</view>
+
+        <view class="info_container">
+          <!-- <text class="view_price fl" wx:if="{{(itemGoodPrice==1 && good.max_price.length == 0)?1:0}}">￥{{Utils.toFix((good.new_user_price?good.new_user_price:good.shop_price) - (hasScore?(good.promotion_base * score):0.0),2) - 0.0}}</text>
+          <text class="view_price fl" wx:if="{{(itemGoodPrice==1 && good.max_price.length > 0)?1:0}}">￥{{Utils.toFix((good.min_new_user_price?good.min_new_user_price:good.min_price) - (hasScore?(good.min_promotion * score):0.0),2) - 0.0}}~￥{{Utils.toFix((good.max_new_user_price?good.max_new_user_price:good.max_price) - (hasScore?(good.max_promotion * score):0.0),2) - 0.0}}</text> -->
+
+          <goodprice wx:if="{{good}}" goods_info="{{good}}"  show_style="2"/>
+
+          <view class="view_buy fr" catchtap="_buy" data-catid="{{good.cat_id}}" data-id="{{good.goods_id}}" wx:if="{{(itemBuyStyle>0&&false)?1:0}}">
+            <text class="view_buy_button" />
+          </view>
+        </view>
+      </view>
+      <view class="corner_back corner_back{{itemCornerStyle}}" wx:if="{{(itemBuyStyle>0)?1:0}}">
+        <text class="corner-icon corner-icon{{itemCornerStyle}}" />
+      </view>
+      <!-- <view class="promotion_tip_container" wx:if="{{(promotionStyle == 0 || (promotionStyle == 1 && hasScore)) ? 1 : 0}}">
+        <view class="promotion_tip">
+          <text>颜值{{hasScore?'已':'最高'}}抵￥{{Utils.toFix(good.promotion_base * score,2)}}</text>
+        </view>
+      </view> -->
+    </view>
+
+    <view class="component-goodlist-detail-itemContainer" wx:if="{{listStyle==3?1:0}}" data-goodId="{{good.goods_id}}" bindtap='_toDetailListPage' data-good="{{good}}">
+      <image src="{{good.goods_img}}" mode='aspectFill' />
+      <view class="view_contain component-goodlist-detail-desc">
+        <view class="view_title"><image src="/pages/img/jd.jpg" class="titleLogo" mode="widthFix" wx:if="{{good.isJD?1:0}}"></image><image src="/pages/img/jd_ticket.png" class="titleLogo" mode="widthFix" wx:if="{{good.isJD && good.couponList.length>0?1:0}}"></image><view class="jdOwner" wx:if="{{good.owner=='g'?1:0}}">自营</view>{{good.goods_name}}</view>
+        <view class="info_container component-goodlist-detail-info-container" style="position:absolute;bottom:10rpx;">
+
+          <!-- <text class="view_price fl" wx:if="{{(itemGoodPrice==1 && good.max_price.length == 0)?1:0}}">￥{{Utils.toFix((good.new_user_price?good.new_user_price:good.shop_price) - (hasScore?(good.promotion_base * score):0.0),2) - 0.0}}</text>
+
+          <text class="view_price fl" wx:if="{{(itemGoodPrice==1 && good.max_price.length > 0)?1:0}}">￥{{Utils.toFix((good.min_new_user_price?good.min_new_user_price:good.min_price) - (hasScore?(good.min_promotion * score):0.0),2) - 0.0}}~￥{{Utils.toFix((good.max_new_user_price?good.max_new_user_price:good.max_price) - (hasScore?(good.max_promotion * score):0.0),2) - 0.0}}</text>
+
+          <view class="star_price" wx:if="{{itemGoodPrice==2?1:0}}">
+            <view>{{good.star_price}}</view>
+            <image src="/pages/img/star_1.png" mode="widthFix"></image>
+          </view> -->
+
+          <goodprice wx:if="{{good}}" goods_info="{{good}}" price_type="{{itemGoodPrice==2?2:1}}" show_style="2" />
+
+          <view class="view_buy fr" catchtap="_buy" data-catid="{{good.cat_id}}" data-id="{{good.goods_id}}" wx:if="{{(itemBuyStyle>0 && false)?1:0}}">
+            <text class="view_buy_button" />
+          </view>
+
+          <view class="jd-buy fr" catchtap="toJd" data-goods_info="{{good}}" wx:if="{{(itemBuyStyle == 4)?1:0}}">购买
+          </view>
+        </view>
+      </view>
+      <view class="corner_back corner_back{{itemCornerStyle}}" wx:if="{{(itemBuyStyle>0)?1:0}}">
+        <text class="corner-icon corner-icon{{itemCornerStyle}}" />
+      </view>
+      <!-- <view class="promotion_tip_container" wx:if="{{(promotionStyle == 0 || (promotionStyle == 1 && hasScore)) ? 1 : 0}}">
+        <view class="promotion_tip">
+          <text>颜值{{hasScore?'已':'最高'}}抵￥{{Utils.toFix(good.promotion_base * score,2)}}</text>
+        </view>
+      </view> -->
+    </view>
+  </view>
+
+  <scroll-view scroll-x="true" scroll-with-animation="true" scroll-left='0' totalLength="750" class="component-goodlist-scroll" windowWidth="375" wx:if="{{listStyle==5?1:0}}">
+    <view class="component-goodlist-scrollwrap" scroll-x="true">
+      <view wx:for="{{new_data}}" wx:for-item="good" wx:key="{{good.goods_id}}" class="component-goodlist-scroll-itemContainer">
+        <image src="{{good.goods_img}}" mode='aspectFill' data-goodId="{{good.goods_id}}"  data-good="{{good}}" bindtap='_toDetailListPage'></image>
+        <view class="view_contain">
+          <view class="view_title"><image src="/pages/img/jd.jpg" class="titleLogo" mode="widthFix" wx:if="{{good.isJD?1:0}}"></image><image src="/pages/img/jd_ticket.png" class="titleLogo" mode="widthFix" wx:if="{{good.isJD && good.couponList.length>0?1:0}}"></image><view class="jdOwner" wx:if="{{good.owner=='g'?1:0}}">自营</view>{{good.goods_name}}</view>
+          <view class="info_container">
+            <!-- <text class="view_price fl" wx:if="{{(itemGoodPrice==1 && good.max_price.length == 0)?1:0}}">￥{{Utils.toFix((good.new_user_price?good.new_user_price:good.shop_price) - (hasScore?(good.promotion_base * score):0.0),2) - 0.0}}</text>
+            <text class="view_price fl" wx:if="{{(itemGoodPrice==1 && good.max_price.length > 0)?1:0}}">￥{{Utils.toFix((good.min_new_user_price?good.min_new_user_price:good.min_price) - (hasScore?(good.min_promotion * score):0.0),2) - 0.0}}~￥{{Utils.toFix((good.max_new_user_price?good.max_new_user_price:good.max_price) - (hasScore?(good.max_promotion * score):0.0),2) - 0.0}}</text> -->
+            <goodprice wx:if="{{good}}" goods_info="{{good}}" />
+            <view class="view_buy fr" catchtap="_buy" data-id="{{good.goods_id}}" data-catid="{{good.cat_id}}" wx:if="{{(itemBuyStyle>0 && false)?1:0}}">
+              <text class="view_buy_button" />
+            </view>
+          </view>
+        </view>
+        <view class="corner_back corner_back{{itemCornerStyle}}" wx:if="{{(itemBuyStyle>0)?1:0}}">
+          <text class="corner-icon corner-icon{{itemCornerStyle}}" />
+        </view>
+
+        <!-- <view class="promotion_tip_container" wx:if="{{(promotionStyle == 0 || (promotionStyle == 1 && hasScore)) ? 1 : 0}}">
+          <view class="promotion_tip">
+            <text>颜值{{hasScore?'已':'最高'}}抵￥{{Utils.toFix(good.promotion_base * score,2)}}</text>
+          </view>
+        </view> -->
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="noPage" wx:if='{{pull_down_refresh && !noMoreData}}'>
+    <view class="loading-tip">
+      <text>正在努力加载中...</text>
+    </view>
+  </view>
+
+  <view class="noPage" wx:if='{{pull_down_refresh && noMoreData}}'>
+    <image src="/pages/img/hasmore.png"></image>
+  </view>
+</view>

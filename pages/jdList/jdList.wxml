@@ -1,0 +1,3 @@
+<!--pages/jdList/jdList.wxml-->
+
+<goodlist id="goodlist" wx:if="{{goods_list}}" goods="{{goods_list}}" listStyle="3" itemGoodPrice="1" itemBuyStyle="4" from_jd="1"/>

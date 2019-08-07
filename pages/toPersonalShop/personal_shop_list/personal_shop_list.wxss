@@ -1,0 +1,108 @@
+/* pages/toPersonalShop/personal_shop_list/personal_shop_list.wxss */
+page{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.shop-list{
+  position: relative;
+  width: 100%;
+  padding: 36rpx 40rpx 34rpx 40rpx;
+  border-top: 2rpx solid rgb(229, 229, 229);
+  text-align: center;
+}
+
+.list-title{
+  position: relative;
+  width: 100%;
+  line-height: 30rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: rgb(26, 26, 26);
+}
+.list-title view{
+  position: relative;
+  height: 24rpx;
+  margin-top: 20rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+}
+
+.list{
+  display: inline-block;
+  position: relative;
+  max-width: 672rpx;
+  margin-top: 22rpx;
+  text-align: left;
+}
+
+.shop-item{
+  display: inline-block;
+  position: relative;
+  width: 325rpx;
+  height: 410rpx;
+  margin-bottom: 35rpx;
+}
+.shop-item:nth-child(odd){
+  margin-right: 22rpx;
+}
+
+.shop-thumb{
+  position: relative;
+  width: 325rpx;
+  height: 325rpx;
+  border-radius: 20rpx;
+}
+
+.list-shop-name{
+  position: relative;
+  height: 28rpx;
+  margin-top: 16rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  color: rgb(26, 26, 26);
+}
+
+.list_shop_slogan{
+  position: relative;
+  height: 24rpx;
+  margin-top: 16rpx;
+  line-height: 24rpx;
+  font-size: 28rpx;
+  color: rgb(94, 94, 94);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+<!--component/textpanel/textpanel.wxml--> 
+  <text class="component-textpanel component-textpanel-text{{textSize}}" style="background:{{background}};color:{{foreColor}};text-align:center">{{text}}</text>

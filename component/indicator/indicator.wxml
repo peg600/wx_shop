@@ -1,0 +1,9 @@
+<view class="component-indicator-container" style="background-color: {{background}};">
+  <view class="component-indicator" catchtap='_goto' style='margin:{{margin}}rpx {{margin}}rpx;:after'>
+      <view class="component-indicator-indicator" wx:if="{{showDot==1?1:0}}">　</view>
+      <text class="component-indicator-title">{{title}}</text>
+      <text class="component-indicator-subtitle" wx:if="{{subTitle.length > 0 ?1 :0}}">{{subTitle}}</text>
+      <text class="component-indicator-tip" wx:if="{{(tipType==0 && tip.length > 0) ?1 :0}}">{{tip}}</text>
+      <image src='{{tip}}' class='component-indicator-img' mode='aspectFit' wx:if="{{(tipType==1 && tip.length > 0) ?1 :0}}"></image>
+  </view>
+</view> 

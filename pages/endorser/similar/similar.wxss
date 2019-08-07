@@ -1,0 +1,64 @@
+/* pages/endorser/similar/similar.wxss */
+
+.canvas-wrapper{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.preview{
+  position: relative;
+  height: 5000rpx;
+  max-height: calc(100vh - 200rpx);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.brands{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  margin-top: 50rpx;
+  line-height: 80rpx;
+  padding: 0 50rpx;
+}
+
+.brand{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  margin-right: 50rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background-color: yellow;
+}
+.brand:last-child{
+  margin-right: 0;
+}
+
+.to-poster{
+  position: relative;
+  width: 80%;
+  height: 100rpx;
+  margin: 50rpx auto;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 50rpx;
+  background-color: greenyellow;
+}
+
+.price{
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.share{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  top: 20rpx;
+  right: 20rpx;
+}

@@ -1,0 +1,61 @@
+<!--pages/personalShop/personalMain/personalMain.wxml-->
+<view class='wrapper'>
+  <view class='tips'>
+    <image class='bac' src='/pages/img/personal_shop_blackboard.png'></image>
+    <view class='tips-content'>
+      <view class='tips-title'>
+        <image src='/pages/img/personal_shop_glasses.png'></image>   
+        <view>眼镜店上架TIPS</view>
+      </view>
+      <view class='tips-text'>
+        每售出一副眼镜，你将获得20元眼镜店的基金奖励，基金可累计，可在人一多好友店铺下单，直接抵用现金。
+      </view>
+      <view class='line'>
+        <image src='/pages/img/personal_center_line.png'></image>
+      </view>
+      <view class='sales'>
+        <view class='left'>
+          售出
+          <image src='/pages/img/jump_icon.png'></image>
+        </view>
+        <view class='right'>{{info.personal_shop_sale_number}}单</view>
+      </view>
+    </view>
+  </view>
+
+  <image class='doc' src='/pages/img/personal_shop_doc.png'></image>
+
+  <view class='list'>
+    <view class='list-title'>眼镜列表</view>
+    <view class='list-item' wx:for="{{goods_list}}" wx:for-item="goods" data-goods_id="{{goods.goods_id}}">
+      <image class='item-left' src='{{goods.goods_thumb}}'  bindtap='toDetail' data-goods_id="{{goods.goods_id}}"></image>
+      <view class='item-right'>
+        <view class='right-wrapper'>
+          <view class='info'  bindtap='toDetail' data-goods_id="{{goods.goods_id}}">
+            <view class='item-name'>{{goods.goods_name}}</view>
+            <view class='item-brief'>{{goods.personal_goods_brief}}</view>
+            <view class='item-price'>
+              <text class='price'>￥{{goods.shop_price}}</text>
+              <text class='market-price'>官方价格：￥{{goods.market_price}}</text>
+            </view>
+          </view>
+          <view class='btn'>
+            <image src='/pages/img/share_arrow.png' data-goods_id="{{goods.goods_id}}" catchtap='shareGoods'></image>
+            <view class='plus' wx:if='{{is_master}}' data-current_goods="{{goods}}" catchtap='showEdit'>+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='setting-mask' wx:if='{{show_edit}}' bindtap='hideEdit' catchtouchmove="prevent">
+  <view class='setting' catchtap='prevent'>
+    <image src='{{current_goods.goods_img}}'></image>
+    <view class='setting-main'>
+      <view class='setting-title'>{{current_goods.goods_name}}</view>
+      <textarea bindinput='changeInfo' value='{{current_goods.personal_goods_brief}}' auto-focus='true'></textarea>
+      <view class='submit-info' catchtap='submitInfo'>提交</view>
+    </view>
+  </view>
+</view>

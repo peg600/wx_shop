@@ -1,0 +1,19 @@
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="选择城市" show_capsule="1" />
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}rpx" scroll-with-animation="true" scroll-into-view="{{toView}}">
+  <view class='new_city'>
+    <view class='city_first_letter'>热门城市</view>
+    <view class='new_city_box'>
+      <text class='new_city_text' wx:for='{{newcity}}' wx:key='this' data-types='new' catchtap='cityTap' data-val='{{item}}'>{{item}}</text>
+    </view>
+  </view>
+  <view class='city_list_box' wx:for='{{citylist}}' wx:key='this' wx:for-item='letterItem' wx:for-index='letterIndex' id='{{letterItem.letter}}'>
+      <view class='city_first_letter' >{{letterItem.letter}}</view>
+      <text class='city_name' wx:for='{{letterItem.data}}' wx:key='this' data-types='list' catchtap='cityTap' data-index='{{index}}' data-val='{{item}}'>{{item.cityName}}</text>
+  </view>
+</scroll-view>
+<view class='city_right' style="height:{{scrollHeight}}rpx">
+  <text wx:for='{{citylist}}' wx:key='this' wx:for-item='item' catchtap='letterTap' data-item='{{item}}'>{{item.letter}}</text>
+</view>
+</view>
+

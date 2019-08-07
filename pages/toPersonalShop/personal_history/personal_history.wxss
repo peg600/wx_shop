@@ -1,0 +1,210 @@
+/* pages/toPersonalShop/personal_history/personal_history.wxss */
+page{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.history-top{
+  position: relative;
+  width: 100%;
+  padding: 34rpx 8rpx 28rpx 8rpx;
+  border-top: 2rpx solid rgb(229, 229, 229);
+}
+
+.list-title{
+  position: relative;
+  width: 100%;
+  margin-left: 40rpx;
+  line-height: 30rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: rgb(62, 62, 62);
+}
+.list-title view{
+  position: relative;
+  height: 24rpx;
+  margin-top: 16rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: rgb(85, 85, 85);
+}
+
+.scroll-wrapper{
+  position: relative;
+  width: 100%;
+  height: 102rpx;
+  margin-top: 34rpx;
+}
+
+.scroll-list{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+}
+
+.history-head{
+  position: relative;
+  flex: 0 0 102rpx;
+  height: 102rpx;
+  margin-right: 24rpx;
+}
+.history-head:last-child{
+  margin-right: 0;
+}
+.history-head image{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 4rpx solid rgb(243, 152, 0);
+  border-radius: 50%;
+  overflow: hidden; 
+}
+
+.line{
+  position: relative;
+  width: 100%;
+  height: 2rpx;
+  padding: 0 24rpx;
+}
+.line view{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(229, 229, 229);
+}
+
+.history-list{
+  position: relative;
+  width: 100%;
+  padding: 34rpx 40rpx 0 40rpx;
+}
+
+.history{
+  position: relative;
+  width: 674rpx;
+  height: 160rpx;
+  border-radius: 40rpx;
+}
+.history:last-child .rope{
+  display: none;
+}
+
+.bac{
+  position: absolute;
+  width: 100%;
+  height: 140rpx;
+}
+
+.main{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 140rpx;
+  padding: 20rpx 38rpx;
+}
+
+.left{
+  position: relative;
+  height: 100rpx;
+  flex: 0 0 100rpx;
+}
+
+.left image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shop-img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 8rpx;
+}
+.shop-img image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.middle-head{
+  position: relative;
+  height: 100%;
+  flex: 0 0 52rpx;
+  margin-left: 22rpx;
+  padding-top: 4rpx;
+}
+
+.middle-head image{
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+}
+
+.right{
+  position: relative;
+  height: 100%;
+  flex: 1 1;
+  margin-left: 20rpx;
+  padding: 18rpx 0;
+}
+
+.shop-name{
+  position: relative;
+  width: 100%;
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: rgb(68, 68, 68);
+}
+
+.shop-slogan{
+  position: relative;
+  width: 100%;
+  height: 20rpx;
+  margin-top: 24rpx;
+  line-height: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 20rpx;
+  color: rgb(88, 88, 88);
+}
+
+.rope{
+  position: relative;
+  width: 100%;
+  height: 20rpx;
+  padding: 0 96rpx;
+}
+
+.rope image{
+  position: relative;
+  width: 6rpx;
+  height: 100%;
+}
+
+.rope-left{
+  float: left;
+}
+
+.rope-right{
+  float: right
+}
+
+
+
+
+
+
+

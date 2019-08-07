@@ -1,0 +1,252 @@
+@import "../common.wxss";
+
+.navi_region {
+  position: absolute;
+  display: block;
+  top: 20rpx;
+  width: 141rpx;
+  height: 100rpx;
+}
+
+.navi_region image {
+  position: absolute;
+  right: 0rpx;
+  width: 141rpx;
+  height: 68rpx;
+}
+
+.rule_region {
+  right: 0rpx;
+}
+
+.back_home_region {
+  left: 0rpx;
+}
+
+.tip {
+  font-size: 26rpx;
+  color: #762400;
+  text-align: center;
+  margin-top: 15rpx;
+  white-space: nowrap;
+}
+
+.preview_container {
+  margin-top: 287rpx;
+  height: 880rpx;
+  background: url(https://wao-files.oss-cn-beijing.aliyuncs.com/holo/preview_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 100%;
+  position: relative;
+  padding-top: 32rpx;
+  padding-left: 130rpx;
+  align-content: center;
+}
+
+.image-container {
+  position: relative;
+  width: 492rpx;
+  height: 654rpx;
+}
+
+.image-container .mainImage {
+  width: 492rpx;
+  height: 654rpx;
+  border-radius: 10rpx;
+  box-shadow: 5px 5rpx 30rpx 0rpx rgba(20, 20, 20, 0.62);
+  text-shadow: 5px 5rpx 30rpx 0rpx rgba(20, 20, 20, 0.62);
+}
+
+.match-image-container {
+  margin-top: 100rpx;
+  position: relative;
+  padding-top: 15rpx;
+}
+
+.match-image-container .similarity {
+  color: #bb3a34;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.match-image-container .larger {
+  font-size: 45rpx;
+}
+
+.match-image-container .inner {
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 60rpx;
+}
+
+.match-image-container .inner .flexItem {
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexItem .info {
+  margin-top: 10rpx;
+  font-size: 23rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.face_area {
+  border: 1rpx rgba(255, 255, 255, 0.6) solid;
+  position: absolute;
+}
+
+.face_indicator {
+  position: absolute;
+  z-index: 100;
+  width: 20px;
+  height: 20px;
+}
+
+.face_info {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17rpx;
+  position: absolute;
+}
+
+.match-image-container .inner .largeItem {
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-image-container .inner image {
+  width: 280rpx;
+  border-radius: 10rpx;
+}
+
+.match-image-container .inner .head_image {
+  width: 100rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+}
+
+.user_image {
+  width: 100rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 50% 50%;
+}
+
+.newPK {
+  border-radius: 40rpx;
+  height: 80rpx;
+  text-align: center;
+  padding-top: 15rpx;
+  vertical-align: middle;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #762400;
+  background: #ffd521;
+}
+
+.noOwnerButton {
+  font-size: 35rpx;
+}
+
+.canvas-wrapper {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.action-buttons {
+  margin-top: 80rpx;
+  width: 492rpx;
+}
+
+.match-buttons {
+  display: flex;
+  padding: 0rpx 80rpx;
+  flex-direction: row;
+}
+
+.match-buttons .buttonItem {
+  flex: 1;
+  margin-top: 20rpx;
+}
+
+.result {
+  font-size: 30rpx;
+  color: #ffd521;
+}
+
+.user_name {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200rpx;
+}
+
+.luck_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.luck_image_container {
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.luck_text_container {
+  flex: 1;
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15rpx;
+}
+
+.luck_image_container image {
+  width: 150rpx;
+}
+
+.fake-head-image {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  border: 1rpx rgba(255, 255, 255, 0.9) solid;
+  position: absolute;
+  opacity: 0.9;
+}
+
+.recommand {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  padding: 10rpx;
+  border-radius: 10rpx;
+  background: #e63117;
+  color: white;
+}
+
+.recommand image {
+  width: 150rpx;
+  height: 150rpx;
+}

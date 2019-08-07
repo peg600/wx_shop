@@ -1,0 +1,32 @@
+page{
+  position: relative;
+  height: 100%;
+  /* overflow: hidden; */
+}
+.rule-container{
+  padding:0 30rpx;
+  overflow: hidden;
+}
+.actions-rule{
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.tit{
+  font-size: 30rpx;
+  color: #ff9200;
+}
+.content{
+  font-size: 30rpx;
+  color: #888888;
+}
+.ont{
+  margin-top: 40rpx;
+}
+button{
+  position: absolute;
+  bottom: 0;
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}

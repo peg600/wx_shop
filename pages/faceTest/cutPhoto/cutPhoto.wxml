@@ -1,0 +1,27 @@
+<cover-view class='cropper-text'>
+  <cover-view class='cropper-txt'>Tips:姿势端正，背景简单，没有过度美颜</cover-view>
+  <cover-view class='cropper-txt'>可以获得比较好的试戴效果</cover-view>
+</cover-view>
+
+<import src="../../../we-cropper/we-cropper.wxml"/>
+
+<view class="cropper-wrapper">
+    <template is="we-cropper" data="{{...cropperOpt}}"/>
+    <!-- <view class="cropper-buttons">
+        <view
+                class="upload"
+                bindtap="uploadTap">
+            重拍
+        </view>
+        <view
+                class="getCropperImage"
+                bindtap="getCropperImage">
+            使用照片
+        </view>
+    </view> -->
+</view>
+
+<cover-view class='cropper-config'>
+  <cover-view bindtap="getImage" style='margin-top: 30rpx;'> 重拍 </cover-view>
+  <cover-view bindtap="getCropperImage" style='margin-top: 30rpx;'> 使用照片            </cover-view>
+</cover-view>

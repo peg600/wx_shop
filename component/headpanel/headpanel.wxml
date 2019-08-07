@@ -1,0 +1,5 @@
+<!--component/headpanel/headpanel.wxml-->
+<view class="component_headpanel" style="text-align:{{textalign}};background:{{background}}">
+  <text class="component_headpanel_head{{textsize}}">{{title}}</text>
+  <text wx:if="{{subtitle==''?0:1}}" class="component_headpanel_subtitle{{textsize}}">{{subtitle}}</text>
+</view> 

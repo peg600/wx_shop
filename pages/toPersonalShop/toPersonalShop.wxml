@@ -1,0 +1,62 @@
+<!--pages/toPersenalShop/toPersonalShop.wxml--> 
+<view class='shop-info-wrapper'>
+  <view class='shop-info-content'>
+    <image src='/pages/img/personal_info_bac.png' class='shop-info-bac'></image>
+
+    <view class='shop-info'>
+      <view class='top'>
+        <view class='top-left'>
+          <view class='personal_shop_thumb'>
+            <image src='{{info.personal_shop_thumb}}' wx:if='{{has_shop}}'></image>
+            <image src='/pages/img/personal_lock.png' wx:if='{{!has_shop}}'></image>
+          </view>
+          <image src='/pages/img/personal_stamp.png'></image>
+        </view>
+        <view class='top-right'>
+          <view class='shop-name' wx:if='{{has_shop}}'>{{info.personal_shop_name}}</view>
+          <view class='shop-name' wx:if='{{!has_shop}}'>等待店主入驻</view>
+          <view class='shop-btn'wx:if='{{has_shop}}' >
+            <view class='enter' bindtap='toMyShop'>
+              进入我的店铺
+            </view>
+            <view class='share' catchtap='shareShop'>
+              <image src='/pages/img/common_share.png'></image>
+            </view>
+          </view>
+          <view class='shop-btn'wx:if='{{!has_shop}}' >
+            <button class='enter'bindgetuserinfo='addNewShop' open-type='getUserInfo'>
+              我要开店
+            </button>
+          </view>
+        </view>
+      </view>
+      <view class='bottom'>
+        <view class='bottom-left' wx:if='{{history_list.length>0}}'>我去过的店</view>
+        <view class='no-history' wx:if='{{history_list.length==0}}'>
+            暂未浏览任何店铺
+          </view>
+        <view class='bottom-right'>
+          <view class='history-list' wx:if='{{history_list.length>0}}'>
+            <view class='history'  wx:for="{{history_list}}" wx:for-item="history" data-user_id="{{history.visit_history_user_id}}" bindtap='toMyShop'>
+              <image src='{{history.master_thumb}}'></image>
+            </view>
+            <view class='more' catchtap='moreHistory'>
+              <view class='dots'>
+                <view class='dot'></view>
+                <view class='dot'></view>
+                <view class='dot'></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<container componentlist="{{componentlist}}"/>
+
+<view class='near'>
+
+</view>
+  <tabbar selectedIndex="1"/>

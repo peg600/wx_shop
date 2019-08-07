@@ -1,0 +1,272 @@
+/* pages/orderInfoPage/orderInfoPage.wxss */
+page {
+  height: 100%;
+  background: #f7f7f7;
+  /* padding-bottom: 100rpx; */
+}
+.page-container{
+  margin-bottom: 100rpx;
+}
+.tit-img, .tit-img image {
+  width: 100%;
+  height: 140rpx;
+}
+.user-info {
+  display: flex;
+  background: #fff;
+  padding: 35rpx 0;
+  margin-bottom: 22rpx;
+}
+.ad-icon {
+  width: 86rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ad-icon image {
+  width: 34rpx;
+  height: 42rpx;
+}
+.info-box {
+  flex: 1;
+}
+.name {
+  font-size: 30rpx;
+  margin-right: 30rpx;
+}
+.tel {
+  font-size: 28rpx;
+}
+.address-detail {
+  font-size: 26rpx;
+  color: #888;
+  padding-right: 38rpx;
+  margin-top: 28rpx;
+}
+.goods-container {
+  background: #fff;
+}
+.shop {
+  height: 82rpx;
+  line-height: 82rpx;
+}
+.shop image {
+  width: 35rpx;
+  height: 35rpx;
+  margin: 0 25rpx;
+  vertical-align: middle;
+}
+.shop text {
+  font-size: 26rpx;
+  color: #000;
+}
+.goods-list {
+  /* background: #f7f7f7; */
+  background: #fff;
+  /* display: flex; */
+  /* height: 265rpx; */
+} 
+.bgf{
+  background: #f7f7f7;
+    padding-bottom: 20rpx;
+
+}
+.goods-box{
+  background: #f7f7f7;
+  display: flex;
+  height: 240rpx;
+}
+.goods-img {
+  width: 261rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goods-img image {
+  width: 215rpx;
+  height: 215rpx;
+}
+.goods-detail {
+  flex: 1;
+  padding-right: 10rpx;
+}
+.goods-name {
+  font-size: 26rpx;
+  color: #353535;
+  margin: 30rpx 0 10rpx 0;
+  line-height: 40rpx;
+}
+.goods-deail {
+  font-size: 22rpx;
+  color: #888;
+  margin-bottom: 10rpx;
+}
+.price-num {
+  font-size: 28rpx;
+  color: #888;
+}
+.rmb {
+  font-size: 35rpx;
+  margin-right: 40rpx;
+}
+.comp-box {
+  width: 700rpx;
+  margin: 25rpx auto 0;
+}
+.comp {
+  display: flex;
+  font-size: 28rpx;
+  color: #888;
+  margin: 25rpx 0;
+}
+.comp-tit, .comp-price {
+  flex: 1;
+}
+.comp-tit {
+  text-align: left;
+}
+.comp-price {
+  text-align: right;
+}
+.total {
+  color: red;
+  font-size: 33rpx;
+}
+.contact-tel {
+  background: #fff;
+  height: 90rpx;
+  display: flex;
+  font-size: 26rpx;
+  color: #353535;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+.contact, .dial {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45rpx;
+}
+.contact-tel image {
+  vertical-align: middle;
+  margin-right: 26rpx;
+}
+.contact image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.dial image {
+  width: 34rpx;
+  height: 41rpx;
+}
+.contact {
+  /* border-right: 1px solid #e6e6e6; */
+}
+.contact button{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: auto;
+  font-weight: normal;
+  font-size: 28rpx;
+}
+.goods-order-info {
+  font-size: 24rpx;
+  color: #888;
+  margin-top: 22rpx;
+  background: #fff;
+  padding: 25rpx;
+}
+.copy button {
+  width: 90rpx;
+  height: 30rpx;
+  border-radius: 45rpx;
+  font-size: 22rpx;
+  color: #888;
+  padding: 0;
+  line-height: 30rpx;
+  border: 1px solid #888;
+  display: inline-block;
+}
+.sn-copy {
+  display: flex;
+  margin-bottom: 25rpx;
+}
+.goods_sn, .copy {
+  flex: 1;
+}
+.copy {
+  text-align: right;
+}
+.like-more {
+  margin-top: 22rpx;
+  /* text-align: center;
+  padding-top: 90rpx;
+  color: #ff5829; */
+  background: #fff;
+}
+.fix-box {
+  height: 100rpx;
+  background: #fff;
+  border-top: 1px solid #f2f2f2;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.fix-box text {
+  border-radius: 45rpx;
+  /* height: 50rpx; */
+  font-size: 26rpx;
+  color: #ff5829;
+  /* box-sizing: border-box; */
+  border: 1px solid #ff5829;
+  padding: 12rpx 30rpx;
+  margin-right: 26rpx;
+}
+.fix-box .normal{
+  color: #353535;
+  border: 1px solid #353535;
+}
+.additional{
+  font-size: 22rpx;
+  text-align: right;
+}
+.additional text{
+  display: inline-block;
+  padding: 0 20rpx;
+  height: 40rpx;
+  border: 1px solid #a6a6a6;
+  border-radius: 45rpx;
+  color: #a6a6a6;
+  line-height: 40rpx;
+  margin-right: 25rpx;
+  margin-bottom: 5rpx;
+}
+
+
+@import "../index/index.wxss"; 
+
+.but_other{
+  margin-top: 24rpx;
+  background: #fff
+}
+.but_other .but_text{
+  text-align: center;
+  font-size: 32rpx;
+  /* padding: 25rpx 0; */
+   color: rgb(255, 88, 41)
+}
+.goods-list{
+   overflow: hidden; 
+}
+.but_text{
+  margin-bottom: 20rpx;
+}
+

@@ -1,0 +1,29 @@
+/* pages/index/type/type.wxss */
+@import "../search/search.wxss";
+@import "../index.wxss";
+
+.sort_container{
+   padding: 10rpx 25rpx;
+   text-align: center
+}
+.sortList{
+   text-align: center;
+   font-size: 26rpx;
+}
+.sortList view{
+  width: 150rpx;
+  height: 40rpx;
+}
+
+.history_search .btn_{
+    padding: 15rpx;
+    height: 70rpx;
+    line-height: 40rpx;
+    display: inline-block;
+    margin-top: 15rpx;
+    margin-left: 20rpx;
+    font-size: 26rpx;
+}
+.hitstirt_word{
+  font-size: 28rpx;
+}

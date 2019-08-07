@@ -1,0 +1,87 @@
+
+.inner .title
+{
+  font-weight: bold;
+  font-size: 40rpx;
+  color: #e63117;
+  margin-bottom: 20rpx;
+}
+
+.inner .hasMargin
+{
+  margin-top: 20rpx;
+}
+
+.inner .hasBottomMargin
+{
+  margin-bottom: 20rpx;
+}
+
+.inner .hasLeftMargin
+{
+  margin-left: 30rpx;
+}
+
+.inner .listitem
+{
+  margin-bottom: 20rpx;
+  margin-left: 15rpx;
+}
+
+.inner .listitem image
+{
+  width: 40rpx;
+}
+
+.inner .index
+{
+  font-weight: bold;
+   color: #e63117;
+}
+
+.numberIndex
+{
+  color: #e63117;
+  font-weight: bold;
+
+}
+
+.inner{
+  overflow-y:auto;
+  height: 590rpx;
+}
+
+.tabheader
+{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  font-size: 35rpx;
+  z-index: 10;
+}
+
+.ruletabItem
+{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 20rpx 10rpx;
+  border-bottom: 1px solid #eeeeee;
+    font-weight: bold;
+}
+
+.ruleSelectedItem
+{
+  border-bottom: 4px solid #e63117;
+  color:#e63117;
+}
+
+.slitter
+{
+  width:100%;
+  margin:30rpx 30rpx;
+  border-bottom: 1px dotted #444;
+  height: 2rpx;
+}

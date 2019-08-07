@@ -1,0 +1,19 @@
+<!--pages/endorser/similar/similar.wxml-->
+<image class='preview' src="{{img_src}}" mode="aspectFit"></image>
+
+<image class='share' src="/pages/img/share1.png" catchtap='toggleShare'></image>
+<!-- 分享方式选择栏 -->
+<sharepanel id="sharepanel" bind:getShareImage="drawChart" share_img="{{img_src}}" bind:shareFinished="onShareFinished"></sharepanel>
+
+<view class='to-poster' catchtap='toPoster'>生成海报</view>
+
+<view class='canvas-wrapper'>
+  <canvas style="width: {{canvas_width}}px; height: {{canvas_height}}px; left: 2000rpx;" canvas-id="firstCanvas"></canvas>
+</view>
+
+<!-- <view class='price'>你的代言价是{{category[0].price}}万</view>
+
+<view class='brands'>
+  <view class='brand' wx:for="{{brand}}" wx:for-item="brand" wx:key="index">{{brand}}</view>
+</view> -->
+

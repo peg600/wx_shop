@@ -1,0 +1,125 @@
+<view class='page-container' wx:if="{{isShow}}">
+  <view class='tit-img'>
+    <image src="{{imgSrc}}"></image>
+  </view>
+  <view class='user-info' hidden="{{!showAddress}}">
+    <view class='ad-icon'>
+      <image src='../img/158284779956461513.png'></image>
+    </view>
+    <view class='info-box'>
+      <view>
+        <text class='name'>{{info.consignee?info.consignee:'小黄花'}}</text>
+        <text class='tel'>{{info.mobile}}</text>
+      </view>
+      <view class='address-detail'>{{info.province_name}}{{info.city_name}}{{info.district_name=='请选择'?'':info.district_name}}{{info.address}}</view>
+    </view>
+  </view>
+  <view class='goods-container'>
+    <view class='shop'>
+      <image src='../img/shopIcon.png'></image>
+      <text> Holo</text>
+    </view>
+    <view class='goods-list bgf' wx:for="{{goodsList}}">
+      <view class='goods-box'>
+        <view class='goods-img'>
+          <image src="{{baseUrl+'/'+item.goods_thumb}}"></image>
+        </view>
+        <view class='goods-detail'>
+          <view class='goods-name'>{{item.goods_name}}</view>
+          <view class='goods-deail'>
+            <!-- <view class='goods-sn'>{{item.goods_sn?'货号:'+item.goods_sn:''}}</view> -->
+            <view class='goods-spe'>{{item.goods_attr?'商品规格:'+item.goods_attr:''}}</view>
+          </view>
+          <view class='price-num'>
+            <text class='rmb'>￥{{item.shop_price}}</text>
+            <text class='num'>X{{item.number}}</text> </view>
+
+        </view>
+      </view>
+      <view class='additional'>
+        <text wx:if="{{status == 4?true:false}}" data-recid="{{item.rec_id}}" bindtap='toActionsShare' data-actid="{{item.act_id}}" data-orderid="{{item.order_id}}">查看钟情购</text>
+        <text wx:if="{{status == 5?true:false}}" data-recid="{{item.rec_id}}" bindtap='toGroup' data-actid="{{item.act_id}}" data-orderid="{{item.order_id}}">查看团购</text>
+        <text wx:elif="{{status == 3 && item.refund != 1?true:false}}" data-recid="{{item.rec_id}}" bindtap='refund'>退款</text>
+        <text wx:elif="{{item.refund==1?true:false}}" data-recid="{{item.rec_id}}" bindtap='showRefund'>已申请</text>
+      </view>
+    </view>
+    <view class='comp-box'>
+      <view class='comp'>
+        <view class='comp-tit'>运费</view>
+        <view class='comp-price'>￥0.00</view>
+      </view>
+      <view class='comp'>
+        <view class='comp-tit'>优惠</view>
+        <view class='comp-price'>-￥{{discount}}</view>
+      </view>
+      <view class='comp'>
+        <view class='comp-tit'>实付款</view>
+        <view class='comp-price total'>￥{{total}}</view>
+      </view>
+    </view>
+    <view class='contact-tel'>
+      <view class='contact'>
+        <image src='../img/csd.png'></image>
+        <button plain open-type='contact'>联系卖家</button>
+        <!-- <text>联系卖家</text> -->
+      </view>
+      <!-- <view class='dial'> -->
+      <!-- <image src='../img/tel.png'></image>
+        <text>拨打电话</text> -->
+      <!-- </view> -->
+
+    </view>
+
+
+  </view>
+  <view class='goods-order-info'>
+    <view class='sn-copy'>
+      <view class='goods_sn'>订单编号：{{orderNumber}}</view>
+      <view class='copy'>
+        <button bindtap='copyNumber' plain>复制</button>
+      </view>
+    </view>
+    <view class='goods-time'>下单时间：{{goodsList[0].created_time}}</view>
+  </view>
+  <view class='like-more'>
+    <view class="container but_other">
+      <view class="but_text">你可能还想买</view>
+
+      <view class="goods-list">
+        <view class="view_glass fl" wx:for="{{allType_data}}" wx:for-item="glass" data-goodId="{{glass.goods_id}}" bindtap="toDetailListPage">
+          <image src="{{glass.goods_img}}"></image>
+          <view class="view_contain">
+            <view class="view_title">{{glass.goods_name}}</view>
+            <view class="view_price fl">
+              <text>￥{{glass.shop_price}}元</text>
+               <text>销量：{{glass.comment_count}}</text> 
+              <!-- <image src="../img/togethIcon.png" class="fr" width="36" height="36"></image> -->
+            </view>
+            <view class="view_even">原价 :￥{{glass.market_price}}元</view>
+          </view>
+
+
+        </view>
+
+
+      </view>
+    </view>
+
+  </view>
+</view>
+<view class='fix-box' wx:if="{{status == 0&& isShow==true ?true:false}}">
+  <text class='normal' bindtap='delOrder'>取消订单</text>
+  <text bindtap='toPay'>付款</text>
+</view>
+<!--<view class='fix-box' wx:elif="{{status == 1&& isShow==true ?true:false}}">
+  <text class='normal' bindtap='queryLogistics'>查看物流</text>
+</view>-->
+<view class='fix-box' wx:elif="{{status == 2&& isShow==true ?true:false}}">
+  <text class='normal' bindtap='queryLogistics'>查看物流</text>
+  <text bindtap='confirmCollect'>确认收货</text>
+</view>
+<view class='fix-box' wx:elif="{{status == 3&& isShow==true ?true:false}}">
+  <!-- <text class='normal'>删除</text> -->
+  <text class='normal' bindtap='delOrder' bindtap='queryLogistics'>查看物流</text>
+  <!-- <text bindtap='toEva'>评价</text> -->
+</view>

@@ -1,0 +1,30 @@
+<!--pages/offlineShop/service/service.wxml-->
+
+
+<view class='transfer-container'>
+  <view class='quest-box'>
+    <view class='hs'>Hello,您是不是要咨询以下问题？</view>
+    <view class='quest-list'>
+      <view class='tit'>Q.提现失败了怎么办？</view>
+      <view class='content'>A.提现失败时会将余额退还到您的账户中。</view>
+    </view>
+    <view class='quest-list'>
+      <view class='tit'>Q.订单状态显示“处理中”是怎么回事？</view>
+      <view class='content'>A.因系统繁忙等诸多原因，订单的结果暂时未返回。您可以过段时间再次进入提现记录页面，届时将获取并刷新订单状态</view>
+    </view>
+    <view class='quest-list'>
+      <view class='tit'>Q.单笔提现最高多少元？</view>
+      <view class='content'>A.单笔提现最高金额为5000元</view>
+    </view>
+
+  </view>
+  <view class='concat-box'>
+     <button send-message-title="{{partner_trade_no}}" show-message-card="true" open-type='contact' plain>
+     <view class='con-img'> <image src='../img/csd.png'></image> </view>
+      <view class='con-text'><view class='con-tit'> <text>联系客服</text> </view><view class='con-time'><text>在线时间:9:00-20：00</text></view></view>
+      <view class='con-next'> <image src='../img/next_img.png'></image></view>
+      <view class='cr'> <image src='../img/cr.png'></image> </view>
+  </button> 
+  </view>
+</view>
+<view class='logo'><image src='../img/shopIcon.png'></image> </view>

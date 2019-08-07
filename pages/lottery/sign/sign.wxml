@@ -1,0 +1,40 @@
+<!--pages/lottery/sign/sign.wxml-->
+
+<view style='padding-top: {{navbar_height}}px'>
+<navbar  title="开心小集" show_capsule="1" />
+<view class='wrapper'>
+  <view class='title'>每日微笑签到</view>
+  <view class='credit'>
+    <view>{{credit}}</view>
+    <view>笑脸</view> 
+  </view>
+
+  <view class='sign'>
+    <text>已连续签到{{serial_days}}天，</text>
+    <view wx:if="{{!has_signed}}" catchtap='takePhoto'>马上签到</view>
+    <view wx:if="{{has_signed}}">已签到</view>
+  </view>
+
+  <view class='bonus-wrapper'>
+    <view>连续签到，获取奖励</view>
+    <view class='bonus' wx:for="{{serial_bonus}}" wx:for-item="set" wx:key="{{set.id}}">
+      <view>累计{{set.day}}天奖励，{{set.bonus}}笑脸</view>
+      <view wx:if="{{set.has && set.day <= serial_days}}" data-set_info="{{set}}" data-set_index="{{index}}" catchtap='getBonus'>领取</view>
+      <view wx:if="{{set.has && set.day > serial_days}}">未达成</view>
+      <view wx:if="{{!set.has}}">已领取</view>
+    </view>
+    
+  </view>
+
+  <view class='sign-result-wrapper' wx:if="{{show_sign}}">
+    <view class='sign-result'>
+      签到成功，获得{{everyday_bonus * photo_score/100 | Int}}笑脸
+      <view catchtap='addSignCredit'>领取</view>
+    </view>
+  </view>
+
+</view>
+
+
+</view>
+

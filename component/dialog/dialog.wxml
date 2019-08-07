@@ -1,0 +1,15 @@
+<!--component/dialog/dialog.wxml-->
+<view class="component-dialog-container" style="display:{{visible?'block':'none'}}">
+  <view class="mask" catchtouchmove='prevent' catchtap='hideDialog'></view>
+  <view class="content-body" style="left:{{left}};top:{{top}};width:{{width}}rpx;">
+    <view class="title-container" style="{{color.length > 0 ? ('background:' + color): ''}}">
+      <text>{{title}}</text>
+    </view>
+    <view class="content-container" style="height:{{height}}rpx;padding:{{contentPadding}}rpx">
+      <text>{{content}}</text>
+      <slot></slot>
+    </view>
+  </view>
+
+  <image src="/pages/img/close_1.png" mode="widthFix" class="close" style="top:{{top1}}" catchtap='hideDialog' wx:if="{{showCloseButton}}"></image>
+</view>

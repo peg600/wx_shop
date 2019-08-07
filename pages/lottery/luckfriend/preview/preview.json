@@ -1,0 +1,11 @@
+{
+  "disableScroll":true,
+    "usingComponents": {
+      "sharepanel": "../../../../component/sharepanel/sharepanel",
+      "dialog": "../../../../component/dialog/dialog",
+      "authorize": "../../../../component/authorize/authorize",
+      "rule":"../components/rule/rule",
+      "airlineChecker": "../../components/airlineChecker/airlineChecker",
+      "backhome":"../../components/backhome/backhome"
+    }
+}

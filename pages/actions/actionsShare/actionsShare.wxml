@@ -1,0 +1,25 @@
+<view class='acshare'>
+  <view class='goods-info'>
+    <view class='goods'>
+      <view class='goods-img'>
+        <!-- <image src="{{baseUrl+'/'+goodsInfo[0].goods_thumb}}"></image> -->
+        <image src="{{picURL}}"></image>
+      </view>
+      <view class='goods-detail'>
+        <view class='info1'><text>数量:</text><text>{{count}}</text></view>
+        <view class='info2'><text>原价:</text><text>￥{{yuanTotal}}</text></view>
+        <view class='info2'><text>优惠:</text><text>￥{{discount}}</text></view>
+        <view class='info2'><text>实付:</text><text>￥{{total}}</text></view>
+      </view>
+    </view>
+    <view class='probability'>分享到群，让大家帮你把关、撮合!</view>
+    <view class='lx'> <image src='/pages/img/cr.png'></image> </view>
+  </view>
+  <view class='y-btn' hidden="{{!isShowBtn}}"> <button open-type='share' plain class='btn-img'><image src='/pages/img/yq.png' ></image></button>  </view>
+  <view class='djs'>{{timer?timer:''}}</view>
+  <view class='goods-det'>
+    <view class='gd-b'> <view class='nt'>商品名称</view> <view class='dt'> <text wx:for="{{goodsInfo}}">{{item.goods_name}}、</text> </view></view>
+    <view class='gd-b'> <view class='nt'>钟情瞬间</view> <view class='dt'>{{goodsInfo[0].created_time}}</view> </view>
+    <view class='gd-b'> <view class='nt'>钟情购须知</view> <view class='dt'>邀请好友参谋撮合，24小时内满10人发货，不满退款</view> </view>
+  </view>
+</view>

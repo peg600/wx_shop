@@ -1,0 +1,4 @@
+<!--component/splitter/splitter.wxml-->
+<view class="component_splitter_container" style="padding-left:{{margin}}rpx;padding-right:{{margin}}rpx;">
+  <view class="component_splitter" style="background:{{background}};width:{{splitterLength}}rpx" />
+</view>

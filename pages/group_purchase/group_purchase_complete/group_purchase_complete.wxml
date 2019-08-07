@@ -1,0 +1,63 @@
+<!--pages/group_purchase/group_purchase_complete/group_purchase_complete.wxml-->
+<view class='top'>
+  <view class='title'>
+    <image src='/pages/img/group_icon_green.png'></image>
+    <text>拼单成功</text>
+  </view>
+  <text class='condition'>商家正在努力发货请耐心等待</text>
+  <view class='back' bindtap='goBack'>
+    <view>回到首页</view>
+  </view>
+  <view class='users'>
+    <view class='captain-wrapper'>
+      <view class='captain'>
+        <image src='{{users_info[0].avatar_url}}'></image>
+      </view>
+      <view class='captain-mark'>拼主</view>
+    </view>  
+    <view class='others-list' wx:if='{{users_info.length>1}}'>
+      <view class='others' wx:for='{{users_info}}' wx:for-item = "other" 
+      wx:if='{{other.user_id !== users_info[0].user_id}}'>
+        <image src='{{other.avatar_url}}'></image>
+      </view>
+    </view> 
+  </view>
+</view>
+<view class='middle'>
+  <view class='info-list'>
+    <view class='info-left'>
+    商品名称
+    </view>
+    <view class='info-right'>
+      <view class='jump-wrapper' bindtap='gotoDetail'>
+        <view class='goods-name'>
+          {{order_info.goods_name}}
+        </view>
+        <view class='jump-icon'>
+          <image src='/pages/img/jump_icon.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='info-list'>
+    <view class='info-left'>
+      订单信息
+    </view>
+    <view class='info-right'>
+      <ul class='rule-info'>
+        <li class='rules'>
+          收件人
+        </li>
+        <li class='rules'>
+          收货地址
+        </li>
+        <li class='rules'>
+          订单状态
+        </li>
+      </ul>
+    </view>
+  </view>
+</view>
+<view class='bottom'>
+
+</view>

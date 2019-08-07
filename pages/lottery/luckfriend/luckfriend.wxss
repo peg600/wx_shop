@@ -1,0 +1,361 @@
+@import "common.wxss";
+
+.navi_region image {
+  position: absolute;
+  right: 0rpx;
+  width: 141rpx;
+  height: 68rpx;
+}
+
+.rule_region {
+  right: 0rpx;
+}
+
+.pk_info_container {
+  margin-top: 290rpx;
+  width: 100%;
+  height: 894rpx;
+  padding: 5rpx 25rpx 25rpx 25rpx;
+  position: relative;
+  background: url("https://wao-files.oss-cn-beijing.aliyuncs.com/holo/first_tab.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.tabitem {
+  width: 233rpx;
+  text-align: center;
+  display: inline-block;
+  height: 80rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #fde4e1;
+  border-radius: 15rpx 15rpx 0 0;
+  vertical-align: middle;
+  padding-top: 25rpx;
+  margin: 0;
+}
+
+.selectedtab {
+  border: none;
+  font-weight: bold;
+  color: #e63117;
+  font-size: 40rpx;
+  padding-top: 15rpx;
+}
+
+.ruleContainer {
+  margin-top: 20rpx;
+}
+
+.tabcontent {
+  position: relative;
+  padding: 30rpx;
+  height: 700rpx;
+  overflow: hidden;
+  font-size: 33rpx;
+  border: none;
+  margin: 0rpx;
+  border-radius: 0 15rpx 15rpx 15rpx;
+}
+
+.newPK {
+  margin: 10rpx 40rpx;
+  border-radius: 40rpx;
+  height: 80rpx;
+  text-align: center;
+  padding-top: 15rpx;
+  vertical-align: middle;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #762400;
+  background: #ffd521;
+}
+
+.mytitle {
+  font-weight: bold;
+  font-size: 40rpx;
+  color: #e63117;
+  margin-bottom: 20rpx;
+}
+
+.star_container {
+  display: flex;
+}
+
+.error_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+}
+
+.error_container image {
+  width: 200rpx;
+  height: 60rpx;
+}
+
+.navi_tip {
+  position: absolute;
+  bottom: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 640rpx;
+  padding-top: 20rpx;
+  border-top: 1px dotted #444;
+}
+
+.down_arrow {
+  position: absolute;
+  bottom: 5rpx;
+  left: 320rpx;
+  width: 18rpx;
+  height: 18rpx;
+}
+
+.luck_score_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.score_item
+{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.luck_score_container .normal {
+  font-size: 30rpx;
+  flex: 1;
+  font-weight: bold;
+}
+
+.luck_score_container .score {
+  flex: 1;
+}
+
+.star_number {
+  color: #444;
+  font-size: 50rpx;
+  flex: 1;
+  padding: 5rpx 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.score_item image {
+  width: 50rpx;
+}
+
+.star_number image {
+  width: 50rpx;
+  margin-left: 25rpx;
+}
+
+.newInfo {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newInfo view {
+  margin-left: 5rpx;
+}
+
+.new_score {
+  width: 170rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-grow: 2;
+}
+
+.new_score image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}
+
+.new_score_container {
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 0rpx;
+  width: 170rpx;
+  background: rgb(230, 49, 23);
+  color: white;
+  border-radius: 10rpx;
+  box-shadow: 0px 5rpx 35rpx 0rpx rgba(187, 127, 16, 0.2);
+  text-shadow: 0px 5rpx 35rpx 0rpx rgba(187, 127, 16, 0.2);
+}
+
+.newinfo_tip {
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.info_container {
+  display: inline-block;
+}
+
+.new_score_container .desc {
+  flex: 1;
+  flex-grow: 2;
+  font-size: 23rpx;
+  text-align: center;
+  width: 170rpx;
+}
+
+.splitter {
+  margin: 10rpx 10rpx;
+  border-top: 1px dotted #444;
+  height: 1rpx;
+}
+
+.summary {
+  padding: 15rpx;
+}
+
+.summary_item {
+  display: block;
+}
+
+.summary_item text {
+  font-weight: bold;
+}
+
+.homeButton {
+  top: 380rpx;
+}
+
+.buttons
+{
+  margin-top: 15rpx;
+  justify-content:end;
+  align-items: right;
+  display: flex;
+  float: right;
+  padding: 0rpx 15rpx;
+}
+
+.button
+{
+  width: 250rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  background: #e63117;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.beauty_item
+{
+  font-size: 40rpx;
+  display: flex;
+}
+
+.margin-bottom
+{
+  margin-bottom: 30rpx;
+}
+
+.firstItem
+{
+  background: url("https://wao-files.oss-cn-beijing.aliyuncs.com/holo/top_1.png");
+}
+
+.secondItem
+{
+  background: url("https://wao-files.oss-cn-beijing.aliyuncs.com/holo/top_2.png");
+}
+
+.thirdItem
+{
+  background: url("https://wao-files.oss-cn-beijing.aliyuncs.com/holo/top_3.png");
+}
+
+.item
+{
+  
+}
+
+.score_tip
+{
+  font-size: 25rpx;
+  color:#888888;
+  padding-left: 20rpx;
+  padding: 10rpx;
+}
+
+.star_img
+{
+   width: 40rpx;
+}
+
+.flexItem {
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background-repeat: no-repeat;
+   background-size: auto 100%;
+}
+
+.user_image {
+  position: relative;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.user_image image{
+  width: 100rpx;
+   box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 50% 50%;
+}
+
+.user_name {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 300rpx;
+}
+
+.score_value
+{
+  position: absolute;
+  top: -20rpx;
+  right: 0rpx;
+  color: #e63117;
+  font-size: 20rpx;
+}
+
+.star_title
+{
+  font-weight: bold;
+  font-size: 40rpx;
+  color: #e63117;
+  text-align: center;
+}

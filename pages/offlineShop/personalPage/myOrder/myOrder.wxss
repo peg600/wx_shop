@@ -1,0 +1,62 @@
+/* pages/offlineShop/personalPage/myOrder/myOrder.wxss */
+
+page{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.order-list{
+  position: relative;
+  width: 100%;
+}
+
+.order{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 30rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.left{
+  flex: 1 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+
+.mid{
+  position: relative;
+  flex: 0 0 150rpx;
+  margin-right: 30rpx;
+  line-height: 50rpx;
+  word-break: break-all;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.right{
+  position: relative;
+  flex: 0 0 200rpx;
+  margin-left: 30rpx;
+  font-size: 26rpx;
+  color: #aaa;
+}
+
+.gray{
+  color: #aaa;
+}
+
+.red{
+  color: red;
+}
+
+.green{
+  color: rgb(9, 212, 9);
+}

@@ -1,0 +1,34 @@
+<!--pages/personalShop/personanSetting/personalSetting.wxml-->
+<view class='wrapper'>
+  <view class='change'>
+    <view class='title'>修改头像</view>
+    <view class='middle'>
+      <image class='head' src='{{info.avatar_url}}'></image>
+    </view>
+    <image class='arrow' src='/pages/img/jump_icon.png'></image>
+  </view>
+  <view class='change' catchtap='showShopNameChange'>
+    <view class='title'>眼镜店名称</view>
+    <view class='middle'>{{info.personal_shop_name}}</view>
+    <image class='arrow' src='/pages/img/jump_icon.png'></image>
+  </view>
+  <view class='change' catchtap='showShopSloganChange'>
+    <view class='title'>个性签名</view>
+    <view class='middle'>{{info.personal_shop_slogan}}</view>
+    <image class='arrow' src='/pages/img/jump_icon.png'></image>
+  </view>
+</view>
+
+<view class='change-page' wx:if='{{show_shop_name_change}}'>
+  <view class='change-title'>为眼镜店命名</view>
+  <view class='change-sec-title'>名称少于16个字符或8个汉字</view>
+  <input id='change-name' bindinput='changeShopName' value='{{info.personal_shop_name}}'></input>
+  <button class="btn-submit" catchtap='submitName'>提交</button>
+</view>
+
+<view class='change-page' wx:if='{{show_shop_slogan_change}}'>
+  <view class='change-title'>个性签名</view>
+  <view class='change-sec-title'>签名少于40个字符或20个汉字</view>
+  <input id='change-name' bindinput='changeShopSlogan' value='{{info.personal_shop_slogan}}'></input>
+  <button class="btn-submit" catchtap='submitSlogan'>提交</button>
+</view>

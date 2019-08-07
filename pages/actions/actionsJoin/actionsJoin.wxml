@@ -1,0 +1,218 @@
+<view class='join-container'>
+ <view class='i-home' bindtap='goHome'>
+    <image src='/pages/img/itry@3x.png'></image>
+    <text>去首页</text>
+  </view> 
+  <view class='i-try' bindtap='goToFitview'>
+    <image src='/pages/img/itry@3x.png'></image>
+    <text>我也试试</text>
+  </view>
+  <view class='grad'>
+    <view class='join-bg'>
+      <view class='share-wrapper'>
+        <view class='share-bac'>
+          <image src='/pages/img/bac@2x.jpg'></image>
+        </view>
+        <view class='share-content'>
+          <view class='share-pic'>
+            <view class='share-inner'>
+              <view class='loading'>
+                <image class='loading-pic' src='/pages/img/loading_pic.png'></image>
+                <image class='loading-message' src='/pages/img/loading.png'></image>
+              </view>
+              <image src='{{picURL}}' class='share-img'></image>
+            </view>
+          </view>
+          <view class='info-content'>
+            <ul class='info-list'>
+              <li class='info-items'>
+                <text class='info-key'>数量</text>
+                <text class='info-value'>{{goodsNumber}}</text>
+              </li>
+              <li class='info-items'>
+                <text class='info-key'>总价:</text>
+                <text class='info-value'>￥{{ptPrice}}</text>
+              </li>
+              <li class='info-items'>
+                <text class='info-key'>运费</text>
+                <text class='info-value'>￥0.00</text>
+              </li>
+              <li class='info-items'>
+                <text class='info-key'>优惠</text>
+                <text class='info-value'>-￥{{discount}}</text>
+              </li>
+              <li class='info-items'>
+                <text class='info-key'>实付款</text>
+                <text class='info-value'>￥{{bargainPrice}}</text>
+              </li>
+              <li class='info-items'>
+                <text class='info-key'>状态</text>
+                <text class='info-value'>待撮合</text>
+              </li>
+              <li class='info-items'>
+                <text class='info-key'>订单时间</text>
+                <text class='info-value'>{{startTime}}</text>
+              </li>
+            </ul>
+          </view>
+          <view class='progress'>
+            <view class='pb'>
+              <view class='outside-bar'>
+                <view class='inside-bar' 
+              style="width:{{orderInfo.head_count-joinCount>0?joinCount/orderInfo.head_count*408+'rpx':408+'rpx'}}">
+                </view>
+                <view class='ball'
+                style="left:{{orderInfo.head_count-joinCount>0?joinCount/orderInfo.head_count*380+'rpx':380+'rpx'}}">
+                  {{joinCount}}人
+                </view>
+              </view>
+            </view>
+            <view class='surplus' 
+            wx:if="{{orderInfo.head_count-userJoinList.length>0}}">
+                还需
+                <text>{{orderInfo.head_count-joinCount}}</text>人即可完成
+            </view>
+            <view class='surplus' wx:else>
+              撮合已完成
+            </view>
+          </view>
+        </view>
+        
+      </view>
+      <!-- <view class='situation'>已有
+        <text class='rt'>{{joinCount}}</text>人撮合，还需
+        <text class='rt'>{{orderInfo.head_count-userJoinList.length>0?orderInfo.head_count-joinCount:0}}</text> 人即可完成</view> -->
+      <!-- <view class='progress'>
+        <view class='pb'>
+          <image src='/pages/img/progress.png' class='fb'></image>
+          <image src='/pages/img/fill.png' class='fail-img' style="width:{{orderInfo.head_count-joinCount>0?joinCount/orderInfo.head_count*490+'rpx':490+'rpx'}}"></image>
+        </view>
+      </view> -->
+      <button class='cuohe' bindgetuserinfo="onGotUserInfo" open-type="getUserInfo" plain='plain'  wx:if="{{orderInfo.head_count-userJoinList.length>0}}">
+        <image src='/pages/img/help_bac@3x.png'></image>
+        <view class='help'>
+          <image src='/pages/img/help@3x.png' class='help'></image>
+          <view class='help-text'>
+            <text>还剩{{timer}}结束</text>
+            <text>快来帮助Ta吧</text>
+          </view>
+        </view>
+      </button>
+      <button class='cuohe' wx:else>
+        <image src='/pages/img/complete_bac.png'></image>
+        <!-- <view class='help' >
+          <image src='/pages/img/complete_word.png'></image>
+          <view class='help-text'>
+            <text>撮合已完成</text>
+          </view>
+        </view> -->
+      </button>
+      <ul class='rule-info'>
+        <li class='rules'>
+         钟情购规则
+        </li>
+        <li class='rules'>
+          好友撮合
+        </li>
+        <li class='rules'>
+          撮合人满发货
+        </li>
+        <li class='rules'>
+          不满退款
+        </li>
+      </ul>
+      <!-- <view class='cb'>
+        <view class='chai' > <button plain  bindgetuserinfo="breakComb" open-type="getUserInfo"><image src='/pages/img/chaisan.png'></image></button>
+          
+        </view>
+        <view class='bao' >
+        <button plain  bindgetuserinfo="baoBan" open-type="getUserInfo"><image src='/pages/img/baoban.png'></image></button>
+        </view>
+      </view>
+      <view class='countdown'>{{timer}}</view> -->
+
+      <view class='ranking-list'>
+        <image src='/pages/img/help_list@3x.png' class='help-list-pic'></image>
+        <!-- <view class='tit zq'>
+          <view class='l-xin'>
+            <image src='/pages/img/xinxing.png'></image>
+          </view>
+          <view class='zq-txt'>钟情人气榜</view>
+          <view class='r-xin'>
+            <image src='/pages/img/xinxing.png'></image>
+          </view>
+        </view> -->
+        <!-- <view class='sx'>
+          <image src='/pages/img/shanxian.png'></image>
+        </view> -->
+        <view class='player-container'>
+          <view class='player' wx:for="{{userJoinList}}" wx:key="{{index}}">
+            <view class='num'>{{index+1}}</view>
+            <view class='avatar'>
+              <image src="{{item.avatar_url}}"></image>
+            </view>
+            <view class='name'>{{item.user_name}}</view>
+            <view class='operation'>{{item.think_cool==1?'帮Ta撮合':'帮Ta拆散'}}    </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='active_title'>
+        <view>热门推荐</view>
+        <image src="../../img/down_bg_box.png"></image>
+      </view>
+      
+      <view class="glasses_list">
+        <view class="view_glass" wx:for="{{new_data}}" wx:for-item="glass" data-goodId="{{glass.goods_id}}" bindtap="toDetailListPage">
+          <image src="{{glass.goods_img}}"></image>
+          <view class="view_contain">
+            <view class="view_title">{{glass.goods_name}}</view>
+            <view class="view_price fl">
+              <text>￥{{glass.shop_price}}元</text>
+              <text>销量：{{glass.count_goods_num}}</text>
+            </view>
+            <view class="view_even">原价 :￥{{glass.market_price}}元</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='rule-mask' wx:if="{{isShowRule}}">
+  <view class='rule-container'>
+      <view class='close' bindtap='closeRule'>X</view>
+      <view class='actions-rule' >活动规则</view>
+      <view class='ont'>
+        <view class='tit'>开团</view>
+        <view class='content'>邀请好友助力钟情购，在24小时内召集5位好友点赞，即可享受优惠价格。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'>流程</view>
+        <view class='content'>
+          参与活动时需要您先按照钟情价价格支付，完成后并召集一定数量好友撮合。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'></view>
+        <view class='content'>必须在规定时间内召集好友撮合成功，没有达到则视为撮合失败，钱款会在通知后原路退回，您将无法享受钟情购价格。</view>
+      </view>
+      <view class='ont'>
+        <view class='tit'>成功</view>
+        <view class='content'>
+          活动成功后您将会收到提示通知，我们将尽快为您发货。</view>
+      </view>
+    </view>
+</view>
+  </view>
+   
+
+
+<!-- <text>此页面为分享给好友展示的页面，包含展示图片一张、好友帮助列表信息</text>
+<view>
+  <view >活动发起者 </view>
+  <view>{{orderInfo.nick_name}} </view>
+  <view >发起人头像 <image src="{{orderInfo.avatar_url}}" style='width:100rpx;height:100rpx;'></image> </view>
+</view>
+<view>
+<view>当前参与者</view>
+<view wx:for="{{userJoinList}}" wx:key="{{index}}"> {{item.user_name}} <image src="{{item.avatar_url}}" style='width:100rpx;height:100rpx;'></image> </view>
+</view>
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息(帮好友助力)</button> -->

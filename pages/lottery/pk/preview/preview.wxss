@@ -1,0 +1,76 @@
+page {
+  background: #fdebbc;
+}
+
+.head {
+  position: absolute;
+  width: 750rpx;
+  top: 0rpx;
+  bottom: 0rpx;
+  background: url(https://wao-files.oss-cn-beijing.aliyuncs.com/holo/spring_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  text-align: center;
+}
+
+
+.rule_region {
+  margin-top: 30rpx;
+  width: 750rpx;
+  height: 100rpx;
+}
+
+.rule_region image {
+  position: absolute;
+  right: 0rpx;
+  width: 138rpx;
+  height: 64rpx;
+}
+
+.preview_container
+{
+   margin-top: 260rpx;
+   width:100%;
+   position: relative;
+   align-content: center;
+}
+
+.image-container
+{
+  position: relative;
+  margin-left: 75rpx;
+  width: 600rpx;
+  height: 800rpx;
+}
+
+.image-container image
+{
+  width: 600rpx;
+  height: 800rpx;
+}
+
+.image-container canvas
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 600rpx;
+  height: 800rpx;
+}
+
+.newPK
+{
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  height: 80rpx;
+  text-align: center;
+  padding-top: 15rpx;
+  vertical-align: middle;
+  font-size: 40rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  font-weight: bold;
+  color: #762400;
+  background: #ffd521;
+}

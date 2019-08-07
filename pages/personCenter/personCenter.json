@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "个人中心",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "tabbar": "../../component/tabbar/tabbar"
+  }
+}

@@ -1,0 +1,154 @@
+page {
+  background: #f2f2f2;
+}
+
+.goods-info {
+  padding: 10rpx;
+  padding-top: 20rpx;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  position: relative;
+  margin-bottom: 10rpx;
+}
+
+.goods-img image {
+  width: 560rpx;
+  height: 560rpx;
+  display: block;
+}
+
+.probability {
+  font-size: 26rpx;
+  color: rgb(136, 136, 136);
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.ls image {
+  width: 110rpx;
+  height: 38rpx;
+}
+
+.goods {
+  display: flex; 
+}
+
+.sre {
+  color: rgb(255, 134, 1);
+  font-size: 24rpx;
+}
+
+.info_container
+{
+  height:80rpx;
+  margin-top: 480px;
+  flex-wrap: wrap;
+}
+
+.info1 {
+  font-size: 24rpx;
+  color: rgb(136, 136, 136);
+  margin-top: 390rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info2 {
+ display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: rgb(136, 136, 136);
+}
+
+.goods-detail {
+  height: 560rpx;
+  width: 180rpx;
+  margin-left: 10rpx;
+  padding-top: 32rpx;
+  vertical-align: bottom;
+}
+
+.sre {
+  margin-top: 20rpx;
+  margin-bottom: 12rpx;
+}
+
+.xj {
+  margin-top: 20rpx;
+}
+
+.lx {
+  position: absolute;
+  left: 275rpx;
+  bottom: -40rpx;
+  z-index: -1;
+}
+
+.lx image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.y-btn {
+  text-align: center;
+}
+
+.y-btn image {
+  width: 548rpx;
+  height: 120rpx;
+  margin-top: 50rpx;
+}
+
+.djs {
+  font-size: 26rpx;
+  color: rgb(255, 134, 1);
+  text-align: center;
+}
+
+.gd-b {
+  display: flex;
+  margin: 30rpx 0;
+}
+
+.nt {
+  font-size: 26rpx;
+  color: rgb(53, 53, 53);
+  margin-right: 40rpx;
+}
+
+.dt {
+  font-size: 26rpx;
+  color: rgb(136, 136, 136);
+}
+
+.goods-det {
+  border-top: 1px solid #f2f2f2;
+  width: 630rpx;
+  margin: 10rpx auto 0;
+  /* padding-top: 30rpx; */
+}
+
+.dt {
+  flex: 1;
+  overflow: hidden;
+  /* word-break: break-all; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+button[plain] {
+  color: #353535;
+  border: 0;
+  background-color: transparent;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.btn-img{
+  height: 186rpx;
+}

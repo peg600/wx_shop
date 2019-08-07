@@ -1,0 +1,5 @@
+/* component/container/container.wxss */
+.component-container
+{
+  width:100%;
+}

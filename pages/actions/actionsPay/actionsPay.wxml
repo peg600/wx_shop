@@ -1,0 +1,56 @@
+< view class='cart-container'>
+  <view class='shop'>
+    <view class='title flex' wx:if="{{carts.length > 0}}">
+      <view class="check-btn {{selectAllStatus==true?'selected':'normal'}}" bindtap='chengeChecked'></view>
+      <view class='shop-info'>
+        <image class='shop-icon' src='/pages/img/shopIcon.png'></image>
+        <text>Holo</text>
+      </view>
+      <!-- <view class='voucher'>领券</view> -->
+    </view>
+    <view wx:else class='carts-dafault'>
+      <image src='/pages/img/carts_none.png'></image>
+    </view>
+
+    <view class='goods' wx:for="{{carts}}" wx:for-index="index">
+      <view class="container-goods-item  {{index == showDelIndex?'show-del-btn':''}}" bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index="{{index}}">
+        <view class='goods-btn'>
+          <view class="check-btn {{item.selected== true? 'selected' : 'normal'}}" bindtap='goodsSelected' data-index="{{index}}"></view>
+        </view>
+        <view class='goods-img' bindtap='toGoodsDetail' data-goodId="{{item.goods_id}}">
+          <image src="{{baseUrl+'/'+item.goods_thumb}}"></image>
+        </view>
+        <view>
+          <view class='goods-name' bindtap='toGoodsDetail' data-goodId="{{item.goods_id}}">{{item.goods_name}}</view>
+          <view class='goods-attr'>{{item.goods_sn}}{{item.goods_attr?' '+ item.goods_attr:''}}</view>
+          <view class='goods-g-price'>{{item.goods_discount?'原价:'+item.shop_price:''}}</view>
+          <view class='goods-number-price'>
+            <text class='rmb'>￥</text>
+            <text class='price'>{{item.goods_discount?item.shop_price-item.goods_discount:item.shop_price}}</text>
+            <view class='number-box'>
+              <text class='reduce' bindtap='reduce' data-num="{{item.number}}" data-index="{{index}}">-</text>
+              <!-- <text class='goods-number'>{{item.number}}</text> -->
+              <input type='number' value="{{item.number}}"  class='ipt-num' bindinput="keyUpInput" data-index="{{index}}" bindblur="inputFocus"></input>
+              <text class='add' bindtap='add' data-num="{{item.number}}" data-index="{{index}}">+</text>
+              
+            </view>
+          </view>
+        </view>
+        <view class='del-goods' bindtap='delGoods' data-rec_id="{{item.rec_id}}">
+          删除
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+  <view class='balance' hidden="{{carts.length>0?false:true}}">
+  <view class='total-box'>
+    <text class='total'>合计:</text>
+    <text class='rmb'>￥</text>
+    <text class='total-price'>{{totalPrice}}</text>
+  </view>
+  
+    <text class='freight'>免运费</text>
+    <text class='quantity' bindtap='payGoods'> 结算({{count}})</text>
+  </view>
+  

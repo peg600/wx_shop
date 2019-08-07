@@ -1,0 +1,22 @@
+<view class='rule-container'>
+  <view class='actions-rule'>活动规则</view>
+  <view class='ont'>
+    <view class='tit'>开团</view>
+    <view class='content'>邀请好友助力（xxx），在24(48)小时内召集5位好友点赞，即可享受优惠价格。</view>
+  </view>
+  <view class='ont'>
+    <view class='tit'>流程</view>
+    <view class='content'>
+参与活动时需要您先按照(xx)价格支付，完成后并召集一定数量好友点赞。</view>
+  </view>
+  <view class='ont'>
+    <view class='tit'></view>
+    <view class='content'>必须在规定时间前内召集好友点赞成功，没有达到则视为召集失败，钱款会在通知后原路退回，您将无法享受(xxx)价格；每次助力金额随机，参与好友越多优惠越大。</view>
+  </view>
+  <view class='ont'>
+    <view class='tit'>成功</view>
+    <view class='content'>
+活动成功后您将会收到提示通知，我们将尽快为您发货。</view>
+  </view>
+</view>
+<button bindtap='isConfirm'>同意参加此活动</button>

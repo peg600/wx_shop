@@ -1,0 +1,88 @@
+
+<view class='head'>
+
+</view>
+<airlineChecker/>
+<view class="ticket_container">
+  <view class="current_lottery">
+    <view class="my_ticket_container" catchtap='goMyTicket'>
+      <text class="my_ticket">我的奖券</text>
+    </view>
+
+    <view class="lottery_index">
+      第{{current_lottery.lottery_index}}期{{current_lottery.lottery_status==1?"进行中":"已结束"}}
+    </view>
+
+    <view class="lottery_status">
+      {{current_lottery.lottery_status==1?"进行中":"已结束"}}
+    </view>
+
+    <view class="lottery_progress">
+      <view class="lottery_current" style="width:{{current_lottery.num / current_lottery.attendee_num * 406}}rpx"></view>
+    </view>
+
+    <view class="lottery_progress_indicator" style="left:{{2 + current_lottery.num / current_lottery.attendee_num * 406}}rpx">{{current_lottery.num}}
+    </view>
+
+    <image src="/pages/img/lottery_info.png" class="lottery_info_indicator_img"></image>
+
+    <view class="lottery_info">
+      <text>参与人数达到</text>
+      <text class="bold">{{current_lottery.attendee_num}}</text>
+      <text>人时自动开奖 {{current_lottery.num}}/{{current_lottery.attendee_num}}</text>
+    </view>
+    <view class="lottery_info_min">0</view>
+    <view class="lottery_info_max">{{current_lottery.attendee_num}}</view>
+    <view class="btn_container" catchtap='joinLottery'>
+      <image src="/pages/img/btn_lottery_submit.png"></image>
+    </view>
+  </view>
+
+  <view class="other_lottery reverseGradientBackground" wx:if="{{lotteries.length > 0}}">
+    <view class="list_header">
+      <text>往期中奖名单</text>
+    </view>
+    <view class="inner">
+      <view class="list-item" wx:for="{{lotteries}}" wx:key="{{item}}">
+      <text class="list-number">第{{item.lottery_index}}期:</text>
+      <image src="{{item.avatar_url}}"></image>
+      <text>{{item.nick_name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="rule_info">
+    <view class="rule_inner_info">
+      <view class="header">
+        <image src="/pages/img/rule_info_header.jpg" mode="widthFix"> </image>
+      </view>
+      <text>1、每期可以有一名幸运用户获得春节免费机票。</text>
+      <text>2、每期抽奖人数达到时自动开奖，开奖完毕参与人数归零，进入下一期抽奖。</text>
+      <text>3、每一期，每个人可以参与多次抽奖，每次抽奖使用一张奖券，每张奖券作为一个独立单位进入抽奖池，奖券越多，中奖几率越大。</text>
+      <text>4、注意：奖券一旦使用，意味着你已经确认收货该奖券所对应的订单商品，订单商品将不能进行退换。保险起见，你可以在收到订单商品并确认无误之后再参加抽奖。</text>
+      <text>5、开奖后将在本页面公布中奖用户信息。</text>
+    </view>
+  </view>
+
+  <view class="rule_info">
+    <view class="rule_inner_info">
+      <view class="header">
+        <image src="/pages/img/lottery_boardcast.jpg" mode="widthFix"> </image>
+      </view>
+      <view class="boardcast">
+        <text>为了避免错过中奖消息，请按照如下步骤</text>
+        <text>搜索并关注公众号</text>
+        <text class="bold emphsis">“开心小集”。</text>
+        <view class="step-intro emphsis">
+          <text>进入微信</text>
+          <image src="/pages/img/right_arrow.png"></image>
+          <text>搜索栏</text>
+          <image src="/pages/img/right_arrow.png"></image>
+          <text>手动搜索“开心小集”</text>
+          <image src="/pages/img/right_arrow.png"></image>
+          <text>点击“关注公众号”</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

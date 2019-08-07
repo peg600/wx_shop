@@ -1,0 +1,2 @@
+<!--pages/toPersonalShop/personal_shop_list/personal_shop_list.wxml-->
+<container componentlist="{{componentlist}}"/>

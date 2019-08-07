@@ -1,0 +1,282 @@
+/* pages/logistics/logistics.wxss */
+
+page {
+  box-sizing: border-box;
+  height: 100%;
+  background: #f2f2f2;
+} 
+
+.wrap {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.express {
+  display: flex;
+  background: #fff;
+  border-radius: 8rpx;
+  margin-top: 26rpx;
+  height: 200rpx;
+}
+
+.summary
+{
+  display: flex;
+  height: 80rpx;
+  background: #fff;
+  vertical-align: middle;
+}
+
+.summary-info {
+  height: 100%;
+  padding-left:24rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: rgb(52, 52, 52);
+}
+
+.express-info {
+  flex: 1;
+}
+
+.ecpress-logo {
+  width: 170rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecpress-logo image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.goods_container
+{
+  position: relative;
+  box-sizing: border-box;
+  margin-top:30rpx;
+  background: white;
+  border-radius: 5px;
+  padding-bottom: 30rpx;
+}
+
+.shop-info {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+  padding: 0 28rpx;
+}
+.shop-icon {
+  position: relative;
+  flex: 0 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.shop-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.shop-name {
+  position: relative;
+  height: 100%;
+  flex: 1 1;
+  padding-left: 24rpx;
+  line-height: 60rpx;
+  font-size: 22rpx;
+  color: rgb(53, 53, 53);
+}
+
+.goods-box
+{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40rpx 16rpx 30rpx;
+  background: #fff;
+}
+
+.goods-wrapper {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 114rpx;
+  margin-top: 16rpx;
+}
+.goods-icon {
+  position: relative;
+  height: 100%;
+  flex: 0 0 114rpx;
+  border-radius: 5rpx;
+}
+.goods-icon image {
+  width: 100%;
+  height: 100%;
+}
+.goods-name {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  flex: 1 1;
+  padding: 16rpx 0 16rpx 30rpx;
+}
+.name-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align:left;
+  vertical-align: middle;
+  font-size: 26rpx;
+  color: rgb(53, 53, 53);
+}
+.goods-number {
+  position: relative;
+  height: 100%;
+  flex: 0 0 90rpx;
+  line-height: 114rpx;
+  text-align: right;
+  font-size: 26rpx;
+  color: rgb(53, 53, 53);
+}
+
+.btnContainer
+{
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btnContainer text {
+  border-radius: 45rpx;
+  /* height: 50rpx; */
+  font-size: 26rpx;
+  color: #ff5829;
+  /* box-sizing: border-box; */
+  border: 1px solid #ff5829;
+  padding: 12rpx 30rpx;
+  margin-right: 26rpx;
+}
+
+.btnContainer .normal{
+  color: #353535;
+    border: 1px solid #353535;
+}
+
+.sn {
+  font-size: 24rpx;
+  color: #353535;
+  margin: 10rpx 0;
+}
+
+.tel {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.logistics {
+  margin-top: 20rpx;
+}
+
+.logistics-box {
+  padding: 60rpx 35rpx;
+  background: #fff;
+}
+
+.term {
+  display: flex;
+  color: #888888;
+}
+
+.term-left {
+  width: 150rpx;
+}
+
+.term-right {
+  flex: 1;
+  padding-left: 40rpx;
+  border-left: 1px solid #aaa;
+  position: relative;
+  padding-bottom: 50rpx;
+}
+
+.short::after {
+  border-radius: 50%;
+  content: '';
+  display: block;
+  width: 16rpx;
+  height: 16rpx;
+  position: absolute;
+  left: -8rpx;
+  top: 8rpx;
+  background: #aaa;
+}
+
+.term-left .day {
+  font-size: 28rpx;
+  height: 45rpx;
+}
+
+.term-left .time {
+  font-size: 24rpx;
+}
+.state {
+  font-size: 28rpx;
+  height: 50rpx;
+}
+
+.state-detail {
+  font-size: 24rpx;
+}
+.big::after {
+  color: #fff;
+  content: '收';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -17rpx;
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20rpx;
+  background: #aaa;
+}
+.end {
+  padding-bottom: 0;
+  border: 0;
+}
+.end::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 8rpx;
+  position: absolute;
+  background: #aaa;
+  top: 0;
+  left: 0;
+}
+.active::after{
+  background: #ff8b02;
+}
+.selected{
+  color: #353535;
+}
+.cheng{
+  color: #ff8b02;
+}
+.n-img{
+  text-align: center;
+  margin-top: 110rpx;
+}
+.n-img image{
+  width: 310rpx;
+  height: 310rpx;
+}

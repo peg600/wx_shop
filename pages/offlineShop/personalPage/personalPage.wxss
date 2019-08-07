@@ -1,0 +1,227 @@
+/* pages/offlineShop/personalPage/personalPage.wxss */
+
+page{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #eee;
+}
+
+.red-wrapper{
+  position: relative;
+  width: 100%;
+  padding: 30rpx 30rpx 0 30rpx;
+  color: #fff;
+  background-color: rgb(255, 40, 40);
+}
+
+.gray-wrapper{
+  position: relative;
+  width: 100%;
+  padding: 0 30rpx 30rpx 30rpx;
+  color: #333;
+}
+
+.name-wrapper{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 120rpx;
+  padding: 10rpx 0;
+}
+.name-wrapper image{
+  position: relative;
+  flex: 0 0 100rpx;
+  height: 100%;
+  margin-right: 30rpx;
+  border-radius: 50%;
+}
+.name-wrapper view{
+  position: relative;
+  flex: 1 1;
+  height: 100%;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: #fff;
+}
+
+.gray-word{
+  display: inline-block;
+  position: relative;
+  margin: 30rpx 60rpx 30rpx 0;
+  vertical-align: middle;
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.black-wrapper{
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 30rpx;
+  padding: 30rpx 30rpx 0 30rpx;
+  border-radius: 30rpx 30rpx 0 0;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #444;
+}
+
+.black-left{
+  position: relative;
+  flex: 1 1;
+  margin-right: 30rpx;
+  padding-left: 30rpx;
+}
+.black-left view{
+  margin-bottom: 20rpx;
+  font-size: 34rpx;
+  color: rgb(255, 255, 174);
+}
+.black-left view:last-child{
+  font-size: 24rpx;
+  color: rgba(255, 255, 255,0.8);
+}
+
+.black-right{
+  flex: 0 0 150rpx;
+  height: 50rpx;
+  margin-top: 20rpx;
+  padding: 0 15rpx;
+  line-height: 50rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #333;
+  background-color: rgb(255, 255, 174);
+}
+
+.virtual-wrapper{
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30rpx;
+  padding: 20rpx 0;
+  border-radius: 0 0 30rpx 30rpx;
+  font-size: 30rpx;
+  color: #333;
+  background-color: #fff;
+}
+
+.virtual{
+  position: relative;
+  flex: 1 1;
+  text-align: center;
+}
+
+.virtual-word{
+  display: inline-block;
+  margin-bottom: 10rpx;
+}
+
+.big{
+  font-size: 40rpx;
+}
+
+.tab-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin: 30rpx 0;
+  border-radius: 30rpx;
+  text-align: center;
+  background-color: #fff;
+}
+
+.tab{
+  box-sizing: border-box;
+  position: relative;
+  flex: 0 0 25%;
+  padding: 30rpx 0;
+  line-height: 32rpx;
+}
+.tab image{
+  position: relative;
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
+.tab view{
+  font-size: 32rpx;
+}
+
+.bar-wrapper{
+  position: relative;
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 100rpx;
+  padding: 0 30rpx;
+}
+
+.percent{
+  position: relative;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: red;
+}
+
+.bar{
+  position: relative;
+  width: 100%;
+  height: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #aaa;
+}
+.bar view{
+  position: relative;
+  width: 0;
+  height: 100%;
+  background-color: red;
+}
+
+.grade{
+  position: relative;
+  float: left;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.grade:last-child{
+  float: right;
+}
+
+.content{
+  display: flex;
+  align-items:center;
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  padding: 0 30rpx;
+}
+
+.content view{
+  position: relative;
+  flex: 1 1 ;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: #333;
+}
+.content image{
+  position: relative;
+  flex: 0 0 20rpx;
+  height: 40rpx;
+}
+
+
+
+
+
+
+
+
+
+

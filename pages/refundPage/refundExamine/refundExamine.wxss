@@ -1,0 +1,16 @@
+.exa-img image{
+  width: 750rpx;
+  height: 140rpx;
+  display: block;
+}
+.exa-dt{
+  font-size: 30rpx;
+  color: rgb(53, 53, 53);
+}
+.sn-time{
+  font-size: 24rpx;
+  color: rgb(136, 136, 136);
+}
+.exa-status{
+  padding: 35rpx 0 35rpx 25rpx;
+}

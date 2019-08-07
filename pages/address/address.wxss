@@ -1,0 +1,102 @@
+page{
+  height: 100%;
+  background: #f2f2f2;
+  position: relative;
+}
+.address-item {
+  margin-bottom: 20rpx;
+  background: #ffffff;
+}
+
+.info-box {
+  padding: 45rpx 25rpx;
+  height: 208rpx;
+  box-sizing: border-box;
+}
+
+.user {
+  margin-bottom: 35rpx;
+  display: flex;
+}
+
+.user-name, .tel {
+  flex: 1;
+  color: rgb(53, 53, 53);
+}
+
+.user-name {
+  font-size: 30rpx;
+}
+
+.tel {
+  font-size: 28rpx;
+  text-align: right;
+}
+.em{
+  color: rgb(243, 109, 0);
+}
+.address-detail {
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+
+.operation {
+  display: flex;
+  border-top: 1px solid #f2f2f2;
+  padding: 0 25rpx;
+}
+
+.set-default, .bn {
+  font-size: 26rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  flex: 1;
+}
+.bn{
+  display: flex;
+}
+.edit,.del{
+  flex: 1;
+}
+.default-img,.edit-img,.del-img{
+  width: 40rpx;
+  height: 40rpx;
+}
+.default-img{
+  margin-right: 24rpx;
+  vertical-align: middle;
+}
+.edit{
+  margin-left: 40rpx;
+  margin-right: 80rpx;
+}
+.edit-img,.del-img{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 14rpx;
+}
+.add-btn{
+  position: fixed;
+  bottom: 0;
+  height: 140rpx;
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #eaeaea;
+  background: #f2f2f2;
+}
+
+.add-btn-img{
+  width: 697rpx;
+  height: 90rpx;
+}
+.address-container{
+  margin-bottom: 150rpx;
+}
+.bgf{
+  background: #fdf8f2;
+}
+
+

@@ -1,0 +1,21 @@
+/* component/textpanel/textpanel.wxss */
+.component-textpanel
+{
+  width:100%;
+  display: block;
+}
+
+.component-textpanel-text0
+{
+  font-size: 55rpx;
+}
+
+.component-textpanel-text1
+{
+  font-size: 35rpx;
+}
+
+.component-textpanel-text2
+{
+  font-size: 23rpx;
+}

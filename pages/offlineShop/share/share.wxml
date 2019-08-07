@@ -1,0 +1,48 @@
+<!--pages/offlineShop/share/share.wxml-->
+
+<authorize type="2"/>
+
+<scroll-view class='wrapper' id="editor-wrapper" scroll-y wx:if="{{!share_img}}"  bindchosen="toggleChooseTag" catchtap='chooseTag' bindscroll="onScroll">
+  <image class='editor' id="editor" src="{{src}}" mode='widthFix' bindload="onImageLoad"></image>
+  <movable-area style="width: {{area_width}}px; height: {{area_height}}px">
+  <!-- <tag wx:for="{{tags}}" wx:for-item="tag" wx:key="{{tag}}" tag="{{tag}}" index="{{index}}" chosen_tag="{{chosen_tag}}" screen_width="{{screen_width}}"/> -->
+    <movable-view class='tag-wrapper' direction="all" 
+    wx:if="{{tag.show}}" 
+    wx:for="{{tags}}" wx:for-item="tag" wx:key="{{tag}}" 
+    x="{{tag.x}}" y="{{tag.y}}" 
+    id="tag-{{index}}" 
+    style="width: {{tag.tag_width}}px; flex-direction: {{tag.left ? 'row-reverse' : 'row'}};" 
+    damping='10000'
+    bindchange="changePos" 
+    data-index="{{index}}" 
+    catchtouchend='onTouchEnd'
+    catchtap='prevent'>
+    <!-- <view class='tag-content' style="transform: translateX({{tag.left ? '20rpx' : '-20rpx'}});"> -->
+      <view class='dot' catchtap='changeDirect' catchtouchend='prevent' data-index="{{index}}">
+        <view></view>
+      </view>
+      <view class='line' style="transform: translateX({{tag.left ? '10rpx' : '-10rpx'}});"></view>
+      <view class='text' style="transform: translateX({{tag.left ? '10rpx' : '-10rpx'}});">{{tag.text}}</view>
+      <!-- </view> -->
+    </movable-view>
+    <view class='delete {{delete_active ? "active" : ""}}' id='delete-wrapper' wx:if="{{show_delete}}" style='top: {{delete_top_height}}px'>
+      <image src='/pages/img/del.png' id="delete"></image>
+    </view>
+  </movable-area>
+</scroll-view>
+
+<scroll-view class='wrapper' scroll-y wx:if="{{share_img}}">
+  <image class='editor' src="{{share_img}}" mode='widthFix'></image>
+</scroll-view>
+
+<view class='canvas-wrapper'>
+  <canvas style="width: {{canvas_width}}px; height: {{canvas_height}}px;left:2000rpx;" canvas-id="firstCanvas"></canvas>
+</view>
+
+  <view class='bottom'>
+    <view class='change' catchtap='chooseImage'>重选图片</view>
+    <view class='next' wx:if="{{!share_img}}" catchtap='drawCanvas'>生成分享图</view>
+    <view class='next' wx:if="{{share_img}}" catchtap='saveImageToPhotosAlbum'>保存图片</view>
+</view>
+
+

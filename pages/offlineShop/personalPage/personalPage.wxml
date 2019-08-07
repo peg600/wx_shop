@@ -1,0 +1,88 @@
+<!--pages/offlineShop/personalPage/personalPage.wxml-->
+
+<authorize type='1'/>
+
+<view class='red-wrapper'>
+  <view class='name-wrapper'>
+    <image src='{{endorser_info.avatar_url}}'></image>
+    <view>{{endorser_info.nick_name}}</view>
+  </view>
+
+  <!-- <view class='gray-word'>粉丝 {{endorser_info.fans_number}}</view>
+  <view class='gray-word'>{{endorser_info.current_grade}}</view> -->
+
+  <!-- <view class='bar-wrapper'>
+    <view class='percent'>{{endorser_info.fans_number/endorser_info.need_number * 100}}%</view>
+    <view class='bar'>
+      <view style='width: {{endorser_info.fans_number/endorser_info.need_number * 690}}rpx'></view>
+    </view>
+    <view class='grade'>{{endorser_info.current_grade}}</view>
+    <view class='grade'>{{endorser_info.next_grade}}</view>
+  </view> -->
+
+  <view class='black-wrapper'>
+    <view class='black-left'>
+      <view>余额 ￥{{endorser_info.endorser_bonus / 100}} </view>
+      <view>每月25号可提现上月结算收益</view>
+    </view>
+    <view class='black-right' catchtap='drawCash'>立即提现</view>
+  </view>
+</view>
+
+<view class='gray-wrapper'>
+  <view class='virtual-wrapper'>
+    <view class='virtual'>
+      <view class='virtual-word'>￥
+        <view class='virtual-word big'>{{endorser_info.endorser_virtual_bonus / 100}}</view>
+      </view>
+      <view class='virtual-word2'>本月预估</view>
+    </view>
+    <view class='virtual'>
+      <view class='virtual-word'>￥
+        <view class='virtual-word big'>{{endorser_info.endorser_history_bonus / 100}}</view>
+      </view>
+      <view class='virtual-word2'>累计提现</view>
+    </view>
+  </view>
+
+  <view class='tab-wrapper'>
+    <view class='tab' catchtap='gotoCash'>
+      <image src="/pages/img/tuikuan.png"></image>
+      <view>收益</view>
+    </view>
+    <view class='tab'>
+      <image src="/pages/img/collection.png" catchtap='gotoFans'></image>
+      <view>粉丝</view>
+    </view>
+    <view class='tab'>
+      <image src="/pages/img/coupon.png" catchtap='gotoCoupon'></image>
+      <view>优惠券</view>
+    </view>
+    <view class='tab'>
+      <image src="/pages/img/cpa.png" catchtap='gotoCashCoupon'></image>
+      <view>现金券</view>
+    </view>
+    <view class='tab'>
+      <image src="/pages/img/order.png" catchtap='gotoOrder'></image>
+      <view>订单</view>
+    </view>
+    <button class='tab' open-type='share'>
+      <image src="/pages/img/share.png"></image>
+      <view>邀请</view>
+    </button>
+  </view>
+
+  <!-- <view class='content' catchtap='gotoCash'>
+    <view>提现兑换（当前可提现{{endorser_info.endorser_bonus/100}}元）</view>
+    <image src='/pages/img/jump_icon.png'></image>
+  </view>
+  <view class='content' catchtap='gotoFans'>
+    <view>我的粉丝（当前粉丝{{endorser_info.fans_number}}人）</view>
+    <image src='/pages/img/jump_icon.png'></image>
+  </view>
+  <view class='content'>
+    <view>累计提现：{{endorser_info.endorser_history_bonus/100}}元</view>
+  </view> -->
+</view>
+
+

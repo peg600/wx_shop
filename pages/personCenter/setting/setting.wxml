@@ -1,0 +1,35 @@
+<!--pages/personCenter/setting/setting.wxml-->
+<view class="user-container">
+  <view class='user-infor flex container'>
+    <view class='user-info-icon'>
+      <open-data type="userAvatarUrl" class='head-img'></open-data>
+    </view>
+    <view class='user-name'>
+      <view class='user-tit'><open-data type="userNickName"></open-data></view>
+      <view class='users'>用户名：<open-data type="userNickName"></open-data></view>
+    </view>
+  </view>
+
+  <view class="view_list">
+    <view class="flex view_flex">
+      <view>绑定手机号码</view>
+     
+    </view>
+    <view class="flex view_flex">
+      <view bindtap='toAdress'>管理收货地址</view>
+     
+    </view>
+    <view class="flex view_flex">
+      <view>意见与反馈</view>
+   
+    </view>
+    <view class="flex view_flex">
+      <view>关于holo</view>
+   
+    </view>
+    <view class="flex view_flex">
+      <view>退出登录</view>
+     
+    </view>
+  </view>
+</view>

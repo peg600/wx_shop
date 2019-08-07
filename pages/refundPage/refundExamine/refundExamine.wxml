@@ -1,0 +1,10 @@
+<view class="exa-container" >
+  <view class='exa-img'> <image src='/pages/img/waitforpay.png'></image></view>
+  <view class='exa-status'>
+    <view class='exa-dt'> 您已成功发起退款申请，请耐心等待商家处理。</view>
+    <view class='sn-time'>
+      <view>订单编号：5469406848</view>
+      <view>下单时间：2018-4-12 16:56:11</view>
+    </view>
+  </view>
+</view>

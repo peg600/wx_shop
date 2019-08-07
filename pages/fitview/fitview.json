@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  
+  "navigationBarTitleText": "试戴",
+  "backgroundColor": "#fff",
+  "disableScroll": true
+}

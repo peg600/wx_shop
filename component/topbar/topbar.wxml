@@ -1,0 +1,32 @@
+<!--component/topbar/topbar.wxml--> 
+<view class='{{is_float ? "float-wrap" : ""}}'>
+  <blank wx:if="{{is_float}}" height="168"/> 
+  <view class='top_container {{is_float ? "float-wrapper" : ""}} {{has_shadow ? "" : "no-shadow"}}' style='top: {{navbar_height}}px' id="scroll-wrapper">
+    <searchbar wx:if="{{showSearchBar}}" isguide="true" />
+    <view class="scroll-container">
+      <scroll-view class='wrapper' scroll-x>
+        <view class='content'>
+          <view class='category {{"" == current_cat ? "selected" : ""}}' wx:if="{{componentlist.length > 0}}" catchtap='chooseCat' data-cat="">推荐</view>
+          <view class='category {{cat.id == current_cat.id ? "selected" : ""}}' wx:for="{{cat_list}}" wx:for-item="cat" wx:key="{{cat.id}}" catchtap='chooseCat' data-cat="{{cat}}">{{cat.name}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class='shadow' wx:if="{{show_shadow}}" style='height: {{goodlist_height}}px'></view>
+
+  <container wx:if="{{current_cat == ''}}" componentlist="{{componentlist}}" pull_down_refresh='true' class="holo-container" id="container" bindcomplete="onComplete"/>
+
+  <goodlist wx:if="{{current_cat != ''}}" id="goodlist" bindcomplete="onComplete" 
+  goods="{{goods}}" 
+  page_number="{{page_number}}" 
+  limit_number="{{limit_number}}" 
+  order="{{order}}" 
+  cat_id="{{current_cat.id}}" 
+  pull_down_refresh="{{pull_down_refresh}}" 
+  margin="{{margin}}" 
+  imageStyle="{{imageStyle}}"
+    imageRatio="{{imageRatio}}" itemStyle="{{itemStyle}}" itemGoodsName="{{itemGoodsName}}" itemGoodsDesc="{{itemGoodsDesc}}" itemGoodPrice="{{itemGoodPrice}}" itemBuyStyle="{{itemBuyStyle}}" itemCornerStyle="{{itemCornerStyle}}">
+  </goodlist>
+
+</view>

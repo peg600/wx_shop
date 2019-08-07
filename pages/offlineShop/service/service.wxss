@@ -1,0 +1,95 @@
+/* pages/offlineShop/service/service.wxss */
+
+
+page{
+  background: #f2f2f2;
+  /* height: 100%; */
+}
+.transfer-container{
+  background: #ffffff;
+  margin: 40rpx 50rpx 0;
+  border-radius: 8rpx;
+}
+.quest-box{
+  padding: 45rpx 40rpx;
+}
+.hs{
+  font-size: 34rpx;
+  /* font-weight: bold; */
+}
+.quest-list{
+  margin-top: 40rpx;
+}
+.tit{
+  font-size: 26rpx;
+  color: #fea700;
+}
+.content{
+  font-size: 26rpx;
+  color: #888888;
+  margin-top: 20rpx;
+}
+.concat-box{
+  border-top: 1px solid #e0e0e0;
+}
+.concat-box button{
+  border: 0;
+  display: flex;
+  height: 150rpx;
+  position: relative;
+  overflow: visible;
+  padding: 0;
+}
+.con-img image{
+  width: 65rpx;
+  height: 65rpx;
+}
+.con-next image{
+  width:  16rpx;
+  height: 35rpx;
+}
+.con-text{
+   flex: 1;
+   text-align: left;
+     z-index: 99;
+}
+.con-tit{
+  font-size: 34rpx;
+  height: 75rpx;
+}
+.con-time{
+  font-size: 28rpx;
+  color: #888888;
+  height: 75rpx;
+  
+}
+.con-img,.con-next{
+  width: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.con-next{
+  width: 140rpx;
+  position: relative;
+}
+.cr{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  bottom: -38rpx;
+  left:285rpx;
+  z-index: 1;
+}
+.cr image{
+  width: 100%;
+  height: 100%;
+}
+.logo{
+  margin-top: 70rpx;
+  text-align: center;
+}
+.logo image{
+  width: 90rpx;
+  height: 90rpx;
+}

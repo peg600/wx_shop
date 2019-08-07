@@ -1,0 +1,344 @@
+/* pages/New/index.wxss */
+page{
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.holo-container
+{
+  background-color: #fefefe;
+}
+
+.fixed
+{
+  position: fixed;
+  top:20rpx;
+  z-index: 100;
+}
+
+.searchContain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+
+.search {
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 0;
+  padding-left: 20rpx;
+  padding-bottom: auto;
+  margin: auto;
+  height: 60rpx;
+  width: 680rpx;
+  border:1px solid #e0e0e0;
+  border-radius: 35rpx;
+  position: relative;
+  box-shadow:0px 1rpx 8rpx 1rpx #fafafa;
+}
+.search image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.search .search_input {
+  font-size: 26rpx;
+  width: 435rpx;
+  display: block;
+  height: 40rpx;
+  text-overflow: clip;
+  white-space: nowrap;
+  font-family: UICTFontTextStyleBody;
+  border-radius: 25rpx;
+}
+
+.goTopContainer
+{
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right:30rpx;
+  line-height: 80rpx;
+  margin: 0;
+  padding: 0;
+  z-index: 99;
+  background-color: rgba(255,255,255,0.5);
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 80%;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow:0px 1rpx 8rpx 1rpx #aaa;
+}
+
+.icon-gotop::before
+{
+    content: "\F006";
+    color: black;
+    font-size: 45rpx;
+    top:15rpx;
+    left:17rpx;
+    transform:rotate(90deg);
+}
+
+.icon-gotop1::before
+{
+    content: "\F058";
+    color: red;
+    top:30rpx;
+    left:30rpx;
+}
+
+
+.pos-wrapper{
+  position: relative;
+  width: 100%;
+  height: 120rpx;
+  margin:  20rpx 0;
+  padding: 0 30rpx;
+  line-height: 120rpx;
+  font-size: 34rpx;
+  background-color: #fff;
+}
+.pos-wrapper view{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.choose-city{
+  height: 50rpx;
+  margin-left: 150rpx;
+  padding: 0 20rpx;
+  line-height: 50rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background-color: orange;
+}
+.choose-city:last-child{
+  margin-left: 30rpx;
+}
+
+.shop-list-wrapper{
+  position: relative;
+  width: 100%;
+}
+
+.shop-list{
+  position: relative;
+  width: 100%;
+}
+
+.shop{
+  position: relative;
+  width: 100%;
+  margin-top: 50rpx;
+}
+
+.info-wrapper{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 10rpx;
+  background-color: #fff;
+}
+
+.shop-image{
+  position: relative;
+  flex:  0 0 220rpx;
+  height: 220rpx;
+  margin-right: 20rpx;
+}
+.shop-image image{
+  width: 100%;
+  height: 100%;
+}
+
+.shop-info{
+  position: relative;
+  flex: 1 1;
+}
+
+.shop-name{
+  position: relative;
+  width: 100%;
+  margin-bottom: 20rpx;
+  line-height: 40rpx;
+  word-wrap: break-word;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.second-cat-wrapper{
+  position: relative;
+  width: 100%;
+}
+
+.second-cat{
+  display: inline-block;
+  position: relative;
+  height: 30rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 0 10rpx;
+  border: 1rpx solid orange;
+  line-height: 28rpx;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 24rpx;
+  color: orange;
+}
+
+.has-coupon{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.time{
+  float: left;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.shop-dist{
+  float: right;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.no-pos{
+  position: relative;
+  width: 650rpx;
+  height: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  background-color: #fefefe;
+}
+
+.no-more{
+  position: relative;
+  width: 300rpx;
+  height: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 30rpx 0; 
+}
+
+.coupon-wrapper{
+  position: relative;
+  width: 100%;
+  padding: 10rpx;
+  background-color: #fff;
+}
+
+.coupon{
+  position: relative;
+  width: 100%;
+  border-top: 1rpx solid #eee;
+  padding-bottom: 20rpx;
+}
+
+.coupon-price{
+  display: inline-block;
+  margin-right: 30rpx;
+  vertical-align: middle;
+  font-size: 32rpx;
+  color: red;
+}
+
+.coupon-name{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.coupon-info{
+  position: relative;
+  width: 100%;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.more-coupon{
+  position: relative;
+  width: 100%;
+  height: 71rpx;
+  border-top: 1rpx solid #eee;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: red;
+  background-color: #fff;
+}
+
+.goods-list{
+  position: relative;
+  width: 100%;
+  border-top: 1rpx solid #eee;
+}
+
+.goods{
+  position: relative;
+  width: 100%;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+  background-color: #fff;
+}
+
+.good-top{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+
+.shop-price{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: red;
+}
+
+.good-name{
+  flex: 1 1;
+  vertical-align: middle;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color: #333;
+}
+
+.market-price{
+  margin-bottom: 10rpx;
+  text-decoration: line-through;
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+
+

@@ -1,0 +1,19 @@
+<!--component/popup/popup.wxml-->
+
+<!-- 触发栏 -->
+<view class='popup' bindtap='toggleShow'>
+  <slot name="slot1"></slot>
+</view>
+
+<!-- 弹框 -->
+<view class='mask' wx:if="{{show}}" catchtap='toggleShow'>
+  <view class='wrapper {{animate? "animate":""}}' catchtap='prevent' style='max-height: {{max_height?max_height:"100vh"}}' animation="{{animate?animationData:''}}">
+
+    <view class="{{title_class}}">
+      <text>{{title}}</text>
+      <image class='close' wx:if="{{show_close}}" src='/pages/img/51133509394742205.png' catchtap='toggleShow'></image>
+    </view>
+
+    <slot name="slot2"></slot>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+.component-indicator-container
+{
+  width:100%;
+  display: inline-block;
+}
+
+.component-indicator
+{
+  display: block;
+  position: relative;
+}
+
+.component-indicator-title
+{
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: left;
+}
+
+.component-indicator-subtitle
+{
+  margin-left: 10rpx;
+  font-size: 25rpx;
+  color:#888888;
+  display: inline-block;
+}
+
+.component-indicator-indicator
+{
+  width:6rpx;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  background-color: red;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+
+.component-indicator-tip
+{
+  flex:1;
+  font-size:25rpx;
+  position: absolute;
+  right:0rpx;
+  bottom: 10rpx;
+  padding:0px; 
+  color: #888888;
+  margin:0px 
+}
+
+.component-indicator-img
+{
+  flex:1;
+  height: 50rpx;
+  width: 100rpx;
+  position: absolute;
+  margin-right: 5rpx;
+  bottom:0px; 
+  right:0rpx;
+}

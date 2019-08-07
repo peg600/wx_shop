@@ -1,0 +1,113 @@
+
+@import "../lottery_header.wxss";
+
+.pk_info_container
+{
+   margin-top: 290rpx;
+   width:100%;
+   padding:25rpx;
+   position: relative;
+}
+
+.tabitem
+{
+  width: 220rpx;
+  text-align: center;
+  border: 1rpx solid #eee;
+  display: inline-block;
+  height: 80rpx;
+  font-size: 35rpx;
+  border-radius: 15rpx 15rpx 0 0;
+  vertical-align: middle;
+  background: white;
+  padding-top: 20rpx;
+}
+
+.selectedtab
+{
+  background: #ffd521;
+  border: none;
+  font-weight: bold;
+  color: #762400;
+  background: #ffd521;
+}
+
+.tabcontent
+{
+  padding: 30rpx;
+  height:600rpx;
+  overflow-y: auto;
+  font-size: 33rpx;
+  background: white;
+  border-radius: 0 15rpx 15rpx 15rpx;
+}
+
+.newPK
+{
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  height: 80rpx;
+  text-align: center;
+  padding-top: 15rpx;
+  vertical-align: middle;
+  font-size: 40rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  font-weight: bold;
+  color: #762400;
+  background: #ffd521;
+}
+
+.emoji-container
+{
+  width: 600rpx;
+  padding: 20rpx;
+}
+
+.emoji-item
+{
+  width: 280rpx;
+  display: inline-block;
+  text-align: center;
+}
+
+.emoji-content
+{
+  position: relative;
+  text-align: center;
+  align-items: center;
+  font-size:30rpx;
+  padding: 20rpx;
+  color: #000;
+}
+
+.emoji-container .selected
+{
+  border-bottom:4px solid #fc3e24;
+  color: #fc3e24;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.emoji-content image{
+  width: 200rpx;
+  display: block;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.confirmemoji
+{
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  height: 80rpx;
+  text-align: center;
+  padding-top: 15rpx;
+  vertical-align: middle;
+  font-size: 40rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  font-weight: bold;
+  color: #762400;
+  background: #ffd521;
+}

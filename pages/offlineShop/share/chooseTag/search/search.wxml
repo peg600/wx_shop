@@ -1,0 +1,102 @@
+<!--pages/offlineShop/share/chooseTag/search/search.wxml-->
+
+<view class="searchContain">
+  <view class="section search">
+    <image src="/pages/img/search.png"></image>
+    <input type='text' class="search_input" placeholder="搜索"
+     confirm-type='搜索' bindinput='listenSearch' bindconfirm='search'
+     value="{{searchInput}}"/>
+     
+     <view class='clear-ipt'  wx:if="{{showClear}}">
+      <image src='/pages/img/51133509394742205.png' bindtap='clearValue'></image>
+    </view>
+    <button bindtap='search' class='search-btn' plain>搜索</button> 
+  </view>
+</view>
+
+<view class='tab-container'>
+  <view class='tab {{current_mode == 0 ? "selected" : ""}}' data-mode="0" catchtap='changeMode'>
+    <view class='mode'>全部</view>
+    <view class='border'></view>
+  </view>
+  <view class='tab {{current_mode == 1 ? "selected" : ""}}' data-mode="1" catchtap='changeMode'>
+    <view class='mode'>店铺</view>
+    <view class='border'></view>
+  </view>
+  <view class='tab {{current_mode == 2 ? "selected" : ""}}' data-mode="2" catchtap='changeMode'>
+    <view class='mode'>品牌</view>
+    <view class='border'></view>
+  </view>
+</view>
+
+<!-- <view class='history-wrapper' wx:if="{{current_mode == 0}}">
+  <view class='title'>
+    <view>最近搜索</view>
+    <image src="/pages/img/del.png" catchtap='clearHistory'></image>
+  </view>
+
+  <view class='history-list'>
+    <view class='history' wx:for="{{history_search}}" wx:for-item="history" wx:key="{{history}}" data-tag_data="{{history}}" catchtap='chooseTag'>
+      <image src="{{history.icon}}" wx:if="{{history.icon}}"></image>
+      <view>{{history.name}}</view>
+    </view>
+  </view>
+</view> -->
+
+<view class='shop-list'  wx:if="{{current_mode == 0 && searchInput}}">
+  <view class='shop' catchtap='chooseTag'>
+    <image src="/pages/img/add_address.png"></image>
+    <view class='right'>
+      <view class='name'>{{searchInput}}</view>
+      <view class='small'>点击创建标签</view>
+    </view>
+  </view>
+</view>
+
+<view class='banner' wx:if="{{current_mode != 2 && shop_list.length > 0}}">店铺</view>
+<view class='shop-list' wx:if="{{current_mode != 2 && shop_list.length > 0}}">
+  <view class='shop' wx:if="{{current_mode == 1 && searchInput}}" catchtap='chooseTag'>
+    <image src="/pages/img/add_address.png"></image>
+    <view class='right'>
+      <view class='name'>{{searchInput}}</view>
+      <view class='small'>点击创建标签</view>
+    </view>
+  </view>
+  <view class='shop' wx:if="{{current_mode == 0 ? index < 3 : true}}" wx:for="{{shop_list}}" wx:for-item="shop" wx:key="{{shop.shop_id}}" data-tag_data="{{shop}}" catchtap='chooseTag'>
+    <image src="/pages/img/addressc.png"></image>
+    <view class='right'>
+      <view class='name'>{{shop.shop_name}}</view>
+      <view class='small'>{{shop.address}}</view>
+    </view>
+  </view>
+</view>
+<view class='more-wrapper' wx:if="{{current_mode == 0 && shop_list.length > 3}}"  data-mode="1" catchtap='changeMode'>
+  <view class='more'>
+    <view>查看更多</view>
+    <image src="/pages/img/jump_icon.png"></image>
+  </view>
+</view>
+
+<view class='banner' wx:if="{{current_mode != 1 && brand_list.length > 0}}">品牌</view>
+<view class='shop-list' wx:if="{{current_mode != 1 && brand_list.length > 0}}">
+  <view class='shop' wx:if="{{current_mode == 2 && searchInput}}" catchtap='chooseTag'>
+    <image src="/pages/img/add_address.png"></image>
+    <view class='right'>
+      <view class='name'>{{searchInput}}</view>
+      <view class='small'>点击创建标签</view>
+    </view>
+  </view>
+  <view class='shop' wx:if="{{current_mode == 0 ? index < 3 : true}}" wx:for="{{brand_list}}" wx:for-item="brand" wx:key="{{brand.brand_id}}" data-tag_data="{{brand}}" catchtap='chooseTag'>
+    <image src="/pages/img/pending_pay.png"></image>
+    <view class='right'>
+      <view class='name'>{{brand.brand_name}}</view>
+      <!-- <view></view> -->
+    </view>
+  </view>
+</view>
+<view class='more-wrapper' wx:if="{{current_mode == 0 && brand_list.length > 3}}"  data-mode="2" catchtap='changeMode'>
+  <view class='more'>
+    <view>查看更多</view>
+    <image src="/pages/img/jump_icon.png"></image>
+  </view>
+</view>

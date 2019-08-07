@@ -1,0 +1,53 @@
+<!--pages/endorser/takePhoto/takePhoto.wxml-->
+<camera wx:if="{{!show_preview}}" device-position="{{device_position}}" flash="off" binderror="onError" style="width: 100%; height: 133vw;"></camera>
+
+<!-- <view class='bottom' style="height:{{blankHeight}}rpx">
+  <view class="btn-area">
+    <view class='album' catchtap='chooseImage'>
+      <image src='/pages/img/album.png'></image>
+    </view>
+    <view class='change' catchtap='changeDevice'>
+      <image src='/pages/img/change_device.png'></image>
+    </view>
+  </view>
+</view> -->
+
+<form-button id="formbutton-album" catchtap='chooseImage'>
+  <view slot="slot1" class='album'>
+    <image src='/pages/img/album.png'></image>
+  </view>
+</form-button>
+
+<form-button id="formbutton" add_class="take-photo" catchtap='takePhoto'>
+  <view slot="slot1" class='photo-button'>
+    <image src='/pages/img/take_photo.png'></image>
+  </view>
+</form-button>
+
+
+<form-button id="formbutton-change" catchtap='changeDevice'>
+  <view slot="slot1" class='album'>
+    <image src='/pages/img/change_device.png'></image>
+  </view>
+</form-button>
+
+<view class='preview' catchtap='close' wx:if="{{show_preview}}">
+  <view class='previewImage-wrapper'>
+    <image src="{{src}}" class="previewImage" bindload="calcPhotoHeight" style='height: {{preview_height}}rpx'></image>
+  </view>
+  
+  <form-button id="formbutton-preview-left" bindtap='closePreview'>
+    <view slot="slot1" class="previewBtn">
+      <image src='/pages/img/re-try.png'></image>
+    </view>
+  </form-button>
+
+  <form-button id="formbutton-preview-right" bindtap='chosen'>
+    <view slot="slot1" class="previewBtn">
+      <image src='/pages/img/use_photo.png'></image>
+    </view>
+  </form-button>
+
+  <!-- <image src='/pages/img/re-try.png' mode='widthFix'></image>
+  <image src='/pages/img/use_photo.png' mode='widthFix'></image> -->
+</view>

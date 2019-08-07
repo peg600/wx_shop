@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商铺详情",
+  "usingComponents": {
+    "form-button": "../../../component/formButton/formButton"
+  }
+}
